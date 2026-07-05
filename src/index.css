@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+:root {
+  --font-sans: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+
+  --color-primary: #77A6D0;
+  --color-secondary: #FEAC25;
+  --color-background: #111521;
+  --color-text: #ffffff;
+  --color-black: #000000;
+  --color-border: #1a202c;
+  --color-success: #4CAF4F;
+  --color-error: #F44336;
+  --color-warning: #FFC107;
+
+  --color-primary-90: rgba(119, 166, 208, 0.9);
+  --color-primary-20: rgba(119, 166, 208, 0.2);
+  --color-secondary-90: rgba(254, 172, 37, 0.9);
+  --color-background-90: rgba(17, 21, 33, 0.9);
+}
+
+
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-sans);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  font-family: var(--font-sans);
+  background-color: var(--color-background);
+  color: var(--color-text);
+}
+
+#root {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+button,
+a {
+  font-family: var(--font-sans);
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+.text-primary {
+  color: var(--color-primary);
+}
+
+.text-secondary {
+  color: var(--color-secondary);
+}
+
+.bg-primary {
+  background-color: var(--color-primary);
+}
+
+.bg-secondary {
+  background-color: var(--color-secondary);
+}
+
+.border-primary {
+  border-color: var(--color-primary);
+}

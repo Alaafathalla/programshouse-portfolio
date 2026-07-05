@@ -19,8 +19,8 @@ export default function App() {
       <About />
       <Services />
       <Portfolio />
-      {/* <Blogs />
-      <Partners />
+      <Blogs />
+      {/* <Partners />
       <Footer /> */}
     </main>
   )

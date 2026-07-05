@@ -3,123 +3,141 @@
 import { motion } from 'framer-motion'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { useState } from 'react'
-import { colors } from '../theme'
 
-const blogs = [
-  {
-    title: 'How to build a new website from scratch (step by step guide)',
-    image: 'linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%)',
-  },
-  {
-    title: 'How to build a new website from scratch (step by step guide)',
-    image: 'linear-gradient(135deg, var(--color-secondary) 0%, var(--color-primary) 100%)',
-  },
-  {
-    title: 'How to build a new website from scratch (step by step guide)',
-    image: 'linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%)',
-  },
-]
+const fallbackImages = ['/blog1.png', '/blog2.png', '/blog3.png']
+
+const blogs = Array.from({ length: 9 }, (_, index) => ({
+  title: 'How to build a new website from scratch (step by step guide)',
+  image: fallbackImages[index % fallbackImages.length],
+}))
 
 export default function Blogs() {
   const [currentIndex, setCurrentIndex] = useState(0)
 
   const handlePrev = () => {
-    setCurrentIndex((prev) => (prev === 0 ? blogs.length - 1 : prev - 1))
+    setCurrentIndex((prev) =>
+      prev === 0 ? blogs.length - 3 : prev - 1
+    )
   }
 
   const handleNext = () => {
-    setCurrentIndex((prev) => (prev === blogs.length - 1 ? 0 : prev + 1))
+    setCurrentIndex((prev) =>
+      prev >= blogs.length - 3 ? 0 : prev + 1
+    )
   }
 
   return (
-    <section id="blogs" className="py-20" style={{ backgroundColor: colors.background }}>
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="text-center mb-16">
+    <section
+      id="blogs"
+      className="relative overflow-hidden bg-[#111521] py-[90px]"
+    >
+      <div className="mx-auto max-w-[1320px] px-6">
+        <div className="mb-[52px] text-center">
           <motion.h2
-            className="text-4xl md:text-5xl font-bold mb-4"
-            style={{ color: colors.text }}
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.8 }}
+            className="mb-5 text-[42px] font-extrabold leading-none text-white"
+            initial={{ opacity: 0, y: 18 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
             viewport={{ once: true }}
           >
-            Our <span className="text-[#FEAC25]">Blogs</span>
+            Our <span className="text-[#77A6D0]">Blogs</span>
           </motion.h2>
+
           <motion.p
-            className="text-lg text-gray-300"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-[18px] font-medium text-white/70"
+            initial={{ opacity: 0, y: 18 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.1 }}
             viewport={{ once: true }}
           >
-            Get inspired, gain new skills and see what's trending
+            Get inspired, gain new skills and see what’s trending
           </motion.p>
         </div>
 
         <div className="relative">
-          {/* Carousel Container */}
-          <div className="overflow-hidden rounded-lg">
+          <div className="overflow-hidden px-[46px]">
             <motion.div
-              className="flex gap-6"
-              animate={{ x: `-${currentIndex * 100}%` }}
-              transition={{ duration: 0.5, ease: 'easeInOut' }}
+              className="flex gap-[32px]"
+              animate={{
+                x: `calc(-${currentIndex * 33.333}% - ${
+                  currentIndex * 10.6
+                }px)`,
+              }}
+              transition={{
+                duration: 0.55,
+                ease: 'easeInOut',
+              }}
             >
               {blogs.map((blog, index) => (
-                <div
+                <motion.article
                   key={index}
-                  className="min-w-full md:min-w-1/3 lg:min-w-1/3 flex-shrink-0"
+                  className="min-w-[calc((100%-64px)/3)] overflow-hidden rounded-[18px] border border-white/15 bg-[#20242F]"
+                  initial={{ opacity: 0, y: 24 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{
+                    duration: 0.6,
+                    delay: (index % 3) * 0.12,
+                  }}
+                  viewport={{ once: true }}
                 >
-                  <motion.div
-                    className="rounded-lg overflow-hidden border border-[#77A6D0] border-opacity-20 hover:border-[#FEAC25] transition group h-full"
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    transition={{ duration: 0.6 }}
-                    viewport={{ once: true }}
-                  >
-                    {/* Image Section with clip-path */}
-                    <div
-                      className="w-full h-48 relative overflow-hidden group-hover:scale-105 transition duration-300"
-                      style={{
-                        background: blog.image,
-                        clipPath: 'polygon(0 0, 100% 0, 100% 85%, 0 100%)',
+                  <div className="h-[170px] overflow-hidden rounded-t-[18px] p-[10px]">
+                    <img
+                      src={blog.image}
+                      alt={blog.title}
+                      onError={(e) => {
+                        e.currentTarget.src =
+                          fallbackImages[
+                            index % fallbackImages.length
+                          ]
                       }}
+                      className="h-full w-full rounded-[12px] object-cover transition duration-500 hover:scale-105"
                     />
+                  </div>
 
-                    {/* Content Section */}
-                    <div className="p-6 bg-[#1a2332]">
-                      <h3 className="text-lg font-bold mb-4 line-clamp-2">{blog.title}</h3>
-                      <a href="#" className="text-[#77A6D0] text-sm font-semibold hover:text-opacity-80 transition">
-                        Explore more
-                      </a>
-                    </div>
-                  </motion.div>
-                </div>
+                  <div className="px-[24px] pb-[24px] pt-[8px]">
+                    <h3 className="mb-[26px] text-[18px] font-bold leading-[1.45] text-white">
+                      {blog.title}
+                    </h3>
+
+                    <a
+                      href="#"
+                      className="text-[12px] font-medium text-white/65 underline underline-offset-4 transition hover:text-[#77A6D0]"
+                    >
+                      Explore more
+                    </a>
+                  </div>
+                </motion.article>
               ))}
             </motion.div>
           </div>
 
-          {/* Navigation Buttons */}
           <button
+            type="button"
             onClick={handlePrev}
-            className="absolute -left-6 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-[#1a2332] border border-[#77A6D0] border-opacity-30 flex items-center justify-center hover:bg-[#77A6D0] hover:text-white transition z-10"
+            className="absolute left-0 top-[43%] z-20 flex h-[48px] w-[48px] -translate-y-1/2 items-center justify-center rounded-full bg-white/10 text-white/70 transition hover:bg-white/20 hover:text-white"
           >
-            <ChevronLeft size={20} />
-          </button>
-          <button
-            onClick={handleNext}
-            className="absolute -right-6 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-[#1a2332] border border-[#77A6D0] border-opacity-30 flex items-center justify-center hover:bg-[#77A6D0] hover:text-white transition z-10"
-          >
-            <ChevronRight size={20} />
+            <ChevronLeft size={22} />
           </button>
 
-          {/* Dots Navigation */}
-          <div className="flex justify-center gap-2 mt-8">
-            {blogs.map((_, index) => (
+          <button
+            type="button"
+            onClick={handleNext}
+            className="absolute right-0 top-[43%] z-20 flex h-[48px] w-[48px] -translate-y-1/2 items-center justify-center rounded-full bg-[#77A6D0] text-white transition hover:bg-[#5f93c4]"
+          >
+            <ChevronRight size={22} />
+          </button>
+
+          <div className="mt-[38px] flex justify-center gap-[6px]">
+            {Array.from({
+              length: blogs.length - 2,
+            }).map((_, index) => (
               <button
                 key={index}
                 onClick={() => setCurrentIndex(index)}
-                className={`w-2 h-2 rounded-full transition ${
-                  index === currentIndex ? 'bg-[#FEAC25] w-8' : 'bg-[#77A6D0] bg-opacity-30'
+                className={`h-[7px] rounded-full transition-all ${
+                  currentIndex === index
+                    ? 'w-[18px] bg-[#77A6D0]'
+                    : 'w-[18px] bg-white/30'
                 }`}
               />
             ))}

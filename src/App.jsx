@@ -14,11 +14,11 @@ export default function App() {
       color: 'var(--color-text)',
       fontFamily: 'var(--font-sans)'
     }}>
-      {/* <Header />
+      <Header />
       <Hero />
       <About />
       <Services />
-      <Portfolio />
+      {/* <Portfolio />
       <Blogs />
       <Partners />
       <Footer /> */}

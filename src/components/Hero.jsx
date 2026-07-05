@@ -62,7 +62,6 @@ export default function Hero() {
             }}
             transition={{ duration: 11, repeat: Infinity, ease: 'easeInOut' }}
           />
-
           <path
             d="M-80 515 C180 545 330 345 555 370 C790 395 850 590 1080 560 C1270 535 1330 470 1510 480"
             stroke="#55CFFF"

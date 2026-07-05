@@ -1,55 +1,80 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { colors } from '../theme'
 
 const partners = [
-  { name: 'Partner 1', initials: 'P1' },
-  { name: 'Partner 2', initials: 'P2' },
-  { name: 'Partner 3', initials: 'P3' },
-  { name: 'Partner 4', initials: 'P4' },
-  { name: 'Partner 5', initials: 'P5' },
-  { name: 'Partner 6', initials: 'P6' },
-  { name: 'Partner 7', initials: 'P7' },
-  { name: 'Partner 8', initials: 'P8' },
+  { name: 'Tasheel HR Company', logo: '/partners/tasheel.png' },
+  { name: 'Dolphin Print', logo: '/partners/dolphin.png' },
+  { name: 'My Dose', logo: '/partners/mydose.png' },
+  { name: 'Medical Islands', logo: '/partners/medical-islands.png' },
+  { name: 'Al Qaswa Group Travel', logo: '/partners/qaswa.png' },
+  { name: 'MS', logo: '/partners/ms.png' },
 ]
+
+const firstRow = [...partners, ...partners]
+const secondRow = [...partners].reverse().concat([...partners].reverse())
+
+function PartnerCard({ partner }) {
+  return (
+    <div className="flex h-[108px] min-w-[260px] items-center justify-center rounded-[12px] border border-white/15 bg-[#20242F] px-8">
+      <img
+        src={partner.logo}
+        alt={partner.name}
+        className="max-h-[66px] max-w-[145px] object-contain brightness-0 invert"
+      />
+    </div>
+  )
+}
 
 export default function Partners() {
   return (
-    <section className="py-20" style={{ backgroundColor: colors.background }}>
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <motion.h2
-            className="text-4xl md:text-5xl font-bold mb-4"
-            style={{ color: colors.text }}
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
+    <section className="relative overflow-hidden bg-[#111521] py-[72px]">
+      <div className="mb-[48px] text-center">
+        <motion.h2
+          className="text-[40px] font-extrabold leading-none text-white"
+          initial={{ opacity: 0, y: 18 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+          viewport={{ once: true }}
+        >
+          Partners in <span className="text-[#77A6D0]">Success</span>
+        </motion.h2>
+      </div>
+
+      <div className="relative space-y-[28px]">
+        <div className="pointer-events-none absolute left-0 top-0 z-20 h-full w-[160px] bg-gradient-to-r from-[#111521] to-transparent" />
+        <div className="pointer-events-none absolute right-0 top-0 z-20 h-full w-[160px] bg-gradient-to-l from-[#111521] to-transparent" />
+
+        <div className="overflow-hidden">
+          <motion.div
+            className="flex w-max gap-[24px]"
+            animate={{ x: ['0%', '-50%'] }}
+            transition={{
+              duration: 28,
+              repeat: Infinity,
+              ease: 'linear',
+            }}
           >
-            Partners in <span style={{ color: colors.primary }}>Success</span>
-          </motion.h2>
+            {firstRow.map((partner, index) => (
+              <PartnerCard key={`top-${index}`} partner={partner} />
+            ))}
+          </motion.div>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-          {partners.map((partner, index) => (
-            <motion.div
-              key={index}
-              className="p-8 rounded-lg bg-[#1a2332] border border-[#77A6D0] border-opacity-20 flex items-center justify-center hover:border-[#FEAC25] transition min-h-32 group"
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: index * 0.05 }}
-              viewport={{ once: true }}
-              whileHover={{ scale: 1.05 }}
-            >
-              <div className="text-center">
-                <div className="w-12 h-12 mx-auto mb-3 rounded-full bg-gradient-to-br from-[#77A6D0] to-[#FEAC25] flex items-center justify-center font-bold text-black group-hover:shadow-lg group-hover:shadow-[#77A6D0] transition">
-                  {partner.initials}
-                </div>
-                <p className="text-sm text-gray-400">{partner.name}</p>
-              </div>
-            </motion.div>
-          ))}
+        <div className="overflow-hidden">
+          <motion.div
+            className="flex w-max gap-[24px]"
+            animate={{ x: ['-50%', '0%'] }}
+            transition={{
+              duration: 28,
+              repeat: Infinity,
+              ease: 'linear',
+            }}
+          >
+            {secondRow.map((partner, index) => (
+              <PartnerCard key={`bottom-${index}`} partner={partner} />
+            ))}
+          </motion.div>
         </div>
       </div>
     </section>

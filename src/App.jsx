@@ -20,8 +20,8 @@ export default function App() {
       <Services />
       <Portfolio />
       <Blogs />
-      {/* <Partners />
-      <Footer /> */}
+      <Partners />
+      <Footer />
     </main>
   )
 }

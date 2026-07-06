@@ -20,7 +20,8 @@ export default function HomePage() {
       <Blogs />
       <Partners />
       <Testimonials />
-    
+      <Idea />
+      <Footer />
     </>
   )
 }

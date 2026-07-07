@@ -8,98 +8,100 @@ import Autoplay from 'embla-carousel-autoplay'
 
 const projects = [
   {
-    title: 'Medical Islands Website',
+    title: 'Rosetta Medical Mobile App & Dashboard',
     description:
-      'Modern medical e-commerce website with customer and admin dashboard.',
+      'Smart prescription delivery platform connecting users with nearby pharmacies.',
     image: '/portfolio/portfolio1.png',
     mobileImage: '/portfolio/port (1).png',
-  },
-  {
-    title: 'RAQ Application Dashboard',
-    description:
-      'Business management dashboard with analytics and reporting features.',
-    image: '/portfolio/portfolio2.png',
-    mobileImage: '/portfolio/port (2).png',
-  },
-  {
-    title: 'Dolphin Website',
-    description: 'Corporate website with modern UI and responsive experience.',
-    image: '/portfolio/portfolio3.png',
-    mobileImage: '/portfolio/port (3).png',
-  },
-  {
-    title: 'SWSW Application',
-    description:
-      'Food delivery mobile application with customer and driver experiences.',
-    image: '/portfolio/portfolio4.png',
-    mobileImage: '/portfolio/port (4).png',
-  },
-  {
-    title: 'Zewail Academy Website',
-    description:
-      'Educational platform for courses, registrations and student management.',
-    image: '/portfolio/portfolio5.png',
-    mobileImage: '/portfolio/port (5).png',
-  },
-  {
-    title: 'Digital Plus Marketing Website',
-    description:
-      'Marketing agency website focused on branding and digital services.',
-    image: '/portfolio/portfolio6.png',
-    mobileImage: '/portfolio/port (6).png',
-  },
-  {
-    title: 'Kaspton Home Services Website',
-    description:
-      'Home services platform with booking and service management.',
-    image: '/portfolio/portfolio7.png',
-    mobileImage: '/portfolio/port (7).png',
-  },
-  {
-    title: 'CP Dashboard',
-    description: 'Business dashboard for monitoring operations and performance.',
-    image: '/portfolio/portfolio8.png',
-    mobileImage: '/portfolio/port (8).png',
   },
   {
     title: 'PROF Medical Research Platform',
     description:
       'Research platform for healthcare professionals and medical content.',
-    image: '/portfolio/portfolio9.png',
-    mobileImage: '/portfolio/port (9).png',
+    image: '/portfolio/portfolio2.png',
+    mobileImage: '/portfolio/port (2).png',
   },
   {
-    title: 'Rosetta Medical Mobile App & Dashboard',
-    description:
-      'Smart prescription delivery platform connecting users with nearby pharmacies.',
-    image: '/portfolio/portfolio10.png',
-    mobileImage: '/portfolio/port (10).png',
-  },
-  {
-    title: 'MBS Marketing Website',
+    title: 'M&S Marketing Website',
     description:
       'Corporate marketing website with service showcase and lead generation.',
-    image: '/portfolio/portfolio11.png',
-    mobileImage: '/portfolio/port (11).png',
+    image: '/portfolio/portfolio3.png',
+    mobileImage: '/portfolio/port (3).png',
   },
   {
-    title: 'Roam Ahmed Life Coaching Website',
+    title: 'Reem Ahmed Life Coaching Website',
     description:
       'Personal coaching platform with booking and consultation features.',
-  image: '/portfolio/portfolio12.png',
-  mobileImage: '/portfolio/port (12).png',
+    image: '/portfolio/portfolio4.png',
+    mobileImage: '/portfolio/port (4).png',
   },
   {
     title: 'Nizam HR Management System',
     description:
       'Complete HR platform with web dashboard and employee mobile application.',
-    image: '/portfolio/portfolio13.png',
-    mobileImage: '/portfolio/port (13).png',
+    image: '/portfolio/portfolio5.png',
+    mobileImage: '/portfolio/port (5).png',
   },
   {
     title: 'Biostart House Website',
     description:
       'Professional business website designed for startup and corporate services.',
+    image: '/portfolio/portfolio6.png',
+    mobileImage: '/portfolio/port (6).png',
+  },
+  {
+    title: 'Medical Islands Website',
+    description:
+      'Modern medical e-commerce website with customer and admin dashboard.',
+    image: '/portfolio/portfolio7.png',
+    mobileImage: '/portfolio/port (7).png',
+  },
+  {
+    title: 'RAQ Application Dashboard',
+    description:
+      'Business management dashboard with analytics and reporting features.',
+    image: '/portfolio/portfolio8.png',
+    mobileImage: '/portfolio/port (8).png',
+  },
+  {
+    title: 'Dolphin Website',
+    description:
+      'Corporate website with modern UI and responsive experience.',
+    image: '/portfolio/portfolio9.png',
+    mobileImage: '/portfolio/port (9).png',
+  },
+  {
+    title: 'SWSW Application',
+    description:
+      'Food delivery mobile application with customer and driver experiences.',
+    image: '/portfolio/portfolio10.png',
+    mobileImage: '/portfolio/port (10).png',
+  },
+  {
+    title: 'Zewail Academy Website',
+    description:
+      'Educational platform for courses, registrations and student management.',
+    image: '/portfolio/portfolio11.png',
+    mobileImage: '/portfolio/port (11).png',
+  },
+  {
+    title: 'Digital Plus Marketing Website',
+    description:
+      'Marketing agency website focused on branding and digital services.',
+    image: '/portfolio/portfolio12.png',
+    mobileImage: '/portfolio/port (12).png',
+  },
+  {
+    title: 'Kaspton Home Services Website',
+    description:
+      'Home services platform with booking and service management.',
+    image: '/portfolio/portfolio13.png',
+    mobileImage: '/portfolio/port (13).png',
+  },
+  {
+    title: 'CP Dashboard',
+    description:
+      'Business dashboard for monitoring operations and performance.',
     image: '/portfolio/portfolio14.png',
     mobileImage: '/portfolio/port (14).png',
   },

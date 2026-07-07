@@ -43,13 +43,13 @@ export default function Innovation() {
         <motion.img
           src="images/services/2.svg"
           alt=""
-          className="relative z-10 hidden w-[525px] md:block lg:w-[500px]"
-          animate={{ rotate: 360 }}
-          transition={{
-            duration: 18,
-            repeat: Infinity,
-            ease: 'linear',
-          }}
+          className="relative z-10 hidden w-[450px] md:block lg:w-[450px]"
+   animate={{ rotate: 360 }}
+  transition={{
+    duration: 18,
+    repeat: Infinity,
+    ease: 'linear',
+  }}
         />
       </div>
 

@@ -3,6 +3,8 @@ import { Routes, Route } from "react-router-dom";
 
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import Loader from "./components/ui/Loader";
+
 
 const Home = lazy(() => import("./Pages/HomePage"));
 const Services = lazy(() => import("./Pages/servicesPage"));
@@ -18,18 +20,12 @@ export default function App() {
     >
       <Header />
 
-      <Suspense
-        fallback={
-          <div className="min-h-screen flex items-center justify-center text-white">
-            Loading...
-          </div>
-        }
-      >
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/services" element={<Services />} />
-        </Routes>
-      </Suspense>
+<Suspense fallback={<Loader />}>
+  <Routes>
+    <Route path="/" element={<Home />} />
+    <Route path="/services" element={<Services />} />
+  </Routes>
+</Suspense>
 
       <Footer />
     </main>

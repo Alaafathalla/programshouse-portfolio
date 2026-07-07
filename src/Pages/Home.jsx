@@ -6,7 +6,6 @@ import Portfolio from '../components/Portfolio'
 import Blogs from '../components/Blogs'
 import Partners from '../components/Partners'
 import Testimonials from '../components/Testimonials'
-import Footer from '../components/Footer'
 import Idea from '../components/Idea'
 import FAQ from '../components/FAQ'
 
@@ -23,7 +22,6 @@ export default function HomePage() {
       <Testimonials />
       <Idea />
       <FAQ />
-      <Footer />
     </>
   )
 }

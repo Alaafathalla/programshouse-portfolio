@@ -1,11 +1,11 @@
-import ServicesSection from "../components/HomeComponents/Services";
-import FAQ from "../components/HomeComponents/FAQ";
+
+import ServicesHero from '../components/ServicesComponents/ServicesHero';
 
 export default function Services() {
   return (
     <>
-      <ServicesSection />
-      <FAQ />
+      <ServicesHero />
+ 
     </>
   );
 }

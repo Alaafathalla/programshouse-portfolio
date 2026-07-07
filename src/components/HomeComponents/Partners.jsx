@@ -3,12 +3,12 @@
 import { motion } from 'framer-motion'
 
 const partners = [
-  { name: 'Tasheel HR Company', logo: '/partners/Tasheel.svg' },
-  { name: 'Dolphin Print', logo: '/partners/Dolphine.svg' },
-  { name: 'MSE', logo: '/partners/MSE.svg' },
-  { name: 'Medical Islands', logo: '/partners/Medical Islands.svg' },
-  { name: 'Qaswa', logo: '/partners/Qaswaa.svg' },
-  { name: 'MS', logo: '/partners/M&S.svg' },
+  { name: 'Tasheel HR Company', logo: 'images/partners/Tasheel.svg' },
+  { name: 'Dolphin Print', logo: 'images/partners/Dolphine.svg' },
+  { name: 'MSE', logo: 'images/partners/MSE.svg' },
+  { name: 'Medical Islands', logo: 'images/partners/Medical Islands.svg' },
+  { name: 'Qaswa', logo: 'images/partners/Qaswaa.svg' },
+  { name: 'MS', logo: 'images/partners/M&S.svg' },
 ]
 
 const firstRow = [...partners, ...partners, ...partners]

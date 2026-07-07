@@ -2,7 +2,7 @@
 
 import { motion, useInView, useMotionValue, useTransform, animate } from 'framer-motion'
 import { useEffect, useRef } from 'react'
-import { Card, CardContent } from './ui/card'
+import { Card, CardContent } from './../ui/card'
 
 const stats = [
   { number: 12, prefix: '', label: 'Years Experience' },

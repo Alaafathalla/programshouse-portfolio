@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { useState } from 'react'
 
-const fallbackImages = ['/blogs/blog1.png', '/blogs/blog2.png', '/blogs/blog3.png']
+const fallbackImages = ['images/blogs/blog1.png', 'images/blogs/blog2.png', 'images/blogs/blog3.png']
 
 const blogs = Array.from({ length: 9 }, (_, index) => ({
   title: 'How to build a new website from scratch (step by step guide)',

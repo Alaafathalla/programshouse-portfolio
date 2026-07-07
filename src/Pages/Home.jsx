@@ -8,6 +8,7 @@ import Partners from '../components/Partners'
 import Testimonials from '../components/Testimonials'
 import Footer from '../components/Footer'
 import Idea from '../components/Idea'
+import FAQ from '../components/FAQ'
 
 export default function HomePage() {
   return (
@@ -21,6 +22,7 @@ export default function HomePage() {
       <Partners />
       <Testimonials />
       <Idea />
+      <FAQ />
       <Footer />
     </>
   )

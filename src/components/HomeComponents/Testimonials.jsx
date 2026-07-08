@@ -73,7 +73,7 @@ export default function Testimonials() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: .5 }}
-            className="mb-5 text-[34px] font-semibold text-[#77A6D0] md:text-[42px]"
+            className="mb-5 text-[34px] font-semibold text-primary md:text-[42px]"
           >
             Testimonials
           </motion.h2>
@@ -109,7 +109,7 @@ export default function Testimonials() {
                 p-5
                 transition-all
                 duration-300
-                hover:border-[#77A6D0]/40
+                hover:border-primary/40
                 hover:bg-white/[0.06]
               "
             >
@@ -117,12 +117,12 @@ export default function Testimonials() {
               <div className="mb-5 flex items-start justify-between">
                 <div className="flex items-center gap-3">
                   {/* Letter Avatar */}
-                  <div className="flex h-11 w-11 items-center justify-center rounded-full border border-[#77A6D0]/25 bg-[#77A6D0]/10 text-lg font-semibold text-[#77A6D0]">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-full border border-primary/25 bg-primary/10 text-lg font-semibold text-primary">
                     {item.name.charAt(0)}
                   </div>
 
                   <div>
-                    <h3 className="text-[13px] font-medium text-[#77A6D0]">
+                    <h3 className="text-[13px] font-medium text-primary">
                       {item.name}
                     </h3>
 
@@ -137,7 +137,7 @@ export default function Testimonials() {
                     <Star
                       key={i}
                       size={11}
-                      className="fill-[#FEAC25] text-[#FEAC25]"
+                      className="fill-secondary text-secondary"
                     />
                   ))}
 

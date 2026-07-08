@@ -83,7 +83,7 @@ export default function FAQ() {
 
       <div className="relative z-10 mx-auto max-w-[980px] px-6">
         <div className="mb-12 text-center">
-          <h2 className="mb-3 text-[42px] font-semibold text-[#77A6D0]">
+          <h2 className="mb-3 text-[42px] font-semibold text-primary">
             FAQ
           </h2>
 
@@ -96,7 +96,7 @@ export default function FAQ() {
           <button
             type="button"
             onClick={toggleAll}
-            className="text-[14px] text-[#77A6D0] transition hover:text-white"
+            className="text-[14px] text-primary transition hover:text-white"
           >
             {allOpened ? 'Collapse all' : 'Expand all'}
           </button>
@@ -122,9 +122,9 @@ export default function FAQ() {
                   </h3>
 
                   {opened ? (
-                    <X size={20} className="text-[#77A6D0]" />
+                    <X size={20} className="text-primary" />
                   ) : (
-                    <Plus size={20} className="text-[#77A6D0]" />
+                    <Plus size={20} className="text-primary" />
                   )}
                 </button>
 

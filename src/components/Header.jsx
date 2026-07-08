@@ -37,8 +37,8 @@ export default function Header() {
                 className={({ isActive }) =>
                   `text-[18px] font-semibold transition-colors duration-300 ${
                     isActive
-                      ? "text-[#77A6D0]"
-                      : "text-white hover:text-[#77A6D0]"
+                      ? "text-primary"
+                      : "text-white hover:text-primary"
                   }`
                 }
               >
@@ -48,7 +48,7 @@ export default function Header() {
               <a
                 key={link.label}
                 href={link.to}
-                className="text-[18px] font-semibold text-white transition-colors duration-300 hover:text-[#77A6D0]"
+                className="text-[18px] font-semibold text-white transition-colors duration-300 hover:text-primary"
               >
                 {link.label}
               </a>
@@ -89,8 +89,8 @@ export default function Header() {
                 className={({ isActive }) =>
                   `py-3 text-base font-medium transition-colors ${
                     isActive
-                      ? "text-[#77A6D0]"
-                      : "text-white hover:text-[#77A6D0]"
+                      ? "text-primary"
+                      : "text-white hover:text-primary"
                   }`
                 }
               >
@@ -101,7 +101,7 @@ export default function Header() {
                 key={link.label}
                 href={link.to}
                 onClick={() => setOpen(false)}
-                className="py-3 text-base font-medium text-white transition-colors hover:text-[#77A6D0]"
+                className="py-3 text-base font-medium text-white transition-colors hover:text-primary"
               >
                 {link.label}
               </a>

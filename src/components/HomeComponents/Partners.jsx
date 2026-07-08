@@ -37,7 +37,7 @@ export default function Partners() {
           transition={{ duration: 0.7 }}
           viewport={{ once: true }}
         >
-          Partners in <span className="text-[#77A6D0]">Success</span>
+          Partners in <span className="text-primary">Success</span>
         </motion.h2>
       </div>
 

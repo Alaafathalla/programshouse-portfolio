@@ -143,7 +143,7 @@ export default function Hero() {
           ))}
         </svg>
 
-        <div className="absolute left-[28%] top-[18%] h-[420px] w-[420px] rounded-full bg-[#77A6D0]/20 blur-[110px]" />
+        <div className="absolute left-[28%] top-[18%] h-[420px] w-[420px] rounded-full bg-primary/20 blur-[110px]" />
         <div className="absolute right-[-120px] bottom-[18%] h-[460px] w-[460px] rounded-full bg-[#7B5CFF]/25 blur-[110px]" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(17,21,33,0.2)_45%,#111521_92%)]" />
       </div>
@@ -167,7 +167,7 @@ export default function Hero() {
         >
           Bring Your Idea
           <br />
-          To <span className="text-[#77A6D0]">Life..</span>
+          To <span className="text-primary">Life..</span>
         </motion.h1>
 
         <motion.p

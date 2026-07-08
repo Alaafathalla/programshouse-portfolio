@@ -121,7 +121,7 @@ export default function DesignServices() {
                   {card.tag}
                   <ArrowUpRight size={15} />
 
-                  <span className="absolute -bottom-[11px] left-[14px] h-0 w-0 border-l-[11px] border-r-[11px] border-t-[12px] border-l-transparent border-r-transparent border-t-[#FEAC25]" />
+                  <span className="absolute -bottom-[11px] left-[14px] text-secondary h-0 w-0 border-l-[11px] border-r-[11px] border-t-[12px] border-l-transparent border-r-transparent border-t-secondary" />
                 </div>
               </div>
             </div>

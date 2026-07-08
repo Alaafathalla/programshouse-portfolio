@@ -54,7 +54,7 @@ export default function Footer() {
                   href={item.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white transition-all duration-300 hover:bg-[#77A6D0] hover:border-[#77A6D0]"
+                  className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white transition-all duration-300 hover:bg-primary hover:border-primary"
                 >
                   {item.icon}
                 </a>
@@ -83,7 +83,7 @@ export default function Footer() {
                 <li key={title}>
                   <a
                     href={href}
-                    className="text-white/70 hover:text-[#77A6D0] transition duration-300"
+                    className="text-white/70 hover:text-primary transition duration-300"
                   >
                     {title}
                   </a>
@@ -127,7 +127,7 @@ export default function Footer() {
 
                 <a
                   href="mailto:contact@programshouse.com"
-                  className="text-white/70 hover:text-[#77A6D0] transition"
+                  className="text-white/70 hover:text-primary transition"
                 >
                   contact@programshouse.com
                 </a>
@@ -143,7 +143,7 @@ export default function Footer() {
 
                 <a
                   href="tel:+201070101091"
-                  className="text-white/70 hover:text-[#77A6D0] transition"
+                  className="text-white/70 hover:text-primary transition"
                 >
                   (+20) 10 7010 1091
                 </a>

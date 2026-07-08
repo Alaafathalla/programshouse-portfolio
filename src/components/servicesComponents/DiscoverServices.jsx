@@ -1,99 +1,105 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { BarChart3, Users } from 'lucide-react'
+import { BarChart3, Users, ChevronsLeftRight } from 'lucide-react'
+import MessageTag from '@/components/ui/MessageTag'
 
 export default function DiscoverService() {
   return (
-    <section className="relative overflow-hidden bg-[#111521] py-[70px] md:py-[88px]">
+    <section className="relative overflow-hidden bg-[#111521] py-[48px] md:py-[70px]">
       <div className="mx-auto max-w-[1160px] px-5 md:px-6">
         <div className="mb-[34px]">
           <div className="mb-[34px] inline-flex h-[38px] items-center gap-2 rounded-[12px] border border-white/10 bg-white/[0.05] px-5 text-[15px] text-white/80">
-            <span className="text-[#FEAC25]">⌘</span>
+            <ChevronsLeftRight size={16} className="text-secondary" />
             Our Discover Service
           </div>
 
-          <h2 className="text-[38px] font-semibold leading-[1.15] tracking-[-0.035em] text-white md:text-[48px]">
+          <h2 className="text-[32px] font-semibold leading-[1.15] tracking-[-0.035em] text-white md:text-[42px]">
             Discover Your Next Digital Product
           </h2>
         </div>
 
-        <div className="grid gap-[24px] md:grid-cols-[1fr_1fr]">
+        <div className="grid gap-[24px] md:grid-cols-2">
           <motion.div
-            initial={{ opacity: 0, x: -70, y: 18 }}
-            whileInView={{ opacity: 1, x: 0, y: 0 }}
+            initial={{ opacity: 0, x: -60 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.35 }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="min-h-[360px] overflow-hidden rounded-[18px] bg-[#202532]"
+            transition={{ duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
+            className="h-[300px] overflow-hidden rounded-[16px] bg-[#202532] md:h-[420px]"
           >
-            <img
-              src="/images/services/discover2.png"
-              alt="Discovery workshop"
-              className="h-full w-full object-cover"
-            />
+<div className="relative h-full w-full">
+  <img
+    src="/images/services/discover2.png"
+    alt="Discovery workshop"
+    className="h-full w-full object-cover"
+  />
+
+  {/* Gradient Overlay */}
+  <div className="absolute inset-0 bg-gradient-to-tr from-[#111521]/85 via-[#111521]/25 to-transparent" />
+</div>
           </motion.div>
 
           <div className="grid gap-[24px]">
             <motion.div
-              initial={{ opacity: 0, x: 70, y: 18 }}
-              whileInView={{ opacity: 1, x: 0, y: 0 }}
+              initial={{ opacity: 0, x: 60 }}
+              whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, amount: 0.35 }}
-              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-              className="relative rounded-[18px] bg-[#202532] px-[34px] py-[34px]"
+              transition={{ duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
+              className="rounded-[16px] bg-[#202532] px-[34px] py-[34px]"
             >
-              <Users size={28} className="mb-7 text-[#FEAC25]" />
+              <Users size={24} className="mb-4 text-secondary" />
 
-              <h3 className="mb-5 text-[27px] font-semibold tracking-[-0.03em] text-white">
+              <h3 className="mb-2 text-[20px] font-medium tracking-[-0.03em] text-white md:text-[27px]">
                 User Research
               </h3>
 
-              <p className="max-w-[390px] text-[14px] leading-[1.75] text-white/55">
+              <p className="max-w-[390px] text-[13px] leading-[1.75] text-white/55 md:text-[14px]">
                 Discover who your users are, what problems they face, and how
                 your product can create real value through qualitative insights.
               </p>
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, x: 70, y: 18 }}
-              whileInView={{ opacity: 1, x: 0, y: 0 }}
+              initial={{ opacity: 0, x: 60 }}
+              whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, amount: 0.35 }}
               transition={{
-                duration: 0.8,
+                duration: 0.75,
                 delay: 0.08,
                 ease: [0.16, 1, 0.3, 1],
               }}
-              className="relative min-h-[210px] overflow-hidden rounded-[18px] bg-[#202532]"
+              className="relative h-[190px] overflow-visible rounded-[16px] bg-[#202532] md:h-[198px]"
             >
-              <img
-                src="/images/services/discover1.png"
-                alt="Research planning"
-                className="h-full w-full object-cover"
+<div className="relative h-full overflow-hidden rounded-[16px]">
+  <img
+    src="/images/services/discover1.png"
+    alt="Research planning"
+    className="h-full w-full object-cover"
+  />
+
+  <div className="absolute inset-0 bg-gradient-to-tr from-[#111521]/85 via-[#111521]/25 to-transparent" />
+</div>
+              <MessageTag
+                text="Every great product starts with research."
+                className="absolute left-[20px] top-[-26px] z-20"
               />
-
-              <div className="absolute left-[22px] top-[-28px] z-20 hidden md:block">
-                <div className="relative flex h-[52px] items-center rounded-[10px] bg-[#FEAC25] px-5 text-[13px] font-medium text-[#111521]">
-                  Every great product starts with research.
-
-                  <span className="absolute -bottom-[11px] left-[16px] h-0 w-0 border-l-[11px] border-r-[11px] border-t-[12px] border-l-transparent border-r-transparent border-t-[#FEAC25]" />
-                </div>
-              </div>
             </motion.div>
           </div>
 
           <motion.div
-            initial={{ opacity: 0, y: 70 }}
+            initial={{ opacity: 0, y: 55 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.35 }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="rounded-[18px] bg-[#202532] px-[34px] py-[38px] md:col-span-2"
+            transition={{ duration: 0.75, ease: [0.16, 1, 0.3, 1] }}
+            className="rounded-[16px] bg-[#202532] px-[34px] py-[34px] md:col-span-2"
           >
-            <BarChart3 size={34} className="mb-8 text-[#FEAC25]" />
+            <BarChart3 size={30} className="mb-4 text-secondary" />
 
-            <h3 className="mb-5 text-[38px] font-semibold leading-[1.1] tracking-[-0.035em] text-white md:text-[46px]">
+            <h3 className="mb-4 text-[28px] font-medium leading-[1.1] tracking-[-0.035em] text-white md:text-[42px]">
               Competitor Analysis
             </h3>
 
-            <p className="max-w-[1060px] text-[14px] leading-[1.75] text-white/55">
+            <p className="max-w-[1060px] text-[13px] leading-[1.75] text-white/55 md:text-[14px]">
               Analyze competitors, identify market gaps, and uncover
               opportunities to build a stronger, more differentiated digital
               product. Understand your business model, challenges, vision, and

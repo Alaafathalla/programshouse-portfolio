@@ -67,7 +67,7 @@ export default function Idea() {
       <div className="mx-auto grid max-w-[1320px] grid-cols-1 items-center gap-[110px] px-6 md:grid-cols-[1fr_430px] lg:gap-[210px]">
         <div className="flex flex-col items-center text-center">
           <h2 className="mb-3 text-[38px] font-normal leading-none tracking-[-0.03em] text-white md:text-[44px]">
-            Have an <span className="text-[#77A6D0]">idea?</span>
+            Have an <span className="text-primary">idea?</span>
           </h2>
 
           <p className="mb-[70px] text-[22px] font-normal leading-none text-white">
@@ -93,7 +93,7 @@ export default function Idea() {
             <input
               {...register('name')}
               placeholder="Enter your name"
-              className="h-[46px] w-full rounded-[10px] border border-white/20 bg-[#202532] px-[16px] text-[13px] text-white outline-none placeholder:text-white/50 focus:border-[#77A6D0]"
+              className="h-[46px] w-full rounded-[10px] border border-white/20 bg-[#202532] px-[16px] text-[13px] text-white outline-none placeholder:text-white/50 focus:border-primary"
             />
 
             {errors.name && (
@@ -111,7 +111,7 @@ export default function Idea() {
             <input
               {...register('email')}
               placeholder="Enter your E-mail"
-              className="h-[46px] w-full rounded-[10px] border border-white/20 bg-[#202532] px-[16px] text-[13px] text-white outline-none placeholder:text-white/50 focus:border-[#77A6D0]"
+              className="h-[46px] w-full rounded-[10px] border border-white/20 bg-[#202532] px-[16px] text-[13px] text-white outline-none placeholder:text-white/50 focus:border-primary"
             />
 
             {errors.email && (
@@ -126,7 +126,7 @@ export default function Idea() {
               Phone Number
             </label>
 
-            <div className="flex h-[46px] rounded-[10px] border border-white/20 bg-[#202532] focus-within:border-[#77A6D0]">
+            <div className="flex h-[46px] rounded-[10px] border border-white/20 bg-[#202532] focus-within:border-primary">
               <button
                 type="button"
                 onClick={() => setOpen((prev) => !prev)}
@@ -196,7 +196,7 @@ export default function Idea() {
             <textarea
               {...register('message')}
               placeholder="Enter Message"
-              className="h-[178px] w-full resize-none rounded-[10px] border border-white/20 bg-[#202532] px-[16px] py-[14px] text-[13px] text-white outline-none placeholder:text-white/50 focus:border-[#77A6D0]"
+              className="h-[178px] w-full resize-none rounded-[10px] border border-white/20 bg-[#202532] px-[16px] py-[14px] text-[13px] text-white outline-none placeholder:text-white/50 focus:border-primary"
             />
 
             {errors.message && (
@@ -209,7 +209,7 @@ export default function Idea() {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="h-[46px] w-full rounded-[10px] bg-[#77A6D0] text-[13px] font-semibold text-white transition hover:bg-[#6497C5] disabled:opacity-60"
+            className="h-[46px] w-full rounded-[10px] bg-primary text-[13px] font-semibold text-white transition hover:bg-[#6497C5] disabled:opacity-60"
           >
             Let&apos;s Talk
           </button>

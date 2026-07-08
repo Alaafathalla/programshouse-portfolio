@@ -52,7 +52,7 @@ export default function About() {
           transition={{ duration: 0.7 }}
           viewport={{ once: true }}
         >
-          About <span className="text-[#77A6D0]">us</span>
+          About <span className="text-primary">us</span>
         </motion.h2>
 
         <motion.h3
@@ -63,7 +63,7 @@ export default function About() {
           viewport={{ once: true }}
         >
           We help businesses transform ideas into{' '}
-          <span className="text-[#77A6D0]">impactful digital products</span>
+          <span className="text-primary">impactful digital products</span>
         </motion.h3>
 
         <motion.p

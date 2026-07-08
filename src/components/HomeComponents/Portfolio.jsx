@@ -153,7 +153,7 @@ export default function Portfolio() {
       <div className="mx-auto max-w-[1320px] px-4 md:px-6">
         <div className="mb-[42px] text-center md:mb-[58px]">
           <motion.h2 className="mb-4 text-[32px] font-extrabold leading-none text-white md:mb-5 md:text-[42px]">
-            Our <span className="text-[#77A6D0]">Portfolio</span>
+            Our <span className="text-primary">Portfolio</span>
           </motion.h2>
 
           <motion.p className="mx-auto max-w-[720px] text-[14px] font-medium leading-[1.6] text-white/70 md:text-[18px]">
@@ -206,7 +206,7 @@ export default function Portfolio() {
                 <button
                   type="button"
                   onClick={scrollNext}
-                  className="absolute right-[18px] top-0 z-30 flex h-[46px] items-center gap-2 rounded-bl-[22px] rounded-tr-[18px] border-b border-l border-white/20 bg-[#111521] px-5 text-[14px] font-semibold text-white transition hover:text-[#77A6D0] md:right-[28px] md:text-[18px]"
+                  className="absolute right-[18px] top-0 z-30 flex h-[46px] items-center gap-2 rounded-bl-[22px] rounded-tr-[18px] border-b border-l border-white/20 bg-[#111521] px-5 text-[14px] font-semibold text-white transition hover:text-primary md:right-[28px] md:text-[18px]"
                 >
                   <ArrowUpRight size={18} />
                   Explore More
@@ -224,7 +224,7 @@ export default function Portfolio() {
               onClick={scrollNext}
               className={`h-[6px] rounded-full transition-all md:h-[7px] ${
                 dot === selectedIndex % 3
-                  ? 'w-[22px] bg-[#77A6D0]'
+                  ? 'w-[22px] bg-primary'
                   : 'w-[14px] bg-white/35'
               }`}
             />

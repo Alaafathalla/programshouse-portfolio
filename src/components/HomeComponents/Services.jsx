@@ -105,7 +105,7 @@ export default function Services() {
             transition={{ duration: 0.7 }}
             viewport={{ once: true }}
           >
-            Our <span className="text-[#77A6D0]">Services</span>
+            Our <span className="text-primary">Services</span>
           </motion.h2>
 
           <motion.p
@@ -139,7 +139,7 @@ export default function Services() {
                 <div className="absolute inset-[1px] flex flex-col items-center rounded-[17px] bg-[#20242F] px-6 py-9 text-center">
                   <div className="mb-[22px] flex h-[50px] w-[50px] items-center justify-center rounded-full">
                     <IconComponent
-                      className="h-[32px] w-[32px] text-[#FEAC25] transition-transform duration-300 group-hover:scale-110"
+                      className="h-[32px] w-[32px] text-secondary transition-transform duration-300 group-hover:scale-110"
                       strokeWidth={1.9}
                     />
                   </div>
@@ -154,10 +154,10 @@ export default function Services() {
 
                   <a
                     href="#"
-                    className="mt-[26px] flex items-center gap-2 text-[12px] font-medium text-white underline underline-offset-4 transition-all duration-300 group-hover:gap-3 group-hover:text-[#FEAC25]"
+                    className="mt-[26px] flex items-center gap-2 text-[12px] font-medium text-white underline underline-offset-4 transition-all duration-300 group-hover:gap-3 group-hover:text-secondary"
                   >
                     Read More
-                    <ArrowRight size={14} className="text-[#FEAC25]" />
+                    <ArrowRight size={14} className="text-secondary" />
                   </a>
                 </div>
               </motion.div>

@@ -254,7 +254,7 @@ export default function DevelopmentSection() {
                 <button
                   type="button"
                   onClick={scrollNext}
-                  className="absolute right-[18px] top-0 z-30 flex h-[46px] items-center gap-2 rounded-bl-[22px] rounded-tr-[18px] border-b border-l border-white/20 bg-[#111521] px-5 text-[14px] font-semibold text-white transition hover:text-[#77A6D0] md:text-[18px]"
+                  className="absolute right-[18px] top-0 z-30 flex h-[46px] items-center gap-2 rounded-bl-[22px] rounded-tr-[18px] border-b border-l border-white/20 bg-[#111521] px-5 text-[14px] font-semibold text-white transition hover:text-primary md:text-[18px]"
                 >
                   <ArrowUpRight size={18} />
                   Explore More
@@ -272,7 +272,7 @@ export default function DevelopmentSection() {
               onClick={scrollNext}
               className={`h-[6px] rounded-full transition-all md:h-[7px] ${
                 dot === selectedIndex % 3
-                  ? 'w-[22px] bg-[#77A6D0]'
+                  ? 'w-[22px] bg-primary'
                   : 'w-[14px] bg-white/35'
               }`}
             />
@@ -302,7 +302,7 @@ export default function DevelopmentSection() {
 
         {/* Icon */}
         <div className="relative mb-6 flex h-[70px] w-[70px] items-center justify-center rounded-[16px] bg-[#202532]">
-          <Icon size={30} className="text-[#77A6D0]" />
+          <Icon size={30} className="text-primary" />
 
           {index !== steps.length - 1 && (
             <span className="absolute left-[calc(100%+18px)] top-1/2 hidden h-px w-[calc(100%+45px)] -translate-y-1/2 border-t border-dashed border-white/20 lg:block" />
@@ -310,7 +310,7 @@ export default function DevelopmentSection() {
         </div>
 
         {/* Title */}
-        <h3 className="mb-3 text-[18px] font-semibold text-[#77A6D0]">
+        <h3 className="mb-3 text-[18px] font-semibold text-primary">
           {step.title}
         </h3>
 

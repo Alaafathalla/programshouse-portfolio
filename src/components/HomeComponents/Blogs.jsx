@@ -36,7 +36,7 @@ export default function Blogs() {
             transition={{ duration: 0.7 }}
             viewport={{ once: true }}
           >
-            Our <span className="text-[#77A6D0]">Blogs</span>
+            Our <span className="text-primary">Blogs</span>
           </motion.h2>
 
           <motion.p
@@ -92,7 +92,7 @@ export default function Blogs() {
 
                     <a
                       href="#"
-                      className="text-[12px] font-medium text-white/65 underline underline-offset-4 transition hover:text-[#77A6D0]"
+                      className="text-[12px] font-medium text-white/65 underline underline-offset-4 transition hover:text-primary"
                     >
                       Explore more
                     </a>
@@ -113,7 +113,7 @@ export default function Blogs() {
           <button
             type="button"
             onClick={handleNext}
-            className="absolute right-2 top-[43%] z-20 hidden h-[44px] w-[44px] -translate-y-1/2 items-center justify-center rounded-full bg-[#77A6D0] text-white transition hover:bg-[#5f93c4] md:flex lg:right-0 lg:h-[48px] lg:w-[48px]"
+            className="absolute right-2 top-[43%] z-20 hidden h-[44px] w-[44px] -translate-y-1/2 items-center justify-center rounded-full bg-primary text-white transition hover:bg-[#5f93c4] md:flex lg:right-0 lg:h-[48px] lg:w-[48px]"
           >
             <ChevronRight size={22} />
           </button>
@@ -126,7 +126,7 @@ export default function Blogs() {
                 onClick={handleNext}
                 className={`h-[7px] rounded-full transition-all ${
                   dot === currentIndex % 3
-                    ? 'w-[22px] bg-[#77A6D0]'
+                    ? 'w-[22px] bg-primary'
                     : 'w-[14px] bg-white/30'
                 }`}
               />

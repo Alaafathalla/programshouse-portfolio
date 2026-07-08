@@ -2,17 +2,17 @@
 
 import { useCallback, useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
-import { ArrowUpRight, Search, FileText, Code2, CheckSquare, Rocket } from 'lucide-react'
+import { ArrowUpRight, Search, FileText, Code2, CheckSquare, Rocket, ChevronsLeftRight } from 'lucide-react'
 import useEmblaCarousel from 'embla-carousel-react'
 import Autoplay from 'embla-carousel-autoplay'
 import { FaLaravel, FaPhp } from 'react-icons/fa'
 import { SiFlutter, SiJavascript, SiReact } from 'react-icons/si'
 
 const tools = [
+   { name: 'React', icon: SiReact, color: '#61DAFB' },
   { name: 'Laravel', icon: FaLaravel, color: '#FF2D20' },
   { name: 'Flutter', icon: SiFlutter, color: '#42A5F5' },
   { name: 'Java script', icon: SiJavascript, color: '#F7DF1E' },
-  { name: 'React', icon: SiReact, color: '#61DAFB' },
   { name: 'PHP', icon: FaPhp, color: '#777BB4' },
 ]
 
@@ -26,28 +26,116 @@ const steps = [
 
 const projects = [
   {
-    title: 'Digital Plus Marketing & Programming Website',
-    description:
-      'Helping businesses grow through innovative software development, creative branding, and results-driven digital marketing.',
-    image: '/images/portfolio/portfolio12.png',
-    mobileImage: '/images/portfolio/port (12).png',
-    badges: ['React', 'Laravel'],
-  },
-  {
     title: 'Rosetta Medical Mobile App & Dashboard',
     description:
       'Smart prescription delivery platform connecting users with nearby pharmacies.',
     image: '/images/portfolio/portfolio1.png',
-    mobileImage: '/images/portfolio/port (1).png',
+    mobileImage: '/images/portfolio/port1 (1).png',
     badges: ['React', 'Flutter'],
+  },
+  {
+    title: 'PROF Medical Research Platform',
+    description:
+      'Research platform for healthcare professionals and medical content.',
+    image: '/images/portfolio/portfolio2.png',
+    mobileImage: '/images/portfolio/port1 (2).png',
+    badges: ['React', 'Laravel'],
+  },
+  {
+    title: 'M&S Marketing Website',
+    description:
+      'Corporate marketing website with service showcase and lead generation.',
+    image: '/images/portfolio/portfolio3.png',
+    mobileImage: '/images/portfolio/port1 (3).png',
+    badges: ['React', 'Laravel'],
+  },
+  {
+    title: 'Reem Ahmed Life Coaching Website',
+    description:
+      'Personal coaching platform with booking and consultation features.',
+    image: '/images/portfolio/portfolio4.png',
+    mobileImage: '/images/portfolio/port1 (4).png',
+    badges: ['React', 'Laravel'],
   },
   {
     title: 'Nizam HR Management System',
     description:
       'Complete HR platform with web dashboard and employee mobile application.',
     image: '/images/portfolio/portfolio5.png',
-    mobileImage: '/images/portfolio/port (5).png',
+    mobileImage: '/images/portfolio/port1 (5).png',
     badges: ['Laravel', 'Flutter'],
+  },
+  {
+    title: 'Biostart House Website',
+    description:
+      'Professional business website designed for startup and corporate services.',
+    image: '/images/portfolio/portfolio6.png',
+    mobileImage: '/images/portfolio/port1 (6).png',
+    badges: ['React', 'Laravel'],
+  },
+  {
+    title: 'Medical Islands Website',
+    description:
+      'Modern medical e-commerce website with customer and admin dashboard.',
+    image: '/images/portfolio/portfolio7.png',
+    mobileImage: '/images/portfolio/port1 (7).png',
+    badges: ['React', 'PHP'],
+  },
+  {
+    title: 'RAQ Application Dashboard',
+    description:
+      'Business management dashboard with analytics and reporting features.',
+    image: '/images/portfolio/portfolio8.png',
+    mobileImage: '/images/portfolio/port1 (8).png',
+    badges: ['React', 'Laravel'],
+  },
+  {
+    title: 'Dolphin Website',
+    description:
+      'Corporate website with modern UI and responsive experience.',
+    image: '/images/portfolio/portfolio9.png',
+    mobileImage: '/images/portfolio/port1 (9).png',
+    badges: ['React', 'Java script'],
+  },
+  {
+    title: 'SWSW Application',
+    description:
+      'Food delivery mobile application with customer and driver experiences.',
+    image: '/images/portfolio/portfolio10.png',
+    mobileImage: '/images/portfolio/port1 (10).png',
+    badges: ['Laravel', 'Flutter'],
+  },
+  {
+    title: 'Zewail Academy Website',
+    description:
+      'Educational platform for courses, registrations and student management.',
+    image: '/images/portfolio/portfolio11.png',
+    mobileImage: '/images/portfolio/port1 (11).png',
+    badges: ['React', 'Laravel'],
+  },
+  {
+    title: 'Digital Plus Marketing Website',
+    description:
+      'Marketing agency website focused on branding and digital services.',
+    image: '/images/portfolio/portfolio12.png',
+    mobileImage: '/images/portfolio/port1 (12).png',
+    badges: ['React', 'Laravel'],
+  },
+  {
+    title: 'Kaspton Home Services Website',
+    description:
+      'Home services platform with booking and service management.',
+    image: '/images/portfolio/portfolio13.png',
+    mobileImage: '/images/portfolio/port1 (13).png',
+    badges: ['React', 'PHP'],
+  },
+  {
+    title: 'CP Dashboard',
+    description:
+      'Business dashboard for monitoring operations and performance.',
+    image: '/images/portfolio/portfolio14.png',
+    mobileImage: '/images/portfolio/port1 (14).png',
+    badges: ['React', 'Laravel'],
   },
 ]
 
@@ -88,11 +176,11 @@ export default function DevelopmentSection() {
       <div className="mx-auto max-w-[1160px] px-5 md:px-6">
         <div className="mb-8">
           <div className="mb-9 inline-flex h-[38px] items-center gap-2 rounded-[12px] border border-white/10 bg-white/[0.05] px-5 text-[15px] text-white/80">
-            <span className="text-[#FEAC25]">⌘</span>
+            <ChevronsLeftRight size={18} className="text-secondary" />
             Our Development Service
           </div>
 
-          <h2 className="mb-8 text-[32px] font-semibold leading-[1.2] tracking-[-0.03em] text-white md:text-[42px]">
+          <h2 className="mb-8 text-[32px] font-medium leading-[1.2] tracking-[-0.03em] text-white md:text-[42px]">
             We built many projects with variant technologies.
           </h2>
 
@@ -115,7 +203,7 @@ export default function DevelopmentSection() {
             {projects.map((project, index) => (
               <div
                 key={index}
-                className="relative h-[430px] flex-[0_0_100%] pr-[18px] md:h-[316px] md:flex-[0_0_100%]"
+                className="relative h-[480px] flex-[0_0_100%] pr-[18px] md:h-[416px] md:flex-[0_0_100%]"
               >
                 <div className="relative h-full overflow-hidden rounded-[18px] border border-white/15 bg-[#151A27] md:[clip-path:polygon(0_0,calc(100%_-_176px)_0,calc(100%_-_146px)_46px,100%_46px,100%_100%,0_100%)]">
                   <div className="absolute inset-0 z-[1] opacity-35 [background-image:radial-gradient(rgba(255,255,255,0.35)_1px,transparent_1px)] [background-size:22px_22px]" />
@@ -134,11 +222,11 @@ export default function DevelopmentSection() {
                     style={{ backgroundImage: `url("${project.image}")` }}
                   />
 
-                  <div className="absolute inset-0 z-[8] hidden bg-gradient-to-r from-[#151A27] via-[#151A27]/15 to-transparent md:block" />
+                  <div className="absolute inset-0 z-[8] hidden bg-gradient-to-r from-[#151A27]  via-[#151A27]/15 to-transparent md:block" />
 
                   <div className="relative z-20 h-full">
                     <div className="absolute left-6 right-6 top-[50px] md:left-[38px] md:right-auto md:top-1/2 md:w-[470px] md:-translate-y-1/2">
-                      <h3 className="mb-4 max-w-[380px] text-[30px] font-semibold leading-[1.22] tracking-[-0.03em] text-white md:text-[40px]">
+                      <h3 className="mb-4 max-w-[480px] text-[30px] font-regular md:font-semibold leading-[1.22] tracking-[-0.03em] text-white md:text-[40px] md:max-w-[470px]">
                         {project.title}
                       </h3>
 
@@ -191,42 +279,49 @@ export default function DevelopmentSection() {
           ))}
         </div>
 
-        <div className="mt-[70px] grid grid-cols-1 gap-8 md:grid-cols-5 md:gap-0">
-          {steps.map((step, index) => {
-            const Icon = step.icon
+<div className="mt-[80px] grid grid-cols-1 gap-12 md:grid-cols-5 md:gap-10 lg:gap-14">
+  {steps.map((step, index) => {
+    const Icon = step.icon
 
-            return (
-              <motion.div
-                key={step.number}
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.4 }}
-                transition={{ duration: 0.55, delay: index * 0.08 }}
-                className="relative flex flex-col items-center text-center"
-              >
-                <span className="mb-5 text-[15px] font-medium text-white">
-                  {step.number}
-                </span>
+    return (
+      <motion.div
+        key={step.number}
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.4 }}
+        transition={{
+          duration: 0.6,
+          delay: index * 0.08,
+        }}
+        className="relative flex flex-col items-center text-center"
+      >
+        {/* Step Number */}
+        <span className="mb-6 text-[15px] font-medium tracking-[0.12em] text-white">
+          {step.number}
+        </span>
 
-                <div className="relative mb-5 flex h-[64px] w-[64px] items-center justify-center rounded-[14px] bg-[#202532]">
-                  <Icon size={28} className="text-[#77A6D0]" />
+        {/* Icon */}
+        <div className="relative mb-6 flex h-[70px] w-[70px] items-center justify-center rounded-[16px] bg-[#202532]">
+          <Icon size={30} className="text-[#77A6D0]" />
 
-                  {index !== steps.length - 1 && (
-                    <span className="absolute left-full top-1/2 hidden h-px w-[130px] -translate-y-1/2 border-t border-dashed border-white/25 md:block" />
-                  )}
-                </div>
-
-                <h3 className="mb-2 text-[17px] font-semibold text-[#77A6D0]">
-                  {step.title}
-                </h3>
-
-                <p className="max-w-[150px] text-[12px] font-medium leading-[1.45] text-white">
-                  {step.text}
-                </p>
-              </motion.div>
-            )
-          })}
+          {index !== steps.length - 1 && (
+            <span className="absolute left-[calc(100%+18px)] top-1/2 hidden h-px w-[calc(100%+45px)] -translate-y-1/2 border-t border-dashed border-white/20 lg:block" />
+          )}
         </div>
+
+        {/* Title */}
+        <h3 className="mb-3 text-[18px] font-semibold text-[#77A6D0]">
+          {step.title}
+        </h3>
+
+        {/* Description */}
+        <p className="max-w-[170px] text-[13px] leading-[1.65] text-white/70">
+          {step.text}
+        </p>
+      </motion.div>
+    )
+  })}
+</div>
       </div>
     </section>
   )

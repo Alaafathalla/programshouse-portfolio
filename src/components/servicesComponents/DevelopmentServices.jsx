@@ -46,7 +46,7 @@ const projects = [
     description:
       'Corporate marketing website with service showcase and lead generation.',
     image: '/images/portfolio/portfolio3.png',
-    mobileImage: '/images/portfolio/port1 (3).png',
+    mobileImage: '/images/portfolio/port1 (4).png',
     badges: ['React', 'Laravel'],
   },
   {
@@ -54,7 +54,7 @@ const projects = [
     description:
       'Personal coaching platform with booking and consultation features.',
     image: '/images/portfolio/portfolio4.png',
-    mobileImage: '/images/portfolio/port1 (4).png',
+    mobileImage: '/images/portfolio/port1 (5).png',
     badges: ['React', 'Laravel'],
   },
   {
@@ -62,15 +62,15 @@ const projects = [
     description:
       'Complete HR platform with web dashboard and employee mobile application.',
     image: '/images/portfolio/portfolio5.png',
-    mobileImage: '/images/portfolio/port1 (5).png',
+    mobileImage: '/images/portfolio/port1 (6).png',
     badges: ['Laravel', 'Flutter'],
   },
   {
-    title: 'Biostart House Website',
+    title: 'Biostat House Website',
     description:
       'Professional business website designed for startup and corporate services.',
     image: '/images/portfolio/portfolio6.png',
-    mobileImage: '/images/portfolio/port1 (6).png',
+    mobileImage: '/images/portfolio/port1 (7).png',
     badges: ['React', 'Laravel'],
   },
   {
@@ -78,7 +78,7 @@ const projects = [
     description:
       'Modern medical e-commerce website with customer and admin dashboard.',
     image: '/images/portfolio/portfolio7.png',
-    mobileImage: '/images/portfolio/port1 (7).png',
+    mobileImage: '/images/portfolio/port1 (9).png',
     badges: ['React', 'PHP'],
   },
   {
@@ -86,7 +86,7 @@ const projects = [
     description:
       'Business management dashboard with analytics and reporting features.',
     image: '/images/portfolio/portfolio8.png',
-    mobileImage: '/images/portfolio/port1 (8).png',
+    mobileImage: '/images/portfolio/port1 (10).png',
     badges: ['React', 'Laravel'],
   },
   {
@@ -94,7 +94,7 @@ const projects = [
     description:
       'Corporate website with modern UI and responsive experience.',
     image: '/images/portfolio/portfolio9.png',
-    mobileImage: '/images/portfolio/port1 (9).png',
+    mobileImage: '/images/portfolio/port1 (11).png',
     badges: ['React', 'Java script'],
   },
   {
@@ -102,7 +102,7 @@ const projects = [
     description:
       'Food delivery mobile application with customer and driver experiences.',
     image: '/images/portfolio/portfolio10.png',
-    mobileImage: '/images/portfolio/port1 (10).png',
+    mobileImage: '/images/portfolio/port1 (12).png',
     badges: ['Laravel', 'Flutter'],
   },
   {
@@ -110,7 +110,7 @@ const projects = [
     description:
       'Educational platform for courses, registrations and student management.',
     image: '/images/portfolio/portfolio11.png',
-    mobileImage: '/images/portfolio/port1 (11).png',
+    mobileImage: '/images/portfolio/port1 (13).png',
     badges: ['React', 'Laravel'],
   },
   {
@@ -118,7 +118,7 @@ const projects = [
     description:
       'Marketing agency website focused on branding and digital services.',
     image: '/images/portfolio/portfolio12.png',
-    mobileImage: '/images/portfolio/port1 (12).png',
+    mobileImage: '/images/portfolio/port1 (8).png',
     badges: ['React', 'Laravel'],
   },
   {
@@ -126,7 +126,7 @@ const projects = [
     description:
       'Home services platform with booking and service management.',
     image: '/images/portfolio/portfolio13.png',
-    mobileImage: '/images/portfolio/port1 (13).png',
+    mobileImage: '/images/portfolio/port1 (14).png',
     badges: ['React', 'PHP'],
   },
   {
@@ -134,7 +134,7 @@ const projects = [
     description:
       'Business dashboard for monitoring operations and performance.',
     image: '/images/portfolio/portfolio14.png',
-    mobileImage: '/images/portfolio/port1 (14).png',
+    mobileImage: '/images/portfolio/port1 (15).png',
     badges: ['React', 'Laravel'],
   },
 ]

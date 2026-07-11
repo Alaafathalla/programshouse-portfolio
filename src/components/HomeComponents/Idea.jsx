@@ -61,7 +61,7 @@ export default function Idea() {
 
   return (
     <section
-      id="contact"
+      id="contact" className="scroll-mt-20"
       className="relative overflow-hidden bg-[#111521] py-[95px] md:py-[130px]"
     >
       <div className="mx-auto grid max-w-[1320px] grid-cols-1 items-center gap-[110px] px-6 md:grid-cols-[1fr_430px] lg:gap-[210px]">

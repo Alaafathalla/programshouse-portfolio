@@ -8,6 +8,7 @@ import Loader from "./components/ui/Loader";
 
 const Home = lazy(() => import("./Pages/HomePage"));
 const Services = lazy(() => import("./Pages/servicesPage"));
+const ErrorPage = lazy(() => import("./Pages/ErrorPage"));
 
 export default function App() {
   return (
@@ -24,6 +25,7 @@ export default function App() {
   <Routes>
     <Route path="/" element={<Home />} />
     <Route path="/services" element={<Services />} />
+     <Route path="*" element={<ErrorPage />} />
   </Routes>
 </Suspense>
 

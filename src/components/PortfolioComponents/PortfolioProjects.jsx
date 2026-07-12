@@ -26,11 +26,7 @@ const categories = [
     label: "Mobile Apps",
     icon: Smartphone,
   },
-  {
-    id: "branding",
-    label: "Branding",
-    icon: Palette,
-  },
+
 ];
 
 export default function PortfolioProjects() {

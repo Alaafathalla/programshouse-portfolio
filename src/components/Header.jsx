@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Link, NavLink } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 import { Button } from "./ui/button";
 
 export default function Header() {
@@ -8,14 +9,14 @@ export default function Header() {
 
   const links = [
     { label: "Home", to: "/", type: "page" },
-    { label: "About Us", to: "#about", type: "section" },
+    { label: "About Us", to: "/#about", type: "section" },
     { label: "Services", to: "/services", type: "page" },
-    { label: "Portfolio", to: "#portfolio", type: "section" },
-    { label: "Blogs", to: "#blogs", type: "section" },
+    { label: "Portfolio", to: "/portfolio", type: "page" },
+    { label: "Blogs", to: "/#blogs", type: "section" },
   ];
 
   return (
-    <header className="fixed left-0 top-0 z-50 w-full bg-[#111521] lg:border-b lg:border-white/10">
+    <header className="fixed left-0 top-0 z-50 w-full border-b border-white/10 bg-[#111521]">
       <div className="mx-auto flex h-[68px] w-[95%] max-w-[1500px] items-center justify-between">
         {/* Logo */}
         <Link to="/" className="flex shrink-0 items-center">
@@ -35,7 +36,7 @@ export default function Header() {
                 to={link.to}
                 end={link.to === "/"}
                 className={({ isActive }) =>
-                  `text-[18px] font-semibold transition-colors duration-300 ${
+                  `relative text-[18px] font-semibold transition-all duration-300 ${
                     isActive
                       ? "text-primary"
                       : "text-white hover:text-primary"
@@ -45,13 +46,14 @@ export default function Header() {
                 {link.label}
               </NavLink>
             ) : (
-              <a
+              <HashLink
                 key={link.label}
-                href={link.to}
-                className="text-[18px] font-semibold text-white transition-colors duration-300 hover:text-primary"
+                smooth
+                to={link.to}
+                className="text-[18px] font-semibold text-white transition-all duration-300 hover:text-primary"
               >
                 {link.label}
-              </a>
+              </HashLink>
             )
           )}
         </nav>
@@ -59,26 +61,29 @@ export default function Header() {
         {/* Right Side */}
         <div className="flex items-center gap-4">
           <div className="hidden lg:block">
-            <Button size="sm">Contact Us</Button>
+            <Button size="sm">
+              Contact Us
+            </Button>
           </div>
 
           <button
             type="button"
-            onClick={() => setOpen((prev) => !prev)}
-            className="text-white lg:hidden"
+            onClick={() => setOpen(!open)}
+            className="rounded-md p-1 text-white transition hover:bg-white/10 lg:hidden"
+            aria-label="Toggle Menu"
           >
             {open ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Navigation */}
+      {/* Mobile Menu */}
       <div
         className={`overflow-hidden bg-[#111521] transition-all duration-300 lg:hidden ${
-          open ? "max-h-[500px]" : "max-h-0"
+          open ? "max-h-[600px]" : "max-h-0"
         }`}
       >
-        <div className="flex flex-col px-6 py-4">
+        <div className="flex flex-col px-6 py-5">
           {links.map((link) =>
             link.type === "page" ? (
               <NavLink
@@ -87,7 +92,7 @@ export default function Header() {
                 end={link.to === "/"}
                 onClick={() => setOpen(false)}
                 className={({ isActive }) =>
-                  `py-3 text-base font-medium transition-colors ${
+                  `border-b border-white/5 py-4 text-base font-medium transition-colors ${
                     isActive
                       ? "text-primary"
                       : "text-white hover:text-primary"
@@ -97,20 +102,21 @@ export default function Header() {
                 {link.label}
               </NavLink>
             ) : (
-              <a
+              <HashLink
                 key={link.label}
-                href={link.to}
+                smooth
+                to={link.to}
                 onClick={() => setOpen(false)}
-                className="py-3 text-base font-medium text-white transition-colors hover:text-primary"
+                className="border-b border-white/5 py-4 text-base font-medium text-white transition-colors hover:text-primary"
               >
                 {link.label}
-              </a>
+              </HashLink>
             )
           )}
 
           <Button
             size="sm"
-            className="mt-5 w-full"
+            className="mt-6 w-full"
             onClick={() => setOpen(false)}
           >
             Contact Us

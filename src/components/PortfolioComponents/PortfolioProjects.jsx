@@ -48,9 +48,9 @@ export default function PortfolioProjects() {
         <div className="mb-12 flex flex-col justify-between gap-7 lg:flex-row lg:items-end">
           <div>
             <div className="mb-4 flex items-center gap-3">
-              <span className="h-px w-8 bg-[#77A6D0]" />
+              <span className="h-px w-8 bg-primary" />
 
-              <p className="text-sm font-medium text-[#77A6D0]">
+              <p className="text-sm font-medium text-primary">
                 Selected projects
               </p>
             </div>
@@ -73,7 +73,7 @@ export default function PortfolioProjects() {
                   aria-pressed={isActive}
                   className={`flex shrink-0 items-center gap-2 rounded-full border px-5 py-3 text-sm font-medium transition-all duration-300 ${
                     isActive
-                      ? "border-[#77A6D0] bg-[#77A6D0] text-white shadow-[0_10px_30px_rgba(119,166,208,0.22)]"
+                      ? "border-primary bg-primary text-white shadow-[0_10px_30px_rgba(119,166,208,0.22)]"
                       : "border-white/10 bg-white/[0.03] text-white/55 hover:border-white/25 hover:bg-white/[0.06] hover:text-white"
                   }`}
                 >

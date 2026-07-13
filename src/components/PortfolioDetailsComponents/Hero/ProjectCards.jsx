@@ -158,7 +158,7 @@ export function RecommendationCard({ mobile = false }) {
             24 tablets
           </p>
 
-          <p className="mt-1 text-[10px] font-medium text-[#77A6D0] sm:text-[11px]">
+          <p className="mt-1 text-[10px] font-medium text-primary sm:text-[11px]">
             Egp 45
           </p>
         </div>
@@ -209,7 +209,7 @@ export function MedicalIconCard({ mobile = false }) {
       `}
     >
       <GiMedicinePills
-        className="text-[#77A6D0]"
+        className="text-primary"
         size={mobile ? 23 : 30}
       />
     </motion.div>
@@ -265,7 +265,7 @@ export function BriefcaseCard({ mobile = false }) {
       <BriefcaseMedical
         size={mobile ? 20 : 24}
         strokeWidth={1.6}
-        className="text-[#77A6D0]"
+        className="text-primary"
       />
     </motion.div>
   );

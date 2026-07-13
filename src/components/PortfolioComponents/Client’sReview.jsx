@@ -21,7 +21,7 @@ export default function ClientReviewSection() {
           transition={{ duration: 0.6 }}
           className="mb-[42px] text-[30px] font-bold leading-none tracking-[-0.045em] sm:text-[38px]"
         >
-          Client&apos;s <span className="text-[#77A6D0]">Review</span>
+          Client&apos;s <span className="text-primary">Review</span>
         </motion.h2>
 
         <div className="grid items-center gap-14 lg:grid-cols-[1.25fr_0.75fr] lg:gap-[70px]">
@@ -106,7 +106,7 @@ export default function ClientReviewSection() {
                   />
 
                   <div>
-                    <h3 className="text-[13px] font-semibold leading-none tracking-[0.015em] text-[#77A6D0]">
+                    <h3 className="text-[13px] font-semibold leading-none tracking-[0.015em] text-primary">
                       {review.name}
                     </h3>
 

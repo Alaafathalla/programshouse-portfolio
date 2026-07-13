@@ -27,7 +27,7 @@ function Breadcrumb() {
     >
       <Link
         to="/"
-        className="transition-colors duration-300 hover:text-[#77A6D0]"
+        className="transition-colors duration-300 hover:text-primary"
       >
         Home
       </Link>
@@ -36,7 +36,7 @@ function Breadcrumb() {
 
       <Link
         to="/portfolio"
-        className="transition-colors duration-300 hover:text-[#77A6D0]"
+        className="transition-colors duration-300 hover:text-primary"
       >
         Portfolio
       </Link>
@@ -73,7 +73,7 @@ export default function ProjectInformation() {
         }}
         className="
           mb-8 text-[36px] font-bold leading-none
-          tracking-[-0.04em] text-[#77A6D0]
+          tracking-[-0.04em] text-primary
           sm:text-[44px] lg:text-[48px]
         "
       >

@@ -95,7 +95,7 @@ export default function ConnectorLine({
             absolute z-20
             h-[12px] w-[12px]
             -translate-x-1/2 -translate-y-1/2
-            rounded-full bg-[#77A6D0]/20
+            rounded-full bg-primary
             blur-[3px]
           "
           initial={{

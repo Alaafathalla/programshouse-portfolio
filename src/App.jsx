@@ -9,6 +9,7 @@ import Loader from "./components/ui/Loader";
 const Home = lazy(() => import("./Pages/HomePage"));
 const Services = lazy(() => import("./Pages/servicesPage"));
 const Portfolio = lazy(() => import("./Pages/portfolioPage"));
+const PortfolioDetailsPage = lazy(() => import("./Pages/PortfolioDetailsPage"));
 const ErrorPage = lazy(() => import("./Pages/ErrorPage"));
 
 export default function App() {
@@ -27,7 +28,9 @@ export default function App() {
     <Route path="/" element={<Home />} />
     <Route path="/services" element={<Services />} />
     <Route path="/portfolio" element={<Portfolio />} />
+    <Route path="/portfolio/:slug" element={<PortfolioDetailsPage />} />
      <Route path="*" element={<ErrorPage />} />
+     
   </Routes>
 </Suspense>
 

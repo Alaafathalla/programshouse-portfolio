@@ -27,6 +27,8 @@ const cards = {
   },
 };
 
+const motionEase = [0.22, 1, 0.36, 1];
+
 const revealAnimation = {
   initial: {
     opacity: 0,
@@ -59,12 +61,13 @@ function InfoCard({
       transition={{
         duration: 0.65,
         delay,
-        ease: [0.22, 1, 0.36, 1],
+        ease: motionEase,
       }}
       className={`
         relative
+        w-full
         overflow-visible
-        rounded-[12px]
+        rounded-[14px]
         border
         border-[#77A6D0]/70
         bg-[#111521]
@@ -81,8 +84,8 @@ function InfoCard({
           bg-[#111521]
           ${
             isTopIcon
-              ? "right-[27px] top-[-2px] h-[5px] w-[52px]"
-              : "right-[-2px] top-1/2 h-[58px] w-[5px] -translate-y-1/2"
+              ? "right-[27px] top-[-2px] h-[5px] w-[58px]"
+              : "right-[-2px] top-1/2 h-[64px] w-[5px] -translate-y-1/2"
           }
         `}
       />
@@ -112,15 +115,15 @@ function InfoCard({
           bg-[#111521]
           ${
             isTopIcon
-              ? "right-[31px] top-[-17px] h-[38px] w-[44px]"
-              : "right-[-20px] top-1/2 h-[46px] w-[40px] -translate-y-1/2"
+              ? "right-[32px] top-[-18px] h-[40px] w-[46px]"
+              : "right-[-21px] top-1/2 h-[52px] w-[42px] -translate-y-1/2"
           }
         `}
       >
         <Icon
-          size={isTopIcon ? 25 : 29}
+          size={isTopIcon ? 35 : 42}
           strokeWidth={1.8}
-          className="text-[#FEAC25]"
+          className="text-secondary"
         />
       </motion.div>
 
@@ -131,18 +134,41 @@ function InfoCard({
           h-full
           flex-col
           px-[26px]
-          py-[22px]
-          pr-[45px]
-          xl:px-[30px]
-          xl:pr-[48px]
+          py-[26px]
+          pr-[50px]
+          sm:px-[30px]
+          sm:py-[28px]
+          sm:pr-[54px]
+          xl:px-[32px]
+          xl:py-[30px]
+          xl:pr-[58px]
           ${contentClassName}
         `}
       >
-        <h3 className="mb-[10px] text-[16px] font-medium leading-none tracking-[-0.025em] text-white xl:text-[17px]">
+        <h3
+          className="
+            mb-[12px]
+            text-[16px]
+            font-semibold
+            leading-none
+            tracking-[-0.025em]
+            text-white
+            sm:text-[17px]
+          "
+        >
           {card.title}
         </h3>
 
-        <p className="max-w-[430px] text-[18px] leading-[1.55] text-[#B7B9C1] xl:text-[15px]">
+        <p
+          className="
+            max-w-[560px]
+            text-[14px]
+            leading-[1.65]
+            text-white/75
+            sm:text-[15px]
+            xl:text-[17px]
+          "
+        >
           {card.description}
         </p>
       </div>
@@ -156,6 +182,7 @@ function ProjectImage({
   delay = 0,
   className = "",
   imageClassName = "",
+  imagePosition = "center",
 }) {
   return (
     <motion.div
@@ -163,16 +190,17 @@ function ProjectImage({
       transition={{
         duration: 0.7,
         delay,
-        ease: [0.22, 1, 0.36, 1],
+        ease: motionEase,
       }}
       whileHover={{
-        y: -3,
+        y: -4,
       }}
       className={`
         relative
         w-full
         overflow-hidden
-        rounded-[12px]
+        rounded-[16px]
+        bg-[#1B202C]
         ${className}
       `}
     >
@@ -181,7 +209,7 @@ function ProjectImage({
         alt={alt}
         draggable={false}
         whileHover={{
-          scale: 1.008,
+          scale: 1.012,
         }}
         transition={{
           duration: 0.45,
@@ -189,11 +217,15 @@ function ProjectImage({
         }}
         className={`
           block
-          h-auto
+          h-full
           w-full
           select-none
+          object-cover
           ${imageClassName}
         `}
+        style={{
+          objectPosition: imagePosition,
+        }}
       />
     </motion.div>
   );
@@ -201,47 +233,90 @@ function ProjectImage({
 
 export default function AboutProjectSection() {
   return (
-    <section className="relative overflow-hidden bg-[#111521] px-5 py-[58px] text-white sm:px-8 sm:py-[72px] lg:px-10 lg:py-[76px]">
-      <div className="relative mx-auto w-full max-w-[1120px]">
+    <section
+      className="
+        relative
+        isolate
+        overflow-hidden
+        bg-[#111521]
+        px-4
+        py-[62px]
+        text-white
+        sm:px-8
+        sm:py-[76px]
+        lg:px-10
+        lg:py-[82px]
+      "
+    >
+      {/* Background glow */}
+      <div
+        className="
+          pointer-events-none
+          absolute
+          left-[18%]
+          top-1/2
+          h-[280px]
+          w-[280px]
+          -translate-y-1/2
+          rounded-full
+          bg-[#77A6D0]/[0.025]
+          blur-[110px]
+        "
+      />
+
+      <div className="relative z-10 mx-auto w-full max-w-[1320px]">
+        {/* Heading */}
         <motion.h2
-          {...revealAnimation}
+          initial={{
+            opacity: 0,
+            x: -40,
+          }}
+          whileInView={{
+            opacity: 1,
+            x: 0,
+          }}
+          viewport={{
+            once: true,
+            amount: 0.35,
+          }}
           transition={{
-            duration: 0.65,
-            ease: [0.22, 1, 0.36, 1],
+            duration: 0.7,
+            ease: motionEase,
           }}
           className="
-            mb-[34px]
-            text-[30px]
+            mb-[40px]
+            text-[32px]
             font-bold
             leading-none
-            tracking-[-0.04em]
-            sm:text-[34px]
-            lg:text-[36px]
+            tracking-[-0.045em]
+            sm:text-[38px]
+            lg:mb-[46px]
+            lg:text-[40px]
           "
         >
           About The <span className="text-[#77A6D0]">Project</span>
         </motion.h2>
 
         {/* Mobile and tablet */}
-        <div className="grid gap-[18px] lg:hidden">
+        <div className="grid gap-[22px] lg:hidden">
           <InfoCard
             card={cards.idea}
             delay={0.05}
-            className="min-h-[220px]"
+            className="min-h-[260px]"
             contentClassName="justify-center"
           />
 
           <InfoCard
             card={cards.client}
             delay={0.1}
-            className="min-h-[165px]"
+            className="min-h-[190px]"
             contentClassName="justify-center"
           />
 
           <InfoCard
             card={cards.value}
             delay={0.15}
-            className="min-h-[185px]"
+            className="min-h-[220px]"
             contentClassName="justify-center"
           />
 
@@ -249,55 +324,91 @@ export default function AboutProjectSection() {
             src="/images/portfolioDetailsPage/about-project1.png"
             alt="Medicine search application screens"
             delay={0.2}
+            className="h-[340px] sm:h-[440px]"
+            imagePosition="center"
           />
 
           <ProjectImage
             src="/images/portfolioDetailsPage/about-project2.png"
             alt="Main healthcare mobile application screen"
             delay={0.25}
+            className="h-[500px] sm:h-[620px]"
+            imagePosition="center"
           />
         </div>
 
         {/* Desktop */}
-        <div className="hidden grid-cols-2 items-start gap-x-[48px] lg:grid xl:gap-x-[54px]  ">
+        <div
+          className="
+            hidden
+            w-full
+            items-start
+            gap-x-[48px]
+            lg:grid
+            lg:grid-cols-2
+            xl:gap-x-[66px]
+          "
+        >
           {/* Left column */}
-          <div className="flex min-w-0 flex-col gap-[22px] xl:gap-[20px] space-y-[30px]">
+          <div
+            className="
+              grid
+              min-w-0
+              grid-rows-[270px_215px_355px]
+              gap-y-[28px]
+              xl:grid-rows-[290px_230px_390px]
+              xl:gap-y-[30px]
+               mx-[30px]
+            "
+          >
             <InfoCard
               card={cards.idea}
               delay={0.05}
-              className="h-[182px] xl:h-[215px]"
-              contentClassName="justify-start pt-[24px]"
+              className="h-full"
+              contentClassName="justify-start pt-[30px]"
             />
 
             <InfoCard
               card={cards.value}
               delay={0.15}
-              className="h-[148px] xl:h-[190px]"
-              contentClassName="justify-start pt-[24px]"
+              className="h-full"
+              contentClassName="justify-start pt-[30px]"
             />
 
             <ProjectImage
               src="/images/portfolioDetailsPage/about-project1.png"
               alt="Medicine search application screens"
               delay={0.2}
-              className="w-full"
+              className="h-full"
+              imagePosition="center center"
             />
           </div>
 
           {/* Right column */}
-          <div className="flex min-w-0 flex-col gap-[18px] xl:gap-[20px]">
+          <div
+            className="
+              grid
+              min-w-0
+              grid-rows-[185px_679px]
+              gap-y-[24px]
+              xl:grid-rows-[200px_736px]
+              xl:gap-y-[26px]
+              mx-[30px]
+            "
+          >
             <InfoCard
               card={cards.client}
               delay={0.1}
-              className="h-[128px] xl:h-[118px]"
-              contentClassName="justify-start pt-[14px]"
+              className="h-[200px] sm:h-[220px] lg:h-[185px] xl:h-[200px]"
+              contentClassName="justify-start pt-[30px]"
             />
 
             <ProjectImage
               src="/images/portfolioDetailsPage/about-project2.png"
               alt="Main healthcare mobile application screen"
               delay={0.18}
-              className="w-full"
+              className="h-full"
+              imagePosition="center center"
             />
           </div>
         </div>

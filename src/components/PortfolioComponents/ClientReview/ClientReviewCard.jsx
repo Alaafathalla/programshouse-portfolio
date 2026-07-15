@@ -60,30 +60,33 @@ export default function ClientReviewCard({
                 <div className="absolute bottom-0 right-0 h-[31px] w-[19px] rounded-bl-[9px] border-b border-l border-[#747CC6]/60" />
               </div>
 
-              {/* Bottom-left stepped shape */}
-              <div className="pointer-events-none absolute bottom-[-1px] left-[-1px] hidden h-[57px] w-[65px] overflow-hidden lg:block">
-                <div
-                  className="absolute inset-0"
-                  style={{
-                    clipPath:
-                      "polygon(0 0, 100% 0, 100% 100%, 72% 100%, 72% 48%, 0 48%)",
-                    transform: "rotate(180deg)",
-                    transformOrigin: "center",
-                    background:
-                      "linear-gradient(135deg, #bea174 0%, #262A972E 18%, #f3b660 72%, #3c3e46 100%)",
-                    boxShadow: "0 0 24px rgba(255,181,67,0.35)",
-                    borderRadius: "0 0 0 12px",
-                  }}
-                />
+{/* Bottom-left stepped shape */}
+<div
+  className="pointer-events-none absolute bottom-[-1px] left-[-1px] hidden h-[57px] w-[65px] lg:block"
+  style={{
+    transform: "rotate(180deg)",
+    transformOrigin: "center",
+  }}
+>
+  <div
+    className="absolute inset-0"
+    style={{
+      clipPath:
+        "polygon(0 0, 100% 0, 100% 100%, 72% 100%, 72% 48%, 0 48%)",
+background:
+  "linear-gradient(0deg, #19223F , #262A972E 18%,  #FFB543 )",
+    
+    }}
+  />
 
-                <div
-                  className="absolute left-0 top-0 h-[31px] w-[19px] rounded-tr-[9px]"
-                  style={{
-                    borderTop: "1px solid rgba(255,181,67,0.45)",
-                    borderRight: "1px solid rgba(255,181,67,0.45)",
-                  }}
-                />
-              </div>
+  <div
+    className="absolute bottom-0 right-0 h-[31px] w-[19px] rounded-bl-[9px]"
+    style={{
+      borderBottom: "1px solid rgba(255,181,67,0.45)",
+      borderLeft: "1px solid #19223F",
+    }}
+  />
+</div>
 
               {/* Review card */}
               <motion.article

@@ -2,17 +2,27 @@ import { motion } from "framer-motion";
 import { Lightbulb, Quote } from "lucide-react";
 import { HashLink } from "react-router-hash-link";
 
-const review = {
+const defaultReview = {
   text:
-    "Propel let us spin up a new product in hours instead of weeks. It’s exactly what we needed as a company that deeply values developer velocity and joy. Propel let us spin",
+    "Propel let us spin up a new product in hours instead of weeks. It’s exactly what we needed as a company that deeply values developer velocity and joy.",
   name: "DANIEL BRIGGS",
   role: "Co-Founder",
-  avatar: "/images/avatar.svg",
+  avatar: "/videoAvatar.png" ,
 };
 
-export default function ClientReviewSection() {
+export default function ClientReviewCard({
+  review = defaultReview,
+  className = "",
+}) {
+  const reviewData = {
+    ...defaultReview,
+    ...review,
+  };
+
   return (
-    <section className="relative overflow-hidden bg-[#111521] px-5 py-[70px] text-white sm:px-8 sm:py-[90px] lg:px-10">
+    <section
+      className={`relative overflow-hidden bg-[#111521] px-5 py-[70px] text-white sm:px-8 sm:py-[90px] lg:px-10 ${className}`}
+    >
       <div className="mx-auto w-full max-w-[1280px]">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
@@ -25,7 +35,7 @@ export default function ClientReviewSection() {
         </motion.h2>
 
         <div className="grid items-center gap-14 lg:grid-cols-[1.25fr_0.75fr] lg:gap-[70px]">
-          {/* Left bordered review area */}
+          {/* Left review area */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -33,9 +43,8 @@ export default function ClientReviewSection() {
             transition={{ duration: 0.7 }}
             className="relative pb-[28px]"
           >
-            {/* Main border */}
             <div className="relative min-h-[260px] rounded-[18px] border border-white/[0.13] px-5 py-10 sm:px-8 sm:py-[38px] lg:min-h-[270px] lg:px-[50px]">
-              {/* Top-right colored stepped shape */}
+              {/* Top-right stepped shape */}
               <div className="pointer-events-none absolute right-[-1px] top-[-1px] hidden h-[57px] w-[65px] lg:block">
                 <div
                   className="absolute inset-0"
@@ -51,7 +60,7 @@ export default function ClientReviewSection() {
                 <div className="absolute bottom-0 right-0 h-[31px] w-[19px] rounded-bl-[9px] border-b border-l border-[#747CC6]/60" />
               </div>
 
-              {/* Bottom-left colored stepped shape */}
+              {/* Bottom-left stepped shape */}
               <div className="pointer-events-none absolute bottom-[-1px] left-[-1px] hidden h-[57px] w-[65px] overflow-hidden lg:block">
                 <div
                   className="absolute inset-0"
@@ -93,34 +102,38 @@ export default function ClientReviewSection() {
                 </div>
 
                 <p className="max-w-[610px] text-[13px] leading-[1.65] text-white/95 sm:text-[14px]">
-                  {review.text}
+                  {reviewData.text}
                 </p>
 
                 <div className="my-[15px] h-px bg-white/[0.07]" />
 
                 <div className="flex items-center gap-3">
-                  <img
-                    src={review.avatar}
-                    alt={review.name}
-                    className="h-[37px] w-[37px] rounded-full object-cover"
-                  />
+                  {reviewData.avatar && (
+                    <img
+                      src={reviewData.avatar}
+                      alt={reviewData.name}
+                      className="h-[37px] w-[37px] rounded-full object-cover"
+                    />
+                  )}
 
                   <div>
                     <h3 className="text-[13px] font-semibold leading-none tracking-[0.015em] text-primary">
-                      {review.name}
+                      {reviewData.name}
                     </h3>
 
-                    <p className="mt-[6px] text-[8px] leading-none text-white/60">
-                      {review.role}
-                    </p>
+                    {reviewData.role && (
+                      <p className="mt-[6px] text-[8px] leading-none text-white/60">
+                        {reviewData.role}
+                      </p>
+                    )}
                   </div>
                 </div>
               </motion.article>
 
-              {/* Gap in border behind lightbulb */}
+              {/* Gap behind the lightbulb */}
               <div className="pointer-events-none absolute bottom-[-3px] right-[18px] z-20 h-[9px] w-[78px] bg-[#111521]" />
 
-              {/* Lightbulb clipped into bottom-right border */}
+              {/* Lightbulb */}
               <motion.div
                 animate={{
                   y: [0, -5, 0],
@@ -144,7 +157,7 @@ export default function ClientReviewSection() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.7, delay: 0.15 }}
-            className="flex flex-col items-center text-center lg:items-center lg:text-center"
+            className="flex flex-col items-center text-center"
           >
             <h3 className="max-w-[420px] text-[28px] font-bold leading-[1.35] tracking-[-0.045em] sm:text-[34px] lg:text-[31px]">
               <span className="bg-gradient-to-r from-[#FEAC25] via-[#E7B67E] to-[#B4B8D4] bg-clip-text text-transparent">
@@ -161,7 +174,7 @@ export default function ClientReviewSection() {
               to="/#contact"
               className="mt-[27px] inline-flex h-[40px] w-fit items-center justify-center rounded-[6px] bg-[#F4F6FC] px-8 text-[14px] font-medium text-[#111521] transition-all duration-300 hover:-translate-y-1 hover:bg-white hover:shadow-[0_12px_30px_rgba(255,255,255,0.16)]"
             >
-               Let&apos;s discuss them
+              Let&apos;s discuss them
             </HashLink>
           </motion.div>
         </div>

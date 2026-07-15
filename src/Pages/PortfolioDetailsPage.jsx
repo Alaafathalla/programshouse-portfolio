@@ -10,17 +10,17 @@ export default function PortfolioDetailsPage() {
     <main className="min-h-screen bg-[#111521]">
       <Hero />
       <Goals />
-      {/* <AboutProjectSection /> */}
+      <AboutProjectSection />
       <Solution />
       <Connect />
 
-      <Portfolio
-        title="explore  "
-        highlightedTitle="more"
-        className="text-start"
-        showDescription={false}
-        id="related-projects"
-      />
+<Portfolio
+  title="Explore"
+  highlightedTitle=" more"
+  textAlign="start"
+  showDescription={false}
+  id="related-projects"
+/>
     </main>
   );
 }

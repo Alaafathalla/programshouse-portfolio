@@ -114,7 +114,9 @@ export default function Portfolio({
   projects = defaultProjects,
   showDescription = true,
   id = "portfolio",
+  textAlign = "center",
 }) {
+
   const [selectedIndex, setSelectedIndex] = useState(0);
 
   const [emblaRef, emblaApi] = useEmblaCarousel(
@@ -160,13 +162,20 @@ export default function Portfolio({
     };
   }, [emblaApi, onSelect]);
 
+const alignmentClass =
+  textAlign === "start"
+    ? "text-start"
+    : textAlign === "end"
+      ? "text-end"
+      : "text-center";
+
   return (
     <section
       id={id}
       className="relative overflow-hidden bg-[#111521] py-[70px] md:py-[92px]"
     >
       <div className="mx-auto max-w-[1320px] px-4 md:px-6">
-        <div className="mb-[42px] text-center md:mb-[58px]">
+        <div className={`mb-[42px] md:mb-[58px] ${alignmentClass}`}>
           <motion.h2
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}

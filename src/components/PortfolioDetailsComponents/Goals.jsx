@@ -46,8 +46,8 @@ export default function ProjectGoalsSection() {
         relative isolate overflow-hidden
         bg-[#111521] px-4 py-[70px]
         text-white
-        sm:px-8 sm:py-[90px]
-        lg:px-10 lg:py-[105px]
+        sm:px-8 sm:py-[80px]
+        lg:px-10 lg:py-[90px]
       "
     >
       {/* Background glow */}
@@ -76,9 +76,9 @@ export default function ProjectGoalsSection() {
         <div
           className="
             grid w-full items-center
-            gap-16 overflow-visible
+            gap-8 overflow-visible
             lg:grid-cols-[0.86fr_1.14fr]
-            lg:gap-[70px]
+            lg:gap-[50px]
           "
         >
           {/* Goals stepper */}

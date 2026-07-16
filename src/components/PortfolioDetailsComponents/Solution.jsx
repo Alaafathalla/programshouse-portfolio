@@ -87,15 +87,15 @@ function SolutionCard({ solution, index }) {
           <div className="min-w-0">
             <h3
               className="
-                mb-[7px]
-                text-[16px] font-semibold
+                mb-[8px]
+                text-[18px] font-semibold
                 leading-[1.35]
                 text-white
                 transition-colors duration-300
                 group-hover:text-primary
-                sm:text-[17px]
-                lg:text-[16px]
-                xl:text-[17px]
+                sm:text-[19px]
+                lg:text-[18px]
+                xl:text-[19px]
               "
             >
               {solution.title}
@@ -103,13 +103,13 @@ function SolutionCard({ solution, index }) {
 
             <p
               className="
-                max-w-[390px]
-                text-[13px]
-                leading-[1.55]
+                max-w-[420px]
+                text-[14px]
+                leading-[1.6]
                 text-[#B3B3B3]
-                sm:text-[14px]
-                lg:text-[13px]
-                xl:text-[14px]
+                sm:text-[15px]
+                lg:text-[15px]
+                xl:text-[16px]
               "
             >
               {solution.description}
@@ -127,17 +127,17 @@ export default function ProjectSolutionSection() {
       className="
         relative isolate overflow-hidden
         bg-[#111521]
-        px-4 py-[62px]
+        px-4 py-[70px]
         text-white
-        sm:px-8 sm:py-[76px]
-        lg:px-10 lg:py-[82px]
+        sm:px-8 sm:py-[80px]
+        lg:px-10 lg:py-[90px]
       "
     >
       <div
         className="
           pointer-events-none
           absolute right-[12%] top-1/2
-          h-[260px] w-[260px]
+          h-[260px] w-[350px]
           -translate-y-1/2
           rounded-full
           bg-primary/[0.035]
@@ -145,7 +145,7 @@ export default function ProjectSolutionSection() {
         "
       />
 
-      <div className="relative z-10 mx-auto w-full max-w-[1320px]">
+      <div className="relative z-10 mx-auto w-full max-w-[1440px]">
         <motion.h2
           initial={{
             opacity: 0,
@@ -165,12 +165,12 @@ export default function ProjectSolutionSection() {
           }}
           className="
             mb-10
-            text-[32px] font-bold
+            text-[34px] font-bold
             leading-none
             tracking-[-0.045em]
-            sm:text-[38px]
+            sm:text-[40px]
             lg:mb-11
-            lg:text-[40px]
+            lg:text-[42px]
           "
         >
           The <span className="text-primary">Solution</span>
@@ -180,16 +180,15 @@ export default function ProjectSolutionSection() {
           className="
             grid w-full
             items-stretch
-            gap-10
-            sm:gap-12
-            lg:grid-cols-[minmax(0,1fr)_minmax(320px,0.78fr)]
-            lg:gap-[72px]
-            xl:grid-cols-[minmax(0,620px)_minmax(340px,500px)]
-            xl:justify-between
-            xl:gap-[90px]
+            gap-4
+            sm:gap-5
+            lg:grid-cols-[1.2fr_1fr]
+            lg:gap-8
+            xl:grid-cols-[1.3fr_1fr]
+            xl:gap-10
           "
         >
-          {/* Image */}
+          {/* Image Column */}
           <motion.div
             initial={{
               opacity: 0,
@@ -208,12 +207,7 @@ export default function ProjectSolutionSection() {
               delay: 0.08,
               ease: motionEase,
             }}
-            className="
-              relative
-              w-full
-              lg:max-w-[610px]
-              xl:max-w-[620px]
-            "
+            className="relative w-full"
           >
             <div
               className="
@@ -243,8 +237,8 @@ export default function ProjectSolutionSection() {
                 shadow-[0_24px_55px_rgba(0,0,0,0.3)]
                 sm:aspect-[1.2/1]
                 lg:aspect-auto
-                lg:h-[440px]
-                xl:h-[450px]
+                lg:h-[560px]
+                xl:h-[580px]
               "
             >
               <img
@@ -262,7 +256,7 @@ export default function ProjectSolutionSection() {
             </motion.div>
           </motion.div>
 
-          {/* Cards */}
+          {/* Cards Column */}
           <motion.div
             initial={{
               opacity: 0,
@@ -286,11 +280,10 @@ export default function ProjectSolutionSection() {
               grid-cols-1
               gap-4
               sm:gap-5
-              lg:h-[440px]
-              lg:max-w-[500px]
+              lg:h-[560px]
               lg:grid-rows-3
               lg:gap-4
-              xl:h-[450px]
+              xl:h-[580px]
             "
           >
             {solutions.map((solution, index) => (

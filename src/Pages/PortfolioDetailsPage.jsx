@@ -19,11 +19,10 @@ export default function PortfolioDetailsPage() {
   return (
     <main className="min-h-screen bg-[#111521]">
       <Hero />
-      <Goals />
       <AboutProjectSection />
+        <Goals />
       <Solution />
       <Connect />
-
 <Portfolio
   title="Explore"
   highlightedTitle=" more"

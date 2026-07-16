@@ -240,12 +240,12 @@ export default function AboutProjectSection() {
         overflow-hidden
         bg-[#111521]
         px-4
-        py-[62px]
+        py-[70px]
         text-white
         sm:px-8
-        sm:py-[76px]
+        sm:py-[80px]
         lg:px-10
-        lg:py-[82px]
+        lg:py-[90px]
       "
     >
       {/* Background glow */}
@@ -264,7 +264,7 @@ export default function AboutProjectSection() {
         "
       />
 
-      <div className="relative z-10 mx-auto w-full max-w-[1320px]">
+      <div className="relative z-10 mx-auto w-full max-w-[1440px]">
         {/* Heading */}
         <motion.h2
           initial={{

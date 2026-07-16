@@ -3,12 +3,11 @@ import { motion } from "framer-motion";
 import { Pause, Play, Quote } from "lucide-react";
 
 const defaultReview = {
-  text:
-"Propel let us spin up a new product in hours instead of weeks. It’s exactly what we needed as a company that deeply values developer velocity and joy. Propel let us spin " ,
+  text: "Propel let us spin up a new product in hours instead of weeks. It’s exactly what we needed as a company that deeply values developer velocity and joy. Propel let us spin ",
   name: "DANIEL BRIGGS",
   role: "Co Founder",
   videoSrc: "",
-videoPoster: "/videoAvatar.png",
+  videoPoster: "/videoAvatar.png",
 };
 
 export default function ClientVideoReview({
@@ -51,7 +50,7 @@ export default function ClientVideoReview({
         className="
           relative
           mx-auto
-          min-h-[405px]
+          min-h-[450px]
           w-full
           max-w-[1280px]
           overflow-hidden
@@ -66,11 +65,9 @@ export default function ClientVideoReview({
             bg-cover
             bg-center
             bg-no-repeat
-
           "
           style={{
-            backgroundImage:
-              "url('/Testimonials.png')",
+            backgroundImage: "url('/Testimonials.png')",
           }}
         />
 
@@ -82,13 +79,13 @@ export default function ClientVideoReview({
             relative
             z-10
             grid
-            min-h-[405px]
+            min-h-[450px]
             items-center
             gap-12
             px-6
             py-12
             sm:px-10
-            lg:grid-cols-[1fr_350px]
+            lg:grid-cols-[1fr_430px]
             lg:gap-[75px]
             lg:px-[48px]
             lg:py-[38px]
@@ -168,7 +165,7 @@ export default function ClientVideoReview({
 
               <h3
                 className="
-                  text-[12px]
+                  text-[15px]
                   font-medium
                   uppercase
                   tracking-[0.01em]
@@ -179,14 +176,14 @@ export default function ClientVideoReview({
               </h3>
 
               {reviewData.role && (
-                <p className="mt-[5px] text-[12px] text-white/70">
+                <p className="mt-[14px] text-[16px] text-white/70">
                   {reviewData.role}
                 </p>
               )}
             </div>
           </motion.div>
 
-          {/* Video */}
+          {/* Video / Image Container */}
           <motion.div
             initial={{ opacity: 0, x: 28 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -195,7 +192,8 @@ export default function ClientVideoReview({
             className="
               mx-auto
               w-full
-              max-w-[370px]
+              max-w-[410px]
+              justify-self-center
               lg:mx-0
               lg:justify-self-end
             "
@@ -203,11 +201,13 @@ export default function ClientVideoReview({
             <div
               className="
                 relative
-                aspect-[0.67]
-                max-h-[325px]
+                aspect-[0.75]
+                max-h-[420px]
+                w-full
                 overflow-hidden
-                rounded-[8px]
-                sm:max-h-[390px]
+                rounded-[12px]
+                shadow-[0_12px_40px_rgba(0,0,0,0.3)]
+                sm:max-h-[580px]
               "
             >
               {reviewData.videoSrc ? (
@@ -258,8 +258,8 @@ export default function ClientVideoReview({
                   top-1/2
                   z-20
                   flex
-                  h-[58px]
-                  w-[58px]
+                  h-[64px]
+                  w-[64px]
                   -translate-x-1/2
                   -translate-y-1/2
                   items-center
@@ -267,7 +267,7 @@ export default function ClientVideoReview({
                   rounded-full
                   border
                   border-white/35
-                  bg-[radial-gradient(circle_at_35%_25%,rgba(255,218,188,0.95),rgba(209, 199, 197, 0.9)_50%,rgba(187, 177, 179, 0.92)_100%)]
+                  bg-[radial-gradient(circle_at_35%_25%,rgba(255,218,188,0.95),rgba(209,199,197,0.9)_50%,rgba(187,177,179,0.92)_100%)]
                   text-white
                   shadow-[0_8px_28px_rgba(0,0,0,0.28)]
                   backdrop-blur-[3px]
@@ -282,10 +282,10 @@ export default function ClientVideoReview({
                 `}
               >
                 {isPlaying ? (
-                  <Pause size={22} fill="currentColor" />
+                  <Pause size={24} fill="currentColor" />
                 ) : (
                   <Play
-                    size={24}
+                    size={26}
                     fill="currentColor"
                     strokeWidth={1.8}
                     className="translate-x-[2px]"

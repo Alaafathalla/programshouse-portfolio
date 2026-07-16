@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { Search, Palette, Code, Headphones, ArrowRight } from 'lucide-react'
+import SectionHeading from '../ui/SectionHeading'
 
 const services = [
   {
@@ -98,15 +99,11 @@ export default function Services() {
     >
       <div className="relative z-10 mx-auto max-w-[1320px] px-6">
         <div className="mb-[58px] text-center">
-          <motion.h2
+          <SectionHeading
+            label="Our "
+            highlight="Services"
             className="mb-5 text-[42px] font-extrabold leading-none text-white"
-            initial={{ opacity: 0, y: 18 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-            viewport={{ once: true }}
-          >
-            Our <span className="text-primary">Services</span>
-          </motion.h2>
+          />
 
           <motion.p
             className="mx-auto max-w-[720px] text-[18px] font-medium leading-[1.6] text-white/70"

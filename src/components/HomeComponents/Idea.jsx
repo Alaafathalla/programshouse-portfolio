@@ -5,6 +5,7 @@ import { z } from 'zod'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { ChevronDown } from 'lucide-react'
+import SectionHeading from '../ui/SectionHeading'
 
 const countries = [
   { name: 'Egypt', code: '+20', flag: 'https://flagcdn.com/w40/eg.png' },
@@ -66,9 +67,12 @@ export default function Idea() {
     >
       <div className="mx-auto grid max-w-[1320px] grid-cols-1 items-center gap-[110px] px-6 md:grid-cols-[1fr_430px] lg:gap-[210px]">
         <div className="flex flex-col items-center text-center">
-          <h2 className="mb-3 text-[38px] font-normal leading-none tracking-[-0.03em] text-white md:text-[44px]">
-            Have an <span className="text-primary">idea?</span>
-          </h2>
+          <SectionHeading
+            label="Have an "
+            highlight="idea?"
+            className="mb-3 text-[38px] font-normal leading-none tracking-[-0.03em] text-white md:text-[44px]"
+            highlightClassName="text-primary"
+          />
 
           <p className="mb-[70px] text-[22px] font-normal leading-none text-white">
             We can help you.

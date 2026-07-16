@@ -1,14 +1,15 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import SectionHeading from '../ui/SectionHeading'
 
 const partners = [
-  { name: 'Tasheel HR Company', logo: 'images/partners/Tasheel.svg' },
-  { name: 'Dolphin Print', logo: 'images/partners/Dolphine.svg' },
-  { name: 'MSE', logo: 'images/partners/MSE.svg' },
-  { name: 'Medical Islands', logo: 'images/partners/Medical Islands.svg' },
-  { name: 'Qaswa', logo: 'images/partners/Qaswaa.svg' },
-  { name: 'MS', logo: 'images/partners/M&S.svg' },
+  { name: 'Tasheel HR Company', logo: '/images/partners/Tasheel.svg' },
+  { name: 'Dolphin Print', logo: '/images/partners/Dolphine.svg' },
+  { name: 'MSE', logo: '/images/partners/MSE.svg' },
+  { name: 'Medical Islands', logo: '/images/partners/Medical Islands.svg' },
+  { name: 'Qaswa', logo: '/images/partners/Qaswaa.svg' },
+  { name: 'MS', logo: '/images/partners/M&S.svg' },
 ]
 
 const firstRow = [...partners, ...partners, ...partners]
@@ -30,15 +31,11 @@ export default function Partners() {
   return (
     <section className="relative overflow-hidden bg-[#111521] py-[70px] md:py-[92px]">
       <div className="mb-[36px] text-center md:mb-[48px]">
-        <motion.h2
+        <SectionHeading
+          label="Partners in "
+          highlight="Success"
           className="text-[30px] font-extrabold leading-none text-white md:text-[40px]"
-          initial={{ opacity: 0, y: 18 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-          viewport={{ once: true }}
-        >
-          Partners in <span className="text-primary">Success</span>
-        </motion.h2>
+        />
       </div>
 
       <div className="relative space-y-[18px] md:space-y-[28px]">

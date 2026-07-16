@@ -30,20 +30,9 @@ const cards = {
 const motionEase = [0.22, 1, 0.36, 1];
 
 const revealAnimation = {
-  initial: {
-    opacity: 0,
-    y: 22,
-  },
-
-  whileInView: {
-    opacity: 1,
-    y: 0,
-  },
-
-  viewport: {
-    once: true,
-    amount: 0.2,
-  },
+  initial: { opacity: 0, y: 22 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true, amount: 0.2 },
 };
 
 function InfoCard({
@@ -64,13 +53,7 @@ function InfoCard({
         ease: motionEase,
       }}
       className={`
-        relative
-        w-full
-        overflow-visible
-        rounded-[14px]
-        border
-        border-[#77A6D0]/70
-        bg-[#111521]
+        relative w-full overflow-visible rounded-[14px] border border-[#77A6D0]/70 bg-[#111521]
         ${className}
       `}
     >
@@ -78,45 +61,27 @@ function InfoCard({
       <span
         aria-hidden="true"
         className={`
-          pointer-events-none
-          absolute
-          z-[2]
-          bg-[#111521]
-          ${
-            isTopIcon
-              ? "right-[27px] top-[-2px] h-[5px] w-[58px]"
-              : "right-[-2px] top-1/2 h-[64px] w-[5px] -translate-y-1/2"
+          pointer-events-none absolute z-[2] bg-[#111521]
+          ${isTopIcon 
+            ? "right-[27px] top-[-2px] h-[5px] w-[58px]" 
+            : "right-[-2px] top-1/2 h-[64px] w-[5px] -translate-y-1/2"
           }
         `}
       />
 
       {/* Animated icon */}
       <motion.div
-        animate={
-          isTopIcon
-            ? {
-                y: [0, -3, 0],
-              }
-            : {
-                rotate: [0, -5, 5, 0],
-              }
-        }
+        animate={isTopIcon ? { y: [0, -3, 0] } : { rotate: [0, -5, 5, 0] }}
         transition={{
           duration: isTopIcon ? 3.2 : 4,
           repeat: Infinity,
           ease: "easeInOut",
         }}
         className={`
-          absolute
-          z-10
-          flex
-          items-center
-          justify-center
-          bg-[#111521]
-          ${
-            isTopIcon
-              ? "right-[32px] top-[-18px] h-[40px] w-[46px]"
-              : "right-[-21px] top-1/2 h-[52px] w-[42px] -translate-y-1/2"
+          absolute z-10 flex items-center justify-center bg-[#111521]
+          ${isTopIcon 
+            ? "right-[32px] top-[-18px] h-[40px] w-[46px]" 
+            : "right-[-21px] top-1/2 h-[52px] w-[42px] -translate-y-1/2"
           }
         `}
       >
@@ -130,45 +95,16 @@ function InfoCard({
       {/* Content */}
       <div
         className={`
-          flex
-          h-full
-          flex-col
-          px-[26px]
-          py-[26px]
-          pr-[50px]
-          sm:px-[30px]
-          sm:py-[28px]
-          sm:pr-[54px]
-          xl:px-[32px]
-          xl:py-[30px]
-          xl:pr-[58px]
+          flex h-full flex-col px-[26px] py-[26px] pr-[50px]
+          sm:px-[30px] sm:py-[28px] sm:pr-[54px]
+          xl:px-[32px] xl:py-[30px] xl:pr-[58px]
           ${contentClassName}
         `}
       >
-        <h3
-          className="
-            mb-[12px]
-            text-[16px]
-            font-semibold
-            leading-none
-            tracking-[-0.025em]
-            text-white
-            sm:text-[17px]
-          "
-        >
+        <h3 className="mb-[12px] text-[16px] font-semibold leading-none tracking-[-0.025em] text-white sm:text-[17px]">
           {card.title}
         </h3>
-
-        <p
-          className="
-            max-w-[560px]
-            text-[14px]
-            leading-[1.65]
-            text-white/75
-            sm:text-[15px]
-            xl:text-[17px]
-          "
-        >
+        <p className="max-w-[560px] text-[14px] leading-[1.65] text-white/75 sm:text-[15px] xl:text-[17px]">
           {card.description}
         </p>
       </div>
@@ -184,6 +120,8 @@ function ProjectImage({
   imageClassName = "",
   imagePosition = "center",
 }) {
+  const hasCustomBg = className.includes("bg-");
+
   return (
     <motion.div
       {...revealAnimation}
@@ -192,15 +130,10 @@ function ProjectImage({
         delay,
         ease: motionEase,
       }}
-      whileHover={{
-        y: -4,
-      }}
+      whileHover={{ y: -4 }}
       className={`
-        relative
-        w-full
-        overflow-hidden
-        rounded-[16px]
-        bg-[#1B202C]
+        relative w-full overflow-hidden rounded-[16px] 
+        ${hasCustomBg ? "" : "bg-[#1B202C]"} 
         ${className}
       `}
     >
@@ -208,24 +141,13 @@ function ProjectImage({
         src={src}
         alt={alt}
         draggable={false}
-        whileHover={{
-          scale: 1.012,
-        }}
+        whileHover={{ scale: 1.012 }}
         transition={{
           duration: 0.45,
           ease: "easeOut",
         }}
-        className={`
-          block
-          h-full
-          w-full
-          select-none
-          object-cover
-          ${imageClassName}
-        `}
-        style={{
-          objectPosition: imagePosition,
-        }}
+        className={`block h-full w-full select-none object-cover ${imageClassName}`}
+        style={{ objectPosition: imagePosition }}
       />
     </motion.div>
   );
@@ -233,71 +155,26 @@ function ProjectImage({
 
 export default function AboutProjectSection() {
   return (
-    <section
-      className="
-        relative
-        isolate
-        overflow-hidden
-        bg-[#111521]
-        px-4
-        py-[70px]
-        text-white
-        sm:px-8
-        sm:py-[80px]
-        lg:px-10
-        lg:py-[90px]
-      "
-    >
+    <section className="relative isolate overflow-hidden bg-[#111521] px-4 py-[70px] text-white sm:px-8 sm:py-[80px] lg:px-10 lg:py-[90px]">
       {/* Background glow */}
-      <div
-        className="
-          pointer-events-none
-          absolute
-          left-[18%]
-          top-1/2
-          h-[280px]
-          w-[280px]
-          -translate-y-1/2
-          rounded-full
-          bg-[#77A6D0]/[0.025]
-          blur-[110px]
-        "
-      />
+      <div className="pointer-events-none absolute left-[18%] top-1/2 h-[280px] w-[280px] -translate-y-1/2 rounded-full bg-[#77A6D0]/[0.025] blur-[110px]" />
 
       <div className="relative z-10 mx-auto w-full max-w-[1440px]">
         {/* Heading */}
         <motion.h2
-          initial={{
-            opacity: 0,
-            x: -40,
-          }}
-          whileInView={{
-            opacity: 1,
-            x: 0,
-          }}
-          viewport={{
-            once: true,
-            amount: 0.35,
-          }}
+          initial={{ opacity: 0, x: -40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, amount: 0.35 }}
           transition={{
             duration: 0.7,
             ease: motionEase,
           }}
-          className="
-            mb-[40px]
-            text-[32px]
-            font-bold
-            leading-none
-            tracking-[-0.045em]
-            sm:text-[38px]
-            lg:mb-[46px]
-            lg:text-[40px]
-          "
+          className="mb-[40px] text-[32px] font-bold leading-none tracking-[-0.045em] sm:text-[38px] lg:mb-[46px] lg:text-[40px]"
         >
           About The <span className="text-[#77A6D0]">Project</span>
         </motion.h2>
 
-        {/* Mobile and tablet */}
+        {/* Mobile and tablet Layout */}
         <div className="grid gap-[22px] lg:hidden">
           <InfoCard
             card={cards.idea}
@@ -332,35 +209,15 @@ export default function AboutProjectSection() {
             src="/images/portfolioDetailsPage/about-project2.png"
             alt="Main healthcare mobile application screen"
             delay={0.25}
-            className="h-[500px] sm:h-[620px]"
-            imagePosition="center"
+            className="h-[500px] sm:h-[620px] bg-[#272b37]"
+            imagePosition="center 30%"
           />
         </div>
 
-        {/* Desktop */}
-        <div
-          className="
-            hidden
-            w-full
-            items-start
-            gap-x-[48px]
-            lg:grid
-            lg:grid-cols-2
-            xl:gap-x-[66px]
-          "
-        >
+        {/* Desktop Layout */}
+        <div className="hidden w-full items-start gap-x-[48px] lg:grid lg:grid-cols-2 xl:gap-x-[66px]">
           {/* Left column */}
-          <div
-            className="
-              grid
-              min-w-0
-              grid-rows-[270px_215px_355px]
-              gap-y-[28px]
-              xl:grid-rows-[290px_230px_390px]
-              xl:gap-y-[30px]
-               mx-[30px]
-            "
-          >
+          <div className="mx-[30px] grid min-w-0 grid-rows-[270px_215px_355px] gap-y-[32px] xl:grid-rows-[290px_230px_390px] xl:gap-y-[30px]">
             <InfoCard
               card={cards.idea}
               delay={0.05}
@@ -385,30 +242,21 @@ export default function AboutProjectSection() {
           </div>
 
           {/* Right column */}
-          <div
-            className="
-              grid
-              min-w-0
-              grid-rows-[185px_679px]
-              gap-y-[14px]
-              xl:grid-rows-[200px_736px]
-              xl:gap-y-[16px]
-              mx-[30px]
-            "
-          >
+          {/* Decreased the first row track height to shrink the client section */}
+          <div className="mx-[30px] grid min-w-0 grid-rows-[140px_740px] gap-y-[14px] xl:grid-rows-[150px_800px] xl:gap-y-[16px]">
             <InfoCard
               card={cards.client}
               delay={0.1}
-              className="h-[180px] sm:h-[200px] lg:h-[186px] xl:h-[180px]"
-              contentClassName="justify-start pt-[30px]"
+              className="h-full"
+              contentClassName="justify-start pt-[24px]"
             />
 
             <ProjectImage
               src="/images/portfolioDetailsPage/about-project2.png"
               alt="Main healthcare mobile application screen"
               delay={0.18}
-              className="h-full"
-              imagePosition="center center"
+              className="h-full bg-[#272b37]"
+              imagePosition="center 30%"
             />
           </div>
         </div>

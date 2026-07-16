@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -25,6 +26,8 @@ const cardVariants = {
 };
 
 export default function ProjectCard({ project, index }) {
+  const [showMobileOverlay, setShowMobileOverlay] = useState(false);
+
   return (
     <motion.article
       layout
@@ -32,7 +35,9 @@ export default function ProjectCard({ project, index }) {
       initial="hidden"
       animate="visible"
       exit="exit"
-      className="group relative min-h-[390px] overflow-hidden rounded-[20px] border border-white/10 bg-[#171c29] shadow-[0_18px_55px_rgba(0,0,0,0.22)]"
+      onClick={() => setShowMobileOverlay((prev) => !prev)}
+      onMouseLeave={() => setShowMobileOverlay(false)}
+      className="group relative min-h-[390px] cursor-pointer overflow-hidden rounded-[20px] border border-white/10 bg-[#171c29] shadow-[0_18px_55px_rgba(0,0,0,0.22)]"
     >
       {/* Main card content */}
       <div className="relative z-10">
@@ -70,8 +75,27 @@ export default function ProjectCard({ project, index }) {
       </div>
 
       {/* Full-card overlay */}
-      <div className="absolute inset-0 z-20 flex translate-y-full flex-col justify-end bg-black/50 p-6 opacity-0 backdrop-blur-[3px] transition-all duration-500 ease-out group-hover:translate-y-0 group-hover:opacity-100">
-        <div className="translate-y-6 transition-transform duration-500 group-hover:translate-y-0">
+      <div
+        className={`
+          absolute inset-0 z-20 flex flex-col justify-end bg-black/50 p-6 backdrop-blur-[3px] transition-all duration-500 ease-out
+          
+          /* Desktop Hover Rules */
+          lg:translate-y-full lg:opacity-0 lg:group-hover:translate-y-0 lg:group-hover:opacity-100
+          
+          /* Mobile Tap Rules */
+          ${showMobileOverlay 
+            ? "translate-y-0 opacity-100" 
+            : "translate-y-full opacity-0"
+          }
+        `}
+      >
+        <div
+          className={`
+            transition-transform duration-500 
+            lg:translate-y-6 lg:group-hover:translate-y-0
+            ${showMobileOverlay ? "translate-y-0" : "translate-y-6"}
+          `}
+        >
           <span className="mb-4 inline-flex rounded-full border border-[#77A6D0]/30 bg-[#77A6D0]/10 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.15em] text-[#9bc8ee]">
             {project.type}
           </span>
@@ -97,6 +121,8 @@ export default function ProjectCard({ project, index }) {
 
           <Link
             to={`/portfolio/${project.slug}`}
+            // stopPropagation prevents closing the card when tapping directly on the link button
+            onClick={(e) => e.stopPropagation()}
             className="inline-flex w-fit items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-semibold text-[#111521] transition-all duration-300 hover:bg-[#77A6D0] hover:text-white"
           >
             Explore Project

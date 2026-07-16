@@ -3,6 +3,7 @@
 import { motion, useInView, useMotionValue, useTransform, animate } from 'framer-motion'
 import { useEffect, useRef } from 'react'
 import { Card, CardContent } from './../ui/card'
+import SectionHeading from '../ui/SectionHeading'
 
 const stats = [
   { number: 12, prefix: '', label: 'Years Experience' },
@@ -45,15 +46,11 @@ export default function About() {
       <div className="absolute inset-0 bg-[#111521]/65" />
 
       <div className="relative z-10 mx-auto max-w-[1120px] px-6 text-center">
-        <motion.h2
+        <SectionHeading
+          label="About "
+          highlight="us"
           className="mb-[48px] text-[32px] font-extrabold leading-none text-white md:text-[34px]"
-          initial={{ opacity: 0, y: 18 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-          viewport={{ once: true }}
-        >
-          About <span className="text-primary">us</span>
-        </motion.h2>
+        />
 
         <motion.h3
           className="mx-auto mb-[22px] max-w-[900px] text-[24px] font-bold leading-[1.35] text-white md:text-[26px]"

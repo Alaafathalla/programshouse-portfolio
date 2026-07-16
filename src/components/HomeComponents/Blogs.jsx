@@ -1,10 +1,12 @@
 'use client'
 
+import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
-import { useState } from 'react'
+import BlogCard from '../ui/BlogCard'
+import SectionHeading from '../ui/SectionHeading'
 
-const fallbackImages = ['images/blogs/blog1.png', 'images/blogs/blog2.png', 'images/blogs/blog3.png']
+const fallbackImages = ['/images/blogs/blog1.png', '/images/blogs/blog2.png', '/images/blogs/blog3.png']
 
 const blogs = Array.from({ length: 9 }, (_, index) => ({
   title: 'How to build a new website from scratch (step by step guide)',
@@ -13,13 +15,33 @@ const blogs = Array.from({ length: 9 }, (_, index) => ({
 
 export default function Blogs() {
   const [currentIndex, setCurrentIndex] = useState(0)
+  const [maxIndex, setMaxIndex] = useState(blogs.length - 3)
+
+  const getResponsiveMaxIndex = () => {
+    if (typeof window === 'undefined') return blogs.length - 3
+    if (window.innerWidth >= 768) return blogs.length - 3
+    if (window.innerWidth >= 640) return blogs.length - 2
+    return blogs.length - 1
+  }
+
+  useEffect(() => {
+    const updateMaxIndex = () => {
+      const nextMaxIndex = getResponsiveMaxIndex()
+      setMaxIndex(nextMaxIndex)
+      setCurrentIndex((prev) => Math.min(prev, nextMaxIndex))
+    }
+
+    updateMaxIndex()
+    window.addEventListener('resize', updateMaxIndex)
+    return () => window.removeEventListener('resize', updateMaxIndex)
+  }, [])
 
   const handlePrev = () => {
-    setCurrentIndex((prev) => (prev === 0 ? blogs.length - 1 : prev - 1))
+    setCurrentIndex((prev) => (prev === 0 ? maxIndex : prev - 1))
   }
 
   const handleNext = () => {
-    setCurrentIndex((prev) => (prev === blogs.length - 1 ? 0 : prev + 1))
+    setCurrentIndex((prev) => (prev >= maxIndex ? 0 : prev + 1))
   }
 
   return (
@@ -29,15 +51,11 @@ export default function Blogs() {
     >
       <div className="mx-auto max-w-[1320px] px-4 md:px-6">
         <div className="mb-[38px] text-center md:mb-[52px]">
-          <motion.h2
-            className="mb-4 text-[32px] font-extrabold leading-none text-white md:mb-5 md:text-[42px]"
-            initial={{ opacity: 0, y: 18 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-            viewport={{ once: true }}
-          >
-            Our <span className="text-primary">Blogs</span>
-          </motion.h2>
+          <SectionHeading
+            label="Our "
+            highlight="Blogs"
+            className="mb-4 md:mb-5 text-[32px] md:text-[42px]"
+          />
 
           <motion.p
             className="mx-auto max-w-[520px] text-[14px] font-medium leading-[1.6] text-white/70 md:text-[18px]"
@@ -52,54 +70,25 @@ export default function Blogs() {
 
         <div className="relative">
           <div className="overflow-hidden md:px-[46px]">
-            <motion.div
-              className="flex gap-[18px] md:gap-[32px]"
-              animate={{
-                x: `calc(-${currentIndex * 100}% - ${
-                  currentIndex * 18
-                }px)`,
+            <div
+              className="flex gap-[18px] md:gap-[32px] [--slide-step:var(--step-mobile)] sm:[--slide-step:var(--step-tablet)] md:[--slide-step:var(--step-desktop)]"
+              style={{
+                transform: `translateX(calc(-${currentIndex} * var(--slide-step)))`,
+                transition: 'transform 0.55s ease-in-out',
+                '--step-mobile': 'calc(100% + 18px)',
+                '--step-tablet': 'calc((100% - 18px)/2 + 18px)',
+                '--step-desktop': 'calc((100% - 64px)/3 + 32px)',
               }}
-              transition={{ duration: 0.55, ease: 'easeInOut' }}
             >
               {blogs.map((blog, index) => (
-                <motion.article
+                <BlogCard
                   key={index}
-                  className="min-w-full overflow-hidden rounded-[18px] border border-white/15 bg-[#20242F] sm:min-w-[calc((100%-18px)/2)] md:min-w-[calc((100%-64px)/3)]"
-                  initial={{ opacity: 0, y: 24 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{
-                    duration: 0.6,
-                    delay: (index % 3) * 0.12,
-                  }}
-                  viewport={{ once: true }}
-                >
-                  <div className="h-[190px] overflow-hidden rounded-t-[18px] p-[10px] md:h-[170px]">
-                    <img
-                      src={blog.image}
-                      alt={blog.title}
-                      onError={(e) => {
-                        e.currentTarget.src =
-                          fallbackImages[index % fallbackImages.length]
-                      }}
-                      className="h-full w-full rounded-[12px] object-cover transition duration-500 hover:scale-105"
-                    />
-                  </div>
-
-                  <div className="px-[20px] pb-[24px] pt-[8px] md:px-[24px]">
-                    <h3 className="mb-[24px] text-[17px] font-bold leading-[1.45] text-white md:text-[18px]">
-                      {blog.title}
-                    </h3>
-
-                    <a
-                      href="#"
-                      className="text-[12px] font-medium text-white/65 underline underline-offset-4 transition hover:text-primary"
-                    >
-                      Explore more
-                    </a>
-                  </div>
-                </motion.article>
+                  blog={blog}
+                  fallbackImage={fallbackImages[index % fallbackImages.length]}
+                  index={index}
+                />
               ))}
-            </motion.div>
+            </div>
           </div>
 
           <button
@@ -123,9 +112,9 @@ export default function Blogs() {
               <button
                 key={dot}
                 type="button"
-                onClick={handleNext}
+                onClick={() => setCurrentIndex(dot * 3)}
                 className={`h-[7px] rounded-full transition-all ${
-                  dot === currentIndex % 3
+                  Math.floor(currentIndex / 3) === dot
                     ? 'w-[22px] bg-primary'
                     : 'w-[14px] bg-white/30'
                 }`}

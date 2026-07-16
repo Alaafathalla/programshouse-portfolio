@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Lightbulb, Quote } from "lucide-react";
 import { HashLink } from "react-router-hash-link";
+import SectionHeading from "../../ui/SectionHeading";
 
 const defaultReview = {
   text:
@@ -24,15 +25,11 @@ export default function ClientReviewCard({
       className={`relative overflow-hidden bg-[#111521] px-5 py-[70px] text-white sm:px-8 sm:py-[90px] lg:px-10 ${className}`}
     >
       <div className="mx-auto w-full max-w-[1280px]">
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.6 }}
-          className="mb-[42px] text-[30px] font-bold leading-none tracking-[-0.045em] sm:text-[38px]"
-        >
-          Client&apos;s <span className="text-primary">Review</span>
-        </motion.h2>
+        <SectionHeading
+          label="Client's "
+          highlight="Review"
+          className="mb-[42px] text-[30px] font-bold tracking-[-0.045em] sm:text-[38px]"
+        />
 
         <div className="grid items-center gap-14 lg:grid-cols-[1.25fr_0.75fr] lg:gap-[70px]">
           {/* Left review area */}

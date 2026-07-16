@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { Star } from 'lucide-react'
+import SectionHeading from '../ui/SectionHeading'
 
 const testimonials = [
   {
@@ -68,15 +69,10 @@ export default function Testimonials() {
       <div className="relative z-10 mx-auto max-w-[1180px] px-6">
         {/* Heading */}
         <div className="mb-14 text-center">
-          <motion.h2
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: .5 }}
+          <SectionHeading
+            label="Testimonials"
             className="mb-5 text-[34px] font-semibold text-primary md:text-[42px]"
-          >
-            Testimonials
-          </motion.h2>
+          />
 
           <motion.p
             initial={{ opacity: 0, y: 15 }}

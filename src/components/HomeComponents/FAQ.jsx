@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Plus, X } from 'lucide-react'
+import SectionHeading from '../ui/SectionHeading'
 
 const faqs = [
   {
@@ -83,9 +84,10 @@ export default function FAQ() {
 
       <div className="relative z-10 mx-auto max-w-[980px] px-6">
         <div className="mb-12 text-center">
-          <h2 className="mb-3 text-[42px] font-semibold text-primary">
-            FAQ
-          </h2>
+          <SectionHeading
+            label="FAQ"
+            className="mb-3 text-[42px] font-semibold text-primary"
+          />
 
           <p className="text-[18px] text-white/70">
             Frequently Asked Questions

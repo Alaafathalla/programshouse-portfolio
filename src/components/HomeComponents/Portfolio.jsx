@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
+import SectionHeading from '../ui/SectionHeading';
 
 const defaultProjects = [
   {
@@ -176,16 +177,11 @@ const alignmentClass =
     >
       <div className="mx-auto max-w-[1320px] px-4 md:px-6">
         <div className={`mb-[42px] md:mb-[58px] ${alignmentClass}`}>
-          <motion.h2
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.6 }}
+          <SectionHeading
+            label={title + " "}
+            highlight={highlightedTitle}
             className="mb-4 text-[32px] font-extrabold leading-none text-white md:mb-5 md:text-[42px]"
-          >
-            {title}{" "}
-            <span className="text-primary">{highlightedTitle}</span>
-          </motion.h2>
+          />
 
           {showDescription && description && (
             <motion.p

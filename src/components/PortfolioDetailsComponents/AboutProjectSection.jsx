@@ -121,7 +121,7 @@ function InfoCard({
         `}
       >
         <Icon
-          size={isTopIcon ? 35 : 42}
+          size={isTopIcon ? 39 : 46}
           strokeWidth={1.8}
           className="text-secondary"
         />
@@ -390,16 +390,16 @@ export default function AboutProjectSection() {
               grid
               min-w-0
               grid-rows-[185px_679px]
-              gap-y-[24px]
+              gap-y-[14px]
               xl:grid-rows-[200px_736px]
-              xl:gap-y-[26px]
+              xl:gap-y-[16px]
               mx-[30px]
             "
           >
             <InfoCard
               card={cards.client}
               delay={0.1}
-              className="h-[200px] sm:h-[220px] lg:h-[185px] xl:h-[200px]"
+              className="h-[180px] sm:h-[200px] lg:h-[186px] xl:h-[180px]"
               contentClassName="justify-start pt-[30px]"
             />
 

@@ -4,6 +4,7 @@ import { Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Loader from "./components/ui/Loader";
+import ScrollToTop from "./components/ScrollToTop";
 
 
 const Home = lazy(() => import("./Pages/HomePage"));
@@ -22,17 +23,17 @@ export default function App() {
       }}
     >
       <Header />
+      <ScrollToTop />
 
-<Suspense fallback={<Loader />}>
-  <Routes>
-    <Route path="/" element={<Home />} />
-    <Route path="/services" element={<Services />} />
-    <Route path="/portfolio" element={<Portfolio />} />
-    <Route path="/portfolio/:slug" element={<PortfolioDetailsPage />} />
-     <Route path="*" element={<ErrorPage />} />
-     
-  </Routes>
-</Suspense>
+      <Suspense fallback={<Loader />}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/portfolio/:slug" element={<PortfolioDetailsPage />} />
+          <Route path="*" element={<ErrorPage />} />
+        </Routes>
+      </Suspense>
 
       <Footer />
     </main>

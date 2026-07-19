@@ -61,9 +61,14 @@ export default function Header() {
         {/* Right Side */}
         <div className="flex items-center gap-4">
           <div className="hidden lg:block">
-            <Button size="sm">
-              Contact Us
-            </Button>
+<Button size="sm"  asChild>
+  <HashLink
+    smooth
+    to="/#contact"
+  >
+    Contact Us
+  </HashLink>
+</Button>
           </div>
 
           <button
@@ -114,13 +119,15 @@ export default function Header() {
             )
           )}
 
-          <Button
-            size="sm"
-            className="mt-6 w-full"
-            onClick={() => setOpen(false)}
-          >
-            Contact Us
-          </Button>
+<Button size="sm" className="mt-6 w-full" asChild>
+  <HashLink
+    smooth
+     to="/#contact"
+    onClick={() => setOpen(false)}
+  >
+    Contact Us
+  </HashLink>
+</Button>
         </div>
       </div>
     </header>

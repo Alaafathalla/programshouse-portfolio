@@ -3,6 +3,8 @@
 import { motion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
 import { Button } from './../ui/button'
+import {Link} from 'react-router-dom'
+import { HashLink } from 'react-router-hash-link'
 
 export default function Hero() {
   return (
@@ -187,17 +189,54 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
         >
-          <Button className="h-[50px] min-w-[185px] rounded-[12px] text-[14px]">
-            Contact Us
-          </Button>
+     <div className="flex flex-wrap items-center gap-4">
+  <HashLink
+    smooth
+    to="/#contact"
+    className="
+      inline-flex
+      h-[50px]
+      min-w-[185px]
+      items-center
+      justify-center
+      rounded-[12px]
+      bg-white
+      text-black
+      px-6
+      text-[14px]
+      font-medium
+      transition-colors
+    "
+  >
+    Contact Us
+  </HashLink>
 
-          <Button
-            variant="outline"
-            className="h-[50px] min-w-[190px] rounded-[12px] border-white/70 bg-transparent text-[14px] text-white hover:bg-white hover:text-[#111521]"
-          >
-            Explore Portfolio
-            <ArrowRight size={16} />
-          </Button>
+  <Link
+    to="/portfolio"
+    className="
+      inline-flex
+      h-[50px]
+      min-w-[190px]
+      items-center
+      justify-center
+      gap-2
+      rounded-[12px]
+      border
+      border-white/70
+      bg-transparent
+      px-6
+      text-[14px]
+      font-medium
+      text-white
+      transition-colors
+      hover:bg-white
+      hover:text-[#111521]
+    "
+  >
+    Explore Portfolio
+    <ArrowRight size={16} />
+  </Link>
+</div>
         </motion.div>
       </div>
     </section>

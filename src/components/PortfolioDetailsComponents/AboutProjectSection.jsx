@@ -29,125 +29,273 @@ const cards = {
 
 const motionEase = [0.22, 1, 0.36, 1];
 
-const revealAnimation = {
-  initial: { opacity: 0, y: 22 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, amount: 0.2 },
-};
-
-function InfoCard({
-  card,
-  delay = 0,
-  className = "",
-  contentClassName = "",
-}) {
+function InfoCard({ card, className = "", contentClassName = "" }) {
   const Icon = card.icon;
   const isTopIcon = card.iconPosition === "top";
 
   return (
-    <motion.article
-      {...revealAnimation}
-      transition={{
-        duration: 0.65,
-        delay,
-        ease: motionEase,
-      }}
+    <article
       className={`
-        relative w-full overflow-visible rounded-[14px] border border-[#77A6D0]/70 bg-[#111521]
+        relative
+        w-full
+        overflow-visible
+        rounded-[14px]
+        border
+        border-[#77A6D0]/70
+        bg-[#111521]
         ${className}
       `}
     >
-      {/* Hide border behind icon */}
       <span
         aria-hidden="true"
         className={`
-          pointer-events-none absolute z-[2] bg-[#111521]
-          ${isTopIcon 
-            ? "right-[27px] top-[-2px] h-[5px] w-[58px]" 
-            : "right-[-2px] top-1/2 h-[64px] w-[5px] -translate-y-1/2"
+          pointer-events-none
+          absolute
+          z-[2]
+          bg-[#111521]
+          ${
+            isTopIcon
+              ? "right-[27px] top-[-2px] h-[5px] w-[58px]"
+              : "right-[-2px] top-1/2 h-[62px] w-[5px] -translate-y-1/2"
           }
         `}
       />
 
-      {/* Animated icon */}
-      <motion.div
-        animate={isTopIcon ? { y: [0, -3, 0] } : { rotate: [0, -5, 5, 0] }}
-        transition={{
-          duration: isTopIcon ? 3.2 : 4,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
+      <div
         className={`
-          absolute z-10 flex items-center justify-center bg-[#111521]
-          ${isTopIcon 
-            ? "right-[32px] top-[-18px] h-[40px] w-[46px]" 
-            : "right-[-21px] top-1/2 h-[52px] w-[42px] -translate-y-1/2"
+          absolute
+          z-10
+          flex
+          items-center
+          justify-center
+          bg-[#111521]
+          ${
+            isTopIcon
+              ? "right-[32px] top-[-18px] h-[40px] w-[46px]"
+              : "right-[-20px] top-1/2 h-[50px] w-[40px] -translate-y-1/2"
           }
         `}
       >
         <Icon
-          size={isTopIcon ? 39 : 46}
+          size={isTopIcon ? 38 : 43}
           strokeWidth={1.8}
-          className="text-secondary"
+          className="text-[#FEAC25]"
         />
-      </motion.div>
+      </div>
 
-      {/* Content */}
       <div
         className={`
-          flex h-full flex-col px-[26px] py-[26px] pr-[50px]
-          sm:px-[30px] sm:py-[28px] sm:pr-[54px]
-          xl:px-[32px] xl:py-[30px] xl:pr-[58px]
+          flex
+          h-full
+          flex-col
+          px-[22px]
+          py-[22px]
+          pr-[46px]
+          sm:px-[26px]
+          sm:py-[24px]
+          sm:pr-[50px]
+          xl:px-[28px]
+          xl:py-[25px]
+          xl:pr-[54px]
           ${contentClassName}
         `}
       >
-        <h3 className="mb-[12px] text-[16px] font-semibold leading-none tracking-[-0.025em] text-white sm:text-[17px]">
+        <h3 className="mb-[10px] text-[16px] font-semibold leading-none tracking-[-0.025em] text-white sm:text-[17px]">
           {card.title}
         </h3>
-        <p className="max-w-[560px] text-[14px] leading-[1.65] text-white/75 sm:text-[15px] xl:text-[17px]">
+
+        <p className="max-w-[560px] text-[13px] leading-[1.58] text-white/70 sm:text-[14px] xl:text-[15px]">
           {card.description}
         </p>
       </div>
-    </motion.article>
+    </article>
   );
 }
 
-function ProjectImage({
-  src,
-  alt,
-  delay = 0,
-  className = "",
-  imageClassName = "",
-  imagePosition = "center",
-}) {
-  const hasCustomBg = className.includes("bg-");
-
+function LeftProjectImage() {
   return (
     <motion.div
-      {...revealAnimation}
+      initial={{
+        opacity: 0,
+        x: -100,
+      }}
+      whileInView={{
+        opacity: 1,
+        x: 0,
+      }}
+      viewport={{
+        once: true,
+        amount: 0.2,
+      }}
       transition={{
-        duration: 0.7,
-        delay,
+        duration: 0.85,
         ease: motionEase,
       }}
-      whileHover={{ y: -4 }}
-      className={`
-        relative w-full overflow-hidden rounded-[16px] 
-        ${hasCustomBg ? "" : "bg-[#1B202C]"} 
-        ${className}
-      `}
+      className="
+        relative
+        h-[300px]
+        w-full
+        overflow-hidden
+        rounded-[15px]
+        bg-[#1B202C]
+        sm:h-[350px]
+        lg:h-full
+      "
     >
-      <motion.img
-        src={src}
-        alt={alt}
+      <div className="pointer-events-none absolute left-1/2 top-1/2 h-[290px] w-[360px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#77A6D0]/[0.035] blur-[75px]" />
+
+      <img
+        src="/images/portfolioDetailsPage/image 301.png"
+        alt=""
+        aria-hidden="true"
         draggable={false}
-        whileHover={{ scale: 1.012 }}
-        transition={{
-          duration: 0.45,
-          ease: "easeOut",
-        }}
-        className={`block h-full w-full select-none object-cover ${imageClassName}`}
-        style={{ objectPosition: imagePosition }}
+        className="
+          pointer-events-none
+          absolute
+          left-[53%]
+          top-[52%]
+          z-0
+          h-auto
+          w-[106%]
+          max-w-none
+          -translate-x-1/2
+          -translate-y-1/2
+          select-none
+          object-contain
+
+          sm:left-[53%]
+          sm:top-[52%]
+          sm:w-[105%]
+
+          lg:left-[59%]
+          lg:top-[35%]
+          lg:w-[108%]
+
+          xl:left-[62%]
+          xl:top-[75%]
+          xl:w-[125%]
+        "
+      />
+
+      <img
+        src="/images/portfolioDetailsPage/iPhone 16 Pro.png"
+        alt="Medicine search application screens"
+        draggable={false}
+        className="
+          absolute
+          bottom-[-8px]
+          left-[46%]
+          z-10
+          h-[89%]
+          w-auto
+          max-w-none
+          -translate-x-1/2
+          select-none
+          object-contain
+
+          sm:left-[46%]
+          sm:h-[91%]
+
+          lg:bottom-[-1px]
+          lg:left-[46%]
+          lg:h-[99%]
+
+          xl:h-[99%]
+        "
+      />
+    </motion.div>
+  );
+}
+
+function RightProjectImage() {
+  return (
+    <motion.div
+      initial={{
+        opacity: 0,
+        x: 100,
+      }}
+      whileInView={{
+        opacity: 1,
+        x: 0,
+      }}
+      viewport={{
+        once: true,
+        amount: 0.2,
+      }}
+      transition={{
+        duration: 0.85,
+        ease: motionEase,
+      }}
+      className="
+        relative
+        h-[470px]
+        w-full
+        overflow-hidden
+        rounded-[15px]
+        bg-[#1B202C]
+        sm:h-[590px]
+        lg:h-full
+      "
+    >
+      <div className="pointer-events-none absolute left-1/2 top-1/2 h-[320px] w-[320px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#77A6D0]/[0.045] blur-[90px]" />
+
+      <img
+        src="/images/portfolioDetailsPage/image 173.png"
+        alt=""
+        aria-hidden="true"
+        draggable={false}
+        className="
+          pointer-events-none
+          absolute
+          left-[52%]
+          top-[30%]
+          z-0
+          h-auto
+          w-[105%]
+          max-w-none
+          -translate-x-1/2
+          -translate-y-1/2
+          select-none
+          object-contain
+
+          sm:left-[52%]
+          sm:top-[47%]
+          sm:w-[108%]
+
+          lg:left-[47%]
+          lg:top-[46%]
+          lg:w-[118%]
+
+          xl:left-[55%]
+          xl:top-[22%]
+          xl:w-[114%]
+        "
+      />
+
+      <img
+        src="/images/portfolioDetailsPage/iPhone 13 Pro.png"
+        alt="Healthcare application home screen"
+        draggable={false}
+        className="
+          absolute
+          bottom-[-3px]
+          left-1/2
+          z-10
+          h-[84%]
+          w-auto
+          max-w-none
+          -translate-x-1/2
+          select-none
+          object-contain
+
+          sm:h-[86%]
+
+          lg:bottom-[30px]
+          lg:h-[104%]
+
+          xl:bottom-[9px]
+          xl:h-[101%]
+        "
       />
     </motion.div>
   );
@@ -155,109 +303,106 @@ function ProjectImage({
 
 export default function AboutProjectSection() {
   return (
-    <section className="relative isolate overflow-hidden bg-[#111521] px-4 py-[70px] text-white sm:px-8 sm:py-[80px] lg:px-10 lg:py-[90px]">
-      {/* Background glow */}
-      <div className="pointer-events-none absolute left-[18%] top-1/2 h-[280px] w-[280px] -translate-y-1/2 rounded-full bg-[#77A6D0]/[0.025] blur-[110px]" />
+    <section className="relative isolate overflow-hidden bg-[#111521] px-4 py-[55px] text-white sm:px-8 sm:py-[65px] lg:px-10 lg:py-[68px]">
+      <div className="pointer-events-none absolute left-[18%] top-1/2 h-[260px] w-[260px] -translate-y-1/2 rounded-full bg-[#77A6D0]/[0.025] blur-[110px]" />
 
-      <div className="relative z-10 mx-auto w-full max-w-[1440px]">
-        {/* Heading */}
-        <motion.h2
-          initial={{ opacity: 0, x: -40 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, amount: 0.35 }}
-          transition={{
-            duration: 0.7,
-            ease: motionEase,
-          }}
-          className="mb-[40px] text-[32px] font-bold leading-none tracking-[-0.045em] sm:text-[38px] lg:mb-[46px] lg:text-[40px]"
+      <div className="relative z-10 mx-auto w-full max-w-[1320px]">
+        <h2
+          className="
+            mb-[32px]
+            text-[30px]
+            font-bold
+            leading-none
+            tracking-[-0.045em]
+            sm:text-[36px]
+            lg:mb-[34px]
+            lg:text-[38px]
+          "
         >
           About The <span className="text-[#77A6D0]">Project</span>
-        </motion.h2>
+        </h2>
 
-        {/* Mobile and tablet Layout */}
-        <div className="grid gap-[22px] lg:hidden">
+        {/* Mobile and tablet */}
+        <div className="grid gap-[18px] lg:hidden">
           <InfoCard
             card={cards.idea}
-            delay={0.05}
-            className="min-h-[260px]"
+            className="min-h-[225px]"
             contentClassName="justify-center"
           />
 
           <InfoCard
             card={cards.client}
-            delay={0.1}
-            className="min-h-[190px]"
+            className="min-h-[165px]"
             contentClassName="justify-center"
           />
 
           <InfoCard
             card={cards.value}
-            delay={0.15}
-            className="min-h-[220px]"
+            className="min-h-[190px]"
             contentClassName="justify-center"
           />
 
-          <ProjectImage
-            src="/images/portfolioDetailsPage/about-project1.png"
-            alt="Medicine search application screens"
-            delay={0.2}
-            className="h-[340px] sm:h-[440px]"
-            imagePosition="center"
-          />
+          <LeftProjectImage />
 
-          <ProjectImage
-            src="/images/portfolioDetailsPage/about-project2.png"
-            alt="Main healthcare mobile application screen"
-            delay={0.25}
-            className="h-[500px] sm:h-[620px] bg-[#272b37]"
-            imagePosition="center 30%"
-          />
+          <RightProjectImage />
         </div>
 
-        {/* Desktop Layout */}
-        <div className="hidden w-full items-start gap-x-[48px] lg:grid lg:grid-cols-2 xl:gap-x-[66px]">
+        {/* Desktop */}
+        <div
+          className="
+            hidden
+            w-full
+            items-stretch
+            gap-x-[44px]
+            lg:grid
+            lg:grid-cols-2
+            xl:gap-x-[54px]
+          "
+        >
           {/* Left column */}
-          <div className="mx-[30px] grid min-w-0 grid-rows-[270px_215px_355px] gap-y-[32px] xl:grid-rows-[290px_230px_390px] xl:gap-y-[30px]">
+          <div
+            className="
+              grid
+              h-full
+              min-w-0
+              grid-rows-[190px_150px_300px]
+              gap-y-[18px]
+              xl:grid-rows-[190px_150px_320px]
+            "
+          >
             <InfoCard
               card={cards.idea}
-              delay={0.05}
               className="h-full"
-              contentClassName="justify-start pt-[30px]"
+              contentClassName="justify-center"
             />
 
             <InfoCard
               card={cards.value}
-              delay={0.15}
               className="h-full"
-              contentClassName="justify-start pt-[30px]"
+              contentClassName="justify-center"
             />
 
-            <ProjectImage
-              src="/images/portfolioDetailsPage/about-project1.png"
-              alt="Medicine search application screens"
-              delay={0.2}
-              className="h-full"
-              imagePosition="center center"
-            />
+            <LeftProjectImage />
           </div>
 
           {/* Right column */}
-          {/* Decreased the first row track height to shrink the client section */}
-          <div className="mx-[30px] grid min-w-0 grid-rows-[140px_740px] gap-y-[14px] xl:grid-rows-[150px_800px] xl:gap-y-[16px]">
+          <div
+            className="
+              grid
+              h-full
+              min-w-0
+              grid-rows-[140px_518px]
+              gap-y-[18px]
+              xl:grid-rows-[140px_538px]
+            "
+          >
             <InfoCard
               card={cards.client}
-              delay={0.1}
               className="h-full"
-              contentClassName="justify-start pt-[24px]"
+              contentClassName="justify-center"
             />
 
-            <ProjectImage
-              src="/images/portfolioDetailsPage/about-project2.png"
-              alt="Main healthcare mobile application screen"
-              delay={0.18}
-              className="h-full bg-[#272b37]"
-              imagePosition="center 30%"
-            />
+            <RightProjectImage />
           </div>
         </div>
       </div>

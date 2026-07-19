@@ -6,11 +6,12 @@ import Footer from "./components/Footer";
 import Loader from "./components/ui/Loader";
 import ScrollToTop from "./components/ScrollToTop";
 
-
 const Home = lazy(() => import("./Pages/HomePage"));
-const Services = lazy(() => import("./Pages/servicesPage"));
-const Portfolio = lazy(() => import("./Pages/portfolioPage"));
-const PortfolioDetailsPage = lazy(() => import("./Pages/PortfolioDetailsPage"));
+const Services = lazy(() => import("./Pages/ServicesPage"));
+const Portfolio = lazy(() => import("./Pages/PortfolioPage"));
+const PortfolioDetailsPage = lazy(() =>
+  import("./Pages/PortfolioDetailsPage")
+);
 const ErrorPage = lazy(() => import("./Pages/ErrorPage"));
 
 export default function App() {
@@ -30,7 +31,10 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/services" element={<Services />} />
           <Route path="/portfolio" element={<Portfolio />} />
-          <Route path="/portfolio/:slug" element={<PortfolioDetailsPage />} />
+          <Route
+            path="/portfolio/:slug"
+            element={<PortfolioDetailsPage />}
+          />
           <Route path="*" element={<ErrorPage />} />
         </Routes>
       </Suspense>

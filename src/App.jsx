@@ -7,7 +7,7 @@ import Loader from "./components/ui/Loader";
 import ScrollToTop from "./components/ScrollToTop";
 
 const Home = lazy(() => import("./Pages/HomePage"));
-const Services = lazy(() => import("./Pages/ServicesPage"));
+const Services = lazy(() => import("./Pages/servicesPage"));
 const Portfolio = lazy(() => import("./Pages/PortfolioPage"));
 const PortfolioDetailsPage = lazy(() =>
   import("./Pages/PortfolioDetailsPage")

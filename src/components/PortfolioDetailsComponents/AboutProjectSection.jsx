@@ -168,11 +168,12 @@ function LeftProjectImage() {
           sm:w-[105%]
 
           lg:left-[59%]
-          lg:top-[35%]
-          lg:w-[108%]
+          lg:top-[80%]
+          lg:w-[178%]
+  
 
-          xl:left-[62%]
-          xl:top-[75%]
+          xl:left-[55%]
+          xl:top-[71%]
           xl:w-[125%]
         "
       />
@@ -196,7 +197,7 @@ function LeftProjectImage() {
           sm:left-[46%]
           sm:h-[91%]
 
-          lg:bottom-[-1px]
+          lg:bottom-[10px]
           lg:left-[46%]
           lg:h-[99%]
 

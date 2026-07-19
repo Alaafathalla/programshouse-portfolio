@@ -68,18 +68,31 @@ export function PersonCard({ mobile = false }) {
               sm:w-[170px]
             `
           : `
-              absolute right-[4%] top-[1%] z-20
-              w-[182px] overflow-hidden rounded-[16px]
+              absolute right-[5%] top-[4%] z-20
+              w-[125px] overflow-hidden rounded-[12px]
               border border-white/[0.04]
-              bg-[#1A2130] p-2
-              shadow-[0_18px_38px_rgba(0,0,0,0.28)]
+              bg-[#1A2130] p-[5px]
+              shadow-[0_15px_30px_rgba(0,0,0,0.26)]
+
+              xl:right-[4%]
+              xl:top-[1%]
+              xl:w-[182px]
+              xl:rounded-[16px]
+              xl:p-2
+              xl:shadow-[0_18px_38px_rgba(0,0,0,0.28)]
             `
       }
     >
       <img
         src={medicalProject.images.person}
         alt="Medical application user"
-        className="aspect-[1.65/1] w-full rounded-[11px] object-cover"
+        className="
+          aspect-[1.65/1]
+          w-full
+          rounded-[8px]
+          object-cover
+          xl:rounded-[11px]
+        "
         draggable={false}
       />
     </motion.div>
@@ -115,50 +128,110 @@ export function RecommendationCard({ mobile = false }) {
               shadow-[0_22px_48px_rgba(0,0,0,0.34)]
             `
           : `
-              absolute right-0   top-[35%] z-30
-              w-[250px] rounded-[17px]
+              absolute right-[2%] top-[37%] z-30
+              w-[170px] rounded-[13px]
               border border-white/[0.04]
-              bg-[#1B2130] p-4
-              shadow-[0_22px_48px_rgba(0,0,0,0.34)]
+              bg-[#1B2130] p-2.5
+              shadow-[0_18px_38px_rgba(0,0,0,0.3)]
+
+              xl:right-0
+              xl:top-[35%]
+              xl:w-[250px]
+              xl:rounded-[17px]
+              xl:p-4
+              xl:shadow-[0_22px_48px_rgba(0,0,0,0.34)]
             `
       }
     >
       <p
-        className="
-          mb-3 text-[11px] leading-[1.5] text-white
-          sm:text-[13px]
-        "
+        className={`
+          mb-2.5 leading-[1.5] text-white
+          ${
+            mobile
+              ? "text-[11px] sm:text-[13px]"
+              : "text-[9px] xl:mb-3 xl:text-[13px]"
+          }
+        `}
       >
         Sure! I found the best option for you.
       </p>
 
       <div
-        className="
-          flex items-center gap-3 rounded-[10px]
-          bg-[#151A27] p-3
-        "
+        className={`
+          flex items-center bg-[#151A27]
+          ${
+            mobile
+              ? "gap-3 rounded-[10px] p-3"
+              : `
+                  gap-2
+                  rounded-[8px]
+                  p-2
+
+                  xl:gap-3
+                  xl:rounded-[10px]
+                  xl:p-3
+                `
+          }
+        `}
       >
         <img
           src={medicalProject.images.product}
           alt="Recommended medical product"
-          className="
-            h-[46px] w-[38px] shrink-0
-            rounded-[4px] object-cover
-            sm:h-[50px] sm:w-[42px]
-          "
+          className={
+            mobile
+              ? `
+                  h-[46px] w-[38px] shrink-0
+                  rounded-[4px] object-cover
+                  sm:h-[50px] sm:w-[42px]
+                `
+              : `
+                  h-[32px] w-[26px] shrink-0
+                  rounded-[4px] object-cover
+
+                  xl:h-[50px]
+                  xl:w-[42px]
+                `
+          }
           draggable={false}
         />
 
         <div className="min-w-0">
-          <p className="truncate text-[10px] text-[#879AC9] sm:text-[11px]">
+          <p
+            className={`
+              truncate text-[#879AC9]
+              ${
+                mobile
+                  ? "text-[10px] sm:text-[11px]"
+                  : "text-[8px] xl:text-[11px]"
+              }
+            `}
+          >
             Pandol Extra
           </p>
 
-          <p className="mt-1 text-[8px] text-white/45 sm:text-[9px]">
+          <p
+            className={`
+              mt-1 text-white/45
+              ${
+                mobile
+                  ? "text-[8px] sm:text-[9px]"
+                  : "text-[7px] xl:text-[9px]"
+              }
+            `}
+          >
             24 tablets
           </p>
 
-          <p className="mt-1 text-[10px] font-medium text-primary sm:text-[11px]">
+          <p
+            className={`
+              mt-1 font-medium text-primary
+              ${
+                mobile
+                  ? "text-[10px] sm:text-[11px]"
+                  : "text-[8px] xl:text-[11px]"
+              }
+            `}
+          >
             Egp 45
           </p>
         </div>
@@ -202,15 +275,27 @@ export function MedicalIconCard({ mobile = false }) {
                 h-[52px] w-[52px] rounded-[13px]
               `
             : `
-                left-[1%] top-[46%]
-                h-[76px] w-[76px] rounded-[17px]
+                left-[2%] top-[48%]
+                h-[46px] w-[46px] rounded-[11px]
+
+                xl:left-[1%]
+                xl:top-[46%]
+                xl:h-[76px]
+                xl:w-[76px]
+                xl:rounded-[17px]
               `
         }
       `}
     >
       <GiMedicinePills
-        className="text-primary"
-        size={mobile ? 23 : 30}
+        className={`
+          text-primary
+          ${
+            mobile
+              ? "h-[23px] w-[23px]"
+              : "h-[18px] w-[18px] xl:h-[30px] xl:w-[30px]"
+          }
+        `}
       />
     </motion.div>
   );
@@ -256,16 +341,28 @@ export function BriefcaseCard({ mobile = false }) {
                 h-[45px] w-[45px] rounded-[12px]
               `
             : `
-                bottom-[5%] right-[10%]
-                h-[52px] w-[52px] rounded-[13px]
+                bottom-[7%] right-[11%]
+                h-[36px] w-[36px] rounded-[10px]
+
+                xl:bottom-[5%]
+                xl:right-[10%]
+                xl:h-[52px]
+                xl:w-[52px]
+                xl:rounded-[13px]
               `
         }
       `}
     >
       <BriefcaseMedical
-        size={mobile ? 20 : 24}
         strokeWidth={1.6}
-        className="text-primary"
+        className={`
+          text-primary
+          ${
+            mobile
+              ? "h-[20px] w-[20px]"
+              : "h-[16px] w-[16px] xl:h-[24px] xl:w-[24px]"
+          }
+        `}
       />
     </motion.div>
   );

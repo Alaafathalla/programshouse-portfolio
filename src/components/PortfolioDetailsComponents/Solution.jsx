@@ -137,7 +137,7 @@ export default function ProjectSolutionSection() {
         className="
           pointer-events-none
           absolute right-[12%] top-1/2
-          h-[260px] w-[350px]
+          h-[220px] w-[330px]
           -translate-y-1/2
           rounded-full
           bg-primary/[0.035]
@@ -183,9 +183,9 @@ export default function ProjectSolutionSection() {
             gap-4
             sm:gap-5
             lg:grid-cols-[1.2fr_1fr]
-            lg:gap-8
+            lg:gap-20
             xl:grid-cols-[1.3fr_1fr]
-            xl:gap-10
+            xl:gap-35
           "
         >
           {/* Image Column */}
@@ -213,7 +213,7 @@ export default function ProjectSolutionSection() {
               className="
                 pointer-events-none
                 absolute inset-x-[15%] bottom-[-14px]
-                h-[42px]
+                h-[32px]
                 rounded-full
                 bg-primary/10
                 blur-[38px]
@@ -237,8 +237,8 @@ export default function ProjectSolutionSection() {
                 shadow-[0_24px_55px_rgba(0,0,0,0.3)]
                 sm:aspect-[1.2/1]
                 lg:aspect-auto
-                lg:h-[560px]
-                xl:h-[580px]
+                lg:h-[500px]
+                xl:h-[520px]
               "
             >
               <img
@@ -280,10 +280,10 @@ export default function ProjectSolutionSection() {
               grid-cols-1
               gap-4
               sm:gap-5
-              lg:h-[560px]
+              lg:h-[510px]
               lg:grid-rows-3
               lg:gap-4
-              xl:h-[580px]
+              xl:h-[520px]
             "
           >
             {solutions.map((solution, index) => (

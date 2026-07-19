@@ -46,7 +46,7 @@ export default function ProjectCard({ project, index }) {
             src={project.image}
             alt={project.title}
             loading={index < 3 ? "eager" : "lazy"}
-            className="h-full w-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-[1.07]"
+            className="h-full w-full object-cover object-top transition-transform duration-700 ease-out lg:group-hover:scale-[1.07]"
           />
 
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#111521]/45 via-transparent to-transparent" />
@@ -74,26 +74,25 @@ export default function ProjectCard({ project, index }) {
         </div>
       </div>
 
-      {/* Full-card overlay */}
+      {/* Full-card overlay (Unified interaction for both tap and desktop hover states) */}
       <div
         className={`
           absolute inset-0 z-20 flex flex-col justify-end bg-black/50 p-6 backdrop-blur-[3px] transition-all duration-500 ease-out
           
-          /* Desktop Hover Rules */
-          lg:translate-y-full lg:opacity-0 lg:group-hover:translate-y-0 lg:group-hover:opacity-100
-          
-          /* Mobile Tap Rules */
+          /* Visible if either mobile state is toggled OR desktop hover is triggered */
           ${showMobileOverlay 
             ? "translate-y-0 opacity-100" 
-            : "translate-y-full opacity-0"
+            : "translate-y-full opacity-0 lg:group-hover:translate-y-0 lg:group-hover:opacity-100"
           }
         `}
       >
         <div
           className={`
             transition-transform duration-500 
-            lg:translate-y-6 lg:group-hover:translate-y-0
-            ${showMobileOverlay ? "translate-y-0" : "translate-y-6"}
+            ${showMobileOverlay 
+              ? "translate-y-0" 
+              : "translate-y-6 lg:group-hover:translate-y-0"
+            }
           `}
         >
           <span className="mb-4 inline-flex rounded-full border border-[#77A6D0]/30 bg-[#77A6D0]/10 px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.15em] text-[#9bc8ee]">
@@ -121,7 +120,6 @@ export default function ProjectCard({ project, index }) {
 
           <Link
             to={`/portfolio/${project.slug}`}
-            // stopPropagation prevents closing the card when tapping directly on the link button
             onClick={(e) => e.stopPropagation()}
             className="inline-flex w-fit items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-semibold text-[#111521] transition-all duration-300 hover:bg-[#77A6D0] hover:text-white"
           >
@@ -129,7 +127,7 @@ export default function ProjectCard({ project, index }) {
 
             <ArrowUpRight
               size={17}
-              className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+              className="transition-transform duration-300 lg:group-hover:translate-x-0.5 lg:group-hover:-translate-y-0.5"
             />
           </Link>
         </div>

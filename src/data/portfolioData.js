@@ -47,18 +47,18 @@ export const projects = [
     mobileImage: "/images/portfolioPage/card(14).png",
     tags: ["React", "Laravel"],
   },
-  {
-    id: 5,
-    slug: "nizam-hr",
-    title: "Nizam HR Management System",
-    category: "web",
-    type: "HR Management System",
-    description:
-      "Complete HR platform with web dashboard and employee mobile application.",
-    image: "/images/portfolioPage/card(5).png",
-    mobileImage: "/images/portfolioPage/card(5).png",
-    tags: ["Laravel", "Flutter"],
-  },
+{
+  id: 5,
+  slug: "nizam-hr",
+  title: "Nizam HR Management System",
+  category: ["web", "mobile"],
+  type: "HR Management System",
+  description:
+    "Complete HR platform with web dashboard and employee mobile application.",
+  image: "/images/portfolioPage/card(5).png",
+  mobileImage: "/images/portfolioPage/card(5).png",
+  tags: ["Laravel", "Flutter"],
+},
   {
     id: 6,
     slug: "biostat-house",
@@ -173,6 +173,15 @@ export const getProjectBySlug = (slug) =>
   projects.find((project) => project.slug === slug);
 
 export const getProjectsByCategory = (category) => {
-  if (!category || category === "all") return projects;
-  return projects.filter((project) => project.category === category);
+  if (!category || category === "all") {
+    return projects;
+  }
+
+  return projects.filter((project) => {
+    const categories = Array.isArray(project.category)
+      ? project.category
+      : [project.category];
+
+    return categories.includes(category);
+  });
 };

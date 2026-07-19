@@ -19,13 +19,17 @@ export default function Header() {
     <header className="fixed left-0 top-0 z-50 w-full border-b border-white/10 bg-[#111521]">
       <div className="mx-auto flex h-[68px] w-[95%] max-w-[1500px] items-center justify-between">
         {/* Logo */}
-        <Link to="/" className="flex shrink-0 items-center">
-          <img
-            src="/Logo.svg"
-            alt="Programs House"
-            className="h-[28px] w-auto object-contain"
-          />
-        </Link>
+<Link
+  to="/"
+  onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+  className="flex shrink-0 items-center"
+>
+  <img
+    src="/Logo.svg"
+    alt="Programs House"
+    className="h-[28px] w-auto object-contain"
+  />
+</Link>
 
         {/* Desktop Navigation */}
         <nav className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-10 lg:flex">
@@ -61,11 +65,12 @@ export default function Header() {
         {/* Right Side */}
         <div className="flex items-center gap-4">
           <div className="hidden lg:block">
-<Button size="sm"  asChild>
-  <HashLink
-    smooth
-    to="/#contact"
-  >
+<Button
+  size="sm"
+  asChild
+  className="transition-all duration-300 hover:scale-110 active:scale-95"
+>
+  <HashLink smooth to="/#contact">
     Contact Us
   </HashLink>
 </Button>

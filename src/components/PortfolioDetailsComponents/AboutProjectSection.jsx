@@ -29,12 +29,57 @@ const cards = {
 
 const motionEase = [0.22, 1, 0.36, 1];
 
-function InfoCard({ card, className = "", contentClassName = "" }) {
+const cardVariants = {
+  hidden: {
+    opacity: 0,
+    y: 35,
+    scale: 0.97,
+  },
+
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+  },
+};
+
+const iconVariants = {
+  hidden: {
+    opacity: 0,
+    scale: 0.45,
+    rotate: -25,
+  },
+
+  visible: {
+    opacity: 1,
+    scale: 1,
+    rotate: 0,
+  },
+};
+
+function InfoCard({
+  card,
+  delay = 0,
+  className = "",
+  contentClassName = "",
+}) {
   const Icon = card.icon;
   const isTopIcon = card.iconPosition === "top";
 
   return (
-    <article
+    <motion.article
+      variants={cardVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{
+        once: true,
+        amount: 0.25,
+      }}
+      transition={{
+        duration: 0.7,
+        delay,
+        ease: motionEase,
+      }}
       className={`
         relative
         w-full
@@ -61,7 +106,23 @@ function InfoCard({ card, className = "", contentClassName = "" }) {
         `}
       />
 
-      <div
+      <motion.div
+        variants={iconVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{
+          once: true,
+          amount: 0.5,
+        }}
+        transition={{
+          duration: 0.65,
+          delay: delay + 0.25,
+          ease: motionEase,
+        }}
+        whileHover={{
+          scale: 1.12,
+          rotate: isTopIcon ? -8 : 8,
+        }}
         className={`
           absolute
           z-10
@@ -81,7 +142,7 @@ function InfoCard({ card, className = "", contentClassName = "" }) {
           strokeWidth={1.8}
           className="text-[#FEAC25]"
         />
-      </div>
+      </motion.div>
 
       <div
         className={`
@@ -108,7 +169,7 @@ function InfoCard({ card, className = "", contentClassName = "" }) {
           {card.description}
         </p>
       </div>
-    </article>
+    </motion.article>
   );
 }
 
@@ -117,18 +178,21 @@ function LeftProjectImage() {
     <motion.div
       initial={{
         opacity: 0,
-        x: -100,
+        x: -110,
+        scale: 0.96,
       }}
       whileInView={{
         opacity: 1,
         x: 0,
+        scale: 1,
       }}
       viewport={{
         once: true,
         amount: 0.2,
       }}
       transition={{
-        duration: 0.85,
+        duration: 0.9,
+        delay: 0.2,
         ease: motionEase,
       }}
       className="
@@ -144,11 +208,28 @@ function LeftProjectImage() {
     >
       <div className="pointer-events-none absolute left-1/2 top-1/2 h-[290px] w-[360px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#77A6D0]/[0.035] blur-[75px]" />
 
-      <img
+      <motion.img
         src="/images/portfolioDetailsPage/image 301.png"
         alt=""
         aria-hidden="true"
         draggable={false}
+        initial={{
+          opacity: 0,
+          scale: 0.9,
+        }}
+        whileInView={{
+          opacity: 1,
+          scale: 1,
+        }}
+        viewport={{
+          once: true,
+          amount: 0.2,
+        }}
+        transition={{
+          duration: 1,
+          delay: 0.45,
+          ease: motionEase,
+        }}
         className="
           pointer-events-none
           absolute
@@ -170,7 +251,6 @@ function LeftProjectImage() {
           lg:left-[59%]
           lg:top-[80%]
           lg:w-[178%]
-  
 
           xl:left-[55%]
           xl:top-[71%]
@@ -178,10 +258,29 @@ function LeftProjectImage() {
         "
       />
 
-      <img
+      <motion.img
         src="/images/portfolioDetailsPage/iPhone 16 Pro.png"
         alt="Medicine search application screens"
         draggable={false}
+        initial={{
+          opacity: 0,
+          y: 45,
+          scale: 0.94,
+        }}
+        whileInView={{
+          opacity: 1,
+          y: 0,
+          scale: 1,
+        }}
+        viewport={{
+          once: true,
+          amount: 0.2,
+        }}
+        transition={{
+          duration: 0.9,
+          delay: 0.55,
+          ease: motionEase,
+        }}
         className="
           absolute
           bottom-[-8px]
@@ -213,18 +312,21 @@ function RightProjectImage() {
     <motion.div
       initial={{
         opacity: 0,
-        x: 100,
+        x: 110,
+        scale: 0.96,
       }}
       whileInView={{
         opacity: 1,
         x: 0,
+        scale: 1,
       }}
       viewport={{
         once: true,
         amount: 0.2,
       }}
       transition={{
-        duration: 0.85,
+        duration: 0.9,
+        delay: 0.25,
         ease: motionEase,
       }}
       className="
@@ -240,11 +342,28 @@ function RightProjectImage() {
     >
       <div className="pointer-events-none absolute left-1/2 top-1/2 h-[320px] w-[320px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#77A6D0]/[0.045] blur-[90px]" />
 
-      <img
+      <motion.img
         src="/images/portfolioDetailsPage/image 173.png"
         alt=""
         aria-hidden="true"
         draggable={false}
+        initial={{
+          opacity: 0,
+          scale: 0.9,
+        }}
+        whileInView={{
+          opacity: 1,
+          scale: 1,
+        }}
+        viewport={{
+          once: true,
+          amount: 0.2,
+        }}
+        transition={{
+          duration: 1,
+          delay: 0.5,
+          ease: motionEase,
+        }}
         className="
           pointer-events-none
           absolute
@@ -273,10 +392,29 @@ function RightProjectImage() {
         "
       />
 
-      <img
+      <motion.img
         src="/images/portfolioDetailsPage/iPhone 13 Pro.png"
         alt="Healthcare application home screen"
         draggable={false}
+        initial={{
+          opacity: 0,
+          y: 55,
+          scale: 0.94,
+        }}
+        whileInView={{
+          opacity: 1,
+          y: 0,
+          scale: 1,
+        }}
+        viewport={{
+          once: true,
+          amount: 0.2,
+        }}
+        transition={{
+          duration: 0.9,
+          delay: 0.6,
+          ease: motionEase,
+        }}
         className="
           absolute
           bottom-[-3px]
@@ -308,7 +446,23 @@ export default function AboutProjectSection() {
       <div className="pointer-events-none absolute left-[18%] top-1/2 h-[260px] w-[260px] -translate-y-1/2 rounded-full bg-[#77A6D0]/[0.025] blur-[110px]" />
 
       <div className="relative z-10 mx-auto w-full max-w-[1320px]">
-        <h2
+        <motion.h2
+          initial={{
+            opacity: 0,
+            x: -45,
+          }}
+          whileInView={{
+            opacity: 1,
+            x: 0,
+          }}
+          viewport={{
+            once: true,
+            amount: 0.4,
+          }}
+          transition={{
+            duration: 0.75,
+            ease: motionEase,
+          }}
           className="
             mb-[32px]
             text-[30px]
@@ -321,24 +475,27 @@ export default function AboutProjectSection() {
           "
         >
           About The <span className="text-[#77A6D0]">Project</span>
-        </h2>
+        </motion.h2>
 
         {/* Mobile and tablet */}
         <div className="grid gap-[18px] lg:hidden">
           <InfoCard
             card={cards.idea}
+            delay={0.05}
             className="min-h-[225px]"
             contentClassName="justify-center"
           />
 
           <InfoCard
             card={cards.client}
+            delay={0.12}
             className="min-h-[165px]"
             contentClassName="justify-center"
           />
 
           <InfoCard
             card={cards.value}
+            delay={0.19}
             className="min-h-[190px]"
             contentClassName="justify-center"
           />
@@ -373,12 +530,14 @@ export default function AboutProjectSection() {
           >
             <InfoCard
               card={cards.idea}
+              delay={0.08}
               className="h-full"
               contentClassName="justify-center"
             />
 
             <InfoCard
               card={cards.value}
+              delay={0.18}
               className="h-full"
               contentClassName="justify-center"
             />
@@ -399,6 +558,7 @@ export default function AboutProjectSection() {
           >
             <InfoCard
               card={cards.client}
+              delay={0.13}
               className="h-full"
               contentClassName="justify-center"
             />

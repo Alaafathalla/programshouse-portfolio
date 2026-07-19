@@ -3,7 +3,6 @@ import { AnimatePresence, motion } from "framer-motion";
 import {
   LayoutGrid,
   Monitor,
-  Palette,
   Smartphone,
 } from "lucide-react";
 
@@ -26,7 +25,6 @@ const categories = [
     label: "Mobile Apps",
     icon: Smartphone,
   },
-
 ];
 
 export default function PortfolioProjects() {
@@ -37,9 +35,13 @@ export default function PortfolioProjects() {
       return projects;
     }
 
-    return projects.filter(
-      (project) => project.category === activeCategory
-    );
+    return projects.filter((project) => {
+      const projectCategories = Array.isArray(project.category)
+        ? project.category
+        : [project.category];
+
+      return projectCategories.includes(activeCategory);
+    });
   }, [activeCategory]);
 
   return (
@@ -71,11 +73,25 @@ export default function PortfolioProjects() {
                   type="button"
                   onClick={() => setActiveCategory(category.id)}
                   aria-pressed={isActive}
-                  className={`flex shrink-0 items-center gap-2 rounded-full border px-5 py-3 text-sm font-medium transition-all duration-300 ${
-                    isActive
-                      ? "border-primary bg-primary text-white shadow-[0_10px_30px_rgba(119,166,208,0.22)]"
-                      : "border-white/10 bg-white/[0.03] text-white/55 hover:border-white/25 hover:bg-white/[0.06] hover:text-white"
-                  }`}
+                  className={`
+                    flex
+                    shrink-0
+                    items-center
+                    gap-2
+                    rounded-full
+                    border
+                    px-5
+                    py-3
+                    text-sm
+                    font-medium
+                    transition-all
+                    duration-300
+                    ${
+                      isActive
+                        ? "border-primary bg-primary text-white shadow-[0_10px_30px_rgba(119,166,208,0.22)]"
+                        : "border-white/10 bg-white/[0.03] text-white/55 hover:border-white/25 hover:bg-white/[0.06] hover:text-white"
+                    }
+                  `}
                 >
                   <Icon size={16} />
                   {category.label}

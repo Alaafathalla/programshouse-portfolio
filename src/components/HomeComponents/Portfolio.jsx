@@ -3,9 +3,10 @@
 import { useCallback, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
-import SectionHeading from '../ui/SectionHeading';
+import SectionHeading from "../ui/SectionHeading";
 
 const defaultProjects = [
   {
@@ -14,6 +15,7 @@ const defaultProjects = [
       "Smart prescription delivery platform connecting users with nearby pharmacies.",
     image: "/images/portfolio/portfolio1.png",
     mobileImage: "/images/portfolio/port (1).png",
+    slug: "rosetta-medical",
   },
   {
     title: "PROF Medical Research Platform",
@@ -21,6 +23,7 @@ const defaultProjects = [
       "Research platform for healthcare professionals and medical content.",
     image: "/images/portfolio/portfolio2.png",
     mobileImage: "/images/portfolio/port (2).png",
+    slug: "prof-medical",
   },
   {
     title: "M&S Marketing Website",
@@ -28,6 +31,7 @@ const defaultProjects = [
       "Corporate marketing website with service showcase and lead generation.",
     image: "/images/portfolio/portfolio3.png",
     mobileImage: "/images/portfolio/port (3).png",
+    slug: "ms-marketing",
   },
   {
     title: "Reem Ahmed Life Coaching Website",
@@ -35,6 +39,7 @@ const defaultProjects = [
       "Personal coaching platform with booking and consultation features.",
     image: "/images/portfolio/portfolio4.png",
     mobileImage: "/images/portfolio/port (4).png",
+    slug: "reem-ahmed",
   },
   {
     title: "Nizam HR Management System",
@@ -42,6 +47,7 @@ const defaultProjects = [
       "Complete HR platform with web dashboard and employee mobile application.",
     image: "/images/portfolio/portfolio5.png",
     mobileImage: "/images/portfolio/port (5).png",
+    slug: "nizam-hr",
   },
   {
     title: "Biostart House Website",
@@ -49,6 +55,7 @@ const defaultProjects = [
       "Professional business website designed for startup and corporate services.",
     image: "/images/portfolio/portfolio6.png",
     mobileImage: "/images/portfolio/port (6).png",
+    slug: "biostart-house",
   },
   {
     title: "Medical Islands Website",
@@ -56,6 +63,7 @@ const defaultProjects = [
       "Modern medical e-commerce website with customer and admin dashboard.",
     image: "/images/portfolio/portfolio7.png",
     mobileImage: "/images/portfolio/port (7).png",
+    slug: "medical-islands",
   },
   {
     title: "RAQ Application Dashboard",
@@ -63,6 +71,7 @@ const defaultProjects = [
       "Business management dashboard with analytics and reporting features.",
     image: "/images/portfolio/portfolio8.png",
     mobileImage: "/images/portfolio/port (8).png",
+    slug: "raq-dashboard",
   },
   {
     title: "Dolphin Website",
@@ -70,6 +79,7 @@ const defaultProjects = [
       "Corporate website with modern UI and responsive experience.",
     image: "/images/portfolio/portfolio9.png",
     mobileImage: "/images/portfolio/port (9).png",
+    slug: "dolphin",
   },
   {
     title: "SWSW Application",
@@ -77,6 +87,7 @@ const defaultProjects = [
       "Food delivery mobile application with customer and driver experiences.",
     image: "/images/portfolio/portfolio10.png",
     mobileImage: "/images/portfolio/port (10).png",
+    slug: "swsw-application",
   },
   {
     title: "Zewail Academy Website",
@@ -84,6 +95,7 @@ const defaultProjects = [
       "Educational platform for courses, registrations and student management.",
     image: "/images/portfolio/portfolio11.png",
     mobileImage: "/images/portfolio/port (11).png",
+    slug: "zewail-academy",
   },
   {
     title: "Digital Plus Marketing Website",
@@ -91,6 +103,7 @@ const defaultProjects = [
       "Marketing agency website focused on branding and digital services.",
     image: "/images/portfolio/portfolio12.png",
     mobileImage: "/images/portfolio/port (12).png",
+    slug: "digital-plus",
   },
   {
     title: "Kaspton Home Services Website",
@@ -98,6 +111,7 @@ const defaultProjects = [
       "Home services platform with booking and service management.",
     image: "/images/portfolio/portfolio13.png",
     mobileImage: "/images/portfolio/port (13).png",
+    slug: "kaspton",
   },
   {
     title: "CP Dashboard",
@@ -105,6 +119,7 @@ const defaultProjects = [
       "Business dashboard for monitoring operations and performance.",
     image: "/images/portfolio/portfolio14.png",
     mobileImage: "/images/portfolio/port (14).png",
+    slug: "cp-dashboard",
   },
 ];
 
@@ -117,7 +132,6 @@ export default function Portfolio({
   id = "portfolio",
   textAlign = "center",
 }) {
-
   const [selectedIndex, setSelectedIndex] = useState(0);
 
   const [emblaRef, emblaApi] = useEmblaCarousel(
@@ -134,10 +148,6 @@ export default function Portfolio({
       }),
     ]
   );
-
-  const scrollNext = useCallback(() => {
-    emblaApi?.scrollNext();
-  }, [emblaApi]);
 
   const scrollTo = useCallback(
     (index) => {
@@ -163,12 +173,12 @@ export default function Portfolio({
     };
   }, [emblaApi, onSelect]);
 
-const alignmentClass =
-  textAlign === "start"
-    ? "text-start"
-    : textAlign === "end"
-      ? "text-end"
-      : "text-center";
+  const alignmentClass =
+    textAlign === "start"
+      ? "text-start"
+      : textAlign === "end"
+        ? "text-end"
+        : "text-center";
 
   return (
     <section
@@ -178,17 +188,29 @@ const alignmentClass =
       <div className="mx-auto max-w-[1320px] px-4 md:px-6">
         <div className={`mb-[42px] md:mb-[58px] ${alignmentClass}`}>
           <SectionHeading
-            label={title + " "}
+            label={`${title} `}
             highlight={highlightedTitle}
             className="mb-4 text-[32px] font-extrabold leading-none text-white md:mb-5 md:text-[42px]"
           />
 
           {showDescription && description && (
             <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.6, delay: 0.08 }}
+              initial={{
+                opacity: 0,
+                y: 20,
+              }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+              }}
+              viewport={{
+                once: true,
+                amount: 0.3,
+              }}
+              transition={{
+                duration: 0.6,
+                delay: 0.08,
+              }}
               className="mx-auto max-w-[720px] text-[14px] font-medium leading-[1.6] text-white/70 md:text-[18px]"
             >
               {description}
@@ -239,14 +261,40 @@ const alignmentClass =
                   </div>
                 </div>
 
-                <button
-                  type="button"
-                  onClick={scrollNext}
-                  className="absolute right-[18px] top-0 z-30 flex h-[46px] items-center gap-2 rounded-bl-[22px] rounded-tr-[18px] border-b border-l border-white/20 bg-[#111521] px-5 text-[14px] font-semibold text-white transition hover:text-primary md:right-[28px] md:text-[18px]"
+                <Link
+                  to={`/portfolio/${project.slug}`}
+                  className="
+                    absolute
+                    right-[18px]
+                    top-0
+                    z-30
+                    flex
+                    h-[46px]
+                    items-center
+                    gap-2
+                    rounded-bl-[22px]
+                    rounded-tr-[18px]
+                    border-b
+                    border-l
+                    border-white/20
+                    bg-[#111521]
+                    px-5
+                    text-[14px]
+                    font-semibold
+                    text-white
+                    transition-colors
+                    hover:text-primary
+                    md:right-[28px]
+                    md:text-[18px]
+                  "
                 >
-                  <ArrowUpRight size={18} />
+                  <ArrowUpRight
+                    size={18}
+                    className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                  />
+
                   Explore More
-                </button>
+                </Link>
               </div>
             ))}
           </div>

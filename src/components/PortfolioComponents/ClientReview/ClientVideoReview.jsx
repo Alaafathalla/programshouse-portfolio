@@ -192,7 +192,7 @@ export default function ClientVideoReview({
             className="
               mx-auto
               w-full
-              max-w-[410px]
+              max-w-[400px]
               justify-self-center
               lg:mx-0
               lg:justify-self-end
@@ -202,12 +202,12 @@ export default function ClientVideoReview({
               className="
                 relative
                 aspect-[0.75]
-                max-h-[420px]
+                max-h-[400px]
                 w-full
                 overflow-hidden
                 rounded-[12px]
                 shadow-[0_12px_40px_rgba(0,0,0,0.3)]
-                sm:max-h-[580px]
+                sm:max-h-[500px]
               "
             >
               {reviewData.videoSrc ? (

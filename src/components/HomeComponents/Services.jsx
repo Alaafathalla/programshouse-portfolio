@@ -11,6 +11,7 @@ import {
 import { HashLink } from "react-router-hash-link";
 import SectionHeading from "../ui/SectionHeading";
 
+
 const services = [
   {
     icon: Search,

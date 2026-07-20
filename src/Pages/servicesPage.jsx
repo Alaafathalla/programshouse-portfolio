@@ -1,8 +1,8 @@
-import ServicesHero from "../components/ServicesComponents/ServicesHero";
-import DesignServices from "../components/ServicesComponents/DesignServices";
-import DevelopmentServices from "../components/ServicesComponents/DevelopmentServices";
-import DiscoverServices from "../components/ServicesComponents/DiscoverServices";
-import SupportServices from "../components/ServicesComponents/SupportServices";
+import ServicesHero from "../components/servicesComponents/ServicesHero";
+import DesignServices from "../components/servicesComponents/DesignServices";
+import DevelopmentServices from "../components/servicesComponents/DevelopmentServices";
+import DiscoverServices from "../components/servicesComponents/DiscoverServices";
+import SupportServices from "../components/servicesComponents/SupportServices";
 
 export default function Services() {
   return (

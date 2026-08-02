@@ -9,7 +9,7 @@ import {
   projectDetails,
 } from "./../../../data/medicalProjectData";
 
-function Breadcrumb() {
+function Breadcrumb({ project }) {
   return (
     <motion.div
       variants={fadeLeft}
@@ -43,12 +43,19 @@ function Breadcrumb() {
 
       <ChevronRight size={12} strokeWidth={1.8} />
 
-      <span className="text-white/60">Medical app</span>
+      <span className="text-white/60">{project?.shortTitle || medicalProject.title}</span>
     </motion.div>
   );
 }
 
-export default function ProjectInformation() {
+export default function ProjectInformation({ project }) {
+  const currentProject = project || medicalProject;
+  const currentDetails = project ? [
+    { label: "Category:", value: project.categoryLabel },
+    { label: "Description:", value: project.description },
+    { label: "Services:", value: project.services },
+    { label: "Team:", value: project.team },
+  ] : projectDetails;
   return (
     <motion.div
       variants={fadeLeft}
@@ -60,7 +67,7 @@ export default function ProjectInformation() {
       }}
       className="relative z-20"
     >
-      <Breadcrumb />
+      <Breadcrumb project={currentProject} />
 
       <motion.h1
         variants={fadeLeft}
@@ -77,7 +84,7 @@ export default function ProjectInformation() {
           sm:text-[44px] lg:text-[48px]
         "
       >
-        {medicalProject.title}
+        {currentProject.shortTitle || currentProject.title}
       </motion.h1>
 
       <motion.div
@@ -91,7 +98,7 @@ export default function ProjectInformation() {
         }}
         className="max-w-[520px] space-y-6"
       >
-        {projectDetails.map((item) => (
+        {currentDetails.map((item) => (
           <div key={item.label}>
             <p className="mb-2 text-[15px] text-white/45 sm:text-base">
               {item.label}

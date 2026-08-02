@@ -23,7 +23,7 @@ const defaultProjects = [
       "Research platform for healthcare professionals and medical content.",
     image: "/images/portfolio/portfolio2.png",
     mobileImage: "/images/portfolio/port (2).png",
-    slug: "prof-medical",
+    slug: "prof-medical-research",
   },
   {
     title: "M&S Marketing Website",

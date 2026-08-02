@@ -39,7 +39,13 @@ const goals = [
 
 const motionEase = [0.22, 1, 0.36, 1];
 
-export default function ProjectGoalsSection() {
+export default function ProjectGoalsSection({ project }) {
+  const projectGoals = project?.goals?.map((goal, index) => ({
+    ...goal,
+    id: goal.id || index + 1,
+    icon: goals[index]?.icon || goals[0].icon,
+  })) || goals;
+  const goalsImage = project?.goalsImage || "/images/portfolioDetailsPage/goal.png";
   return (
     <section
       className="
@@ -94,9 +100,9 @@ export default function ProjectGoalsSection() {
             className="relative w-full"
           >
             <ol className="relative">
-              {goals.map((goal, index) => {
+              {projectGoals.map((goal, index) => {
                 const Icon = goal.icon;
-                const isLast = index === goals.length - 1;
+                const isLast = index === projectGoals.length - 1;
 
                 return (
                   <motion.li
@@ -264,7 +270,7 @@ export default function ProjectGoalsSection() {
               {/* Image wrapper */}
               <div className="relative overflow-hidden rounded-[18px] bg-[#1A2030] shadow-[0_28px_65px_rgba(0,0,0,0.34)]">
                 <img
-                  src="/images/portfolioDetailsPage/goal.png"
+                  src={goalsImage}
                   alt="User finding medicine through a mobile application"
                   className="aspect-[1.03/1] w-full object-cover"
                   draggable={false}

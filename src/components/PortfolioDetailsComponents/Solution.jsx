@@ -121,7 +121,12 @@ function SolutionCard({ solution, index }) {
   );
 }
 
-export default function ProjectSolutionSection() {
+export default function ProjectSolutionSection({ project }) {
+  const projectSolutions = project?.solution?.map((solution, index) => ({
+    ...solution,
+    id: solution.id || index + 1,
+  })) || solutions;
+  const solutionImage = project?.solutionImage || "/images/portfolioDetailsPage/solution.png";
   return (
     <section
       className="
@@ -242,7 +247,7 @@ export default function ProjectSolutionSection() {
               "
             >
               <img
-                src="/images/portfolioDetailsPage/solution.png"
+                src={solutionImage}
                 alt="Healthcare application solution screens"
                 draggable={false}
                 className="
@@ -286,7 +291,7 @@ export default function ProjectSolutionSection() {
               xl:h-[520px]
             "
           >
-            {solutions.map((solution, index) => (
+            {projectSolutions.map((solution, index) => (
               <SolutionCard
                 key={solution.id}
                 solution={solution}

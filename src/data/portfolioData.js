@@ -13,7 +13,7 @@ export const projects = [
   },
   {
     id: 2,
-    slug: "prof-medical",
+    slug: "prof-medical-research",
     title: "PROF Medical Research Platform",
     category: "web",
     type: "Medical Research Platform",

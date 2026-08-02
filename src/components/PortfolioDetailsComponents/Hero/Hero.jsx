@@ -9,7 +9,7 @@ import {
   motionEase,
 } from "./../../../data/medicalProjectData";
 
-export default function Hero() {
+export default function Hero({ project }) {
   return (
     <section
       className="
@@ -36,7 +36,7 @@ export default function Hero() {
           lg:gap-[70px]
         "
       >
-        <ProjectInformation />
+        <ProjectInformation project={project} />
 
         <motion.div
           variants={fadeRight}
@@ -49,7 +49,7 @@ export default function Hero() {
           }}
           className="w-full overflow-visible"
         >
-          <ProjectVisual />
+          <ProjectVisual project={project} />
         </motion.div>
       </div>
     </section>

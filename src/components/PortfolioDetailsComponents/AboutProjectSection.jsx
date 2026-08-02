@@ -98,6 +98,7 @@ function InfoCard({
           absolute
           z-[2]
           bg-[#111521]
+
           ${
             isTopIcon
               ? "right-[27px] top-[-2px] h-[5px] w-[58px]"
@@ -130,6 +131,7 @@ function InfoCard({
           items-center
           justify-center
           bg-[#111521]
+
           ${
             isTopIcon
               ? "right-[32px] top-[-18px] h-[40px] w-[46px]"
@@ -152,20 +154,44 @@ function InfoCard({
           px-[22px]
           py-[22px]
           pr-[46px]
+
           sm:px-[26px]
           sm:py-[24px]
           sm:pr-[50px]
+
           xl:px-[28px]
           xl:py-[25px]
           xl:pr-[54px]
+
           ${contentClassName}
         `}
       >
-        <h3 className="mb-[10px] text-[16px] font-semibold leading-none tracking-[-0.025em] text-white sm:text-[17px]">
+        <h3
+          className="
+            mb-[10px]
+            text-[16px]
+            font-semibold
+            leading-none
+            tracking-[-0.025em]
+            text-white
+
+            sm:text-[17px]
+          "
+        >
           {card.title}
         </h3>
 
-        <p className="max-w-[560px] text-[13px] leading-[1.58] text-white/70 sm:text-[14px] xl:text-[15px]">
+        <p
+          className="
+            max-w-[560px]
+            text-[13px]
+            leading-[1.58]
+            text-white/70
+
+            sm:text-[14px]
+            xl:text-[15px]
+          "
+        >
           {card.description}
         </p>
       </div>
@@ -173,7 +199,33 @@ function InfoCard({
   );
 }
 
-function LeftProjectImage() {
+function LeftProjectImage({
+  image,
+  imageClassName = "",
+  alt = "Project preview",
+}) {
+  const defaultImageClassName = `
+    absolute
+    bottom-[-8px]
+    left-[46%]
+    z-10
+    h-[89%]
+    w-auto
+    max-w-none
+    -translate-x-1/2
+    select-none
+    object-contain
+
+    sm:left-[46%]
+    sm:h-[91%]
+
+    lg:bottom-[10px]
+    lg:left-[46%]
+    lg:h-[99%]
+
+    xl:h-[99%]
+  `;
+
   return (
     <motion.div
       initial={{
@@ -202,12 +254,28 @@ function LeftProjectImage() {
         overflow-hidden
         rounded-[15px]
         bg-[#1B202C]
+
         sm:h-[350px]
         lg:h-full
       "
     >
-      <div className="pointer-events-none absolute left-1/2 top-1/2 h-[290px] w-[360px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#77A6D0]/[0.035] blur-[75px]" />
+      <div
+        className="
+          pointer-events-none
+          absolute
+          left-1/2
+          top-1/2
+          h-[290px]
+          w-[360px]
+          -translate-x-1/2
+          -translate-y-1/2
+          rounded-full
+          bg-[#77A6D0]/[0.035]
+          blur-[75px]
+        "
+      />
 
+      {/* Fixed blue shape */}
       <motion.img
         src="/images/portfolioDetailsPage/image 301.png"
         alt=""
@@ -258,9 +326,10 @@ function LeftProjectImage() {
         "
       />
 
+      {/* Dynamic project image */}
       <motion.img
-        src="/images/portfolioDetailsPage/iPhone 16 Pro.png"
-        alt="Medicine search application screens"
+        src={image || "/images/portfolioDetailsPage/iPhone 16 Pro.png"}
+        alt={alt}
         draggable={false}
         initial={{
           opacity: 0,
@@ -281,33 +350,38 @@ function LeftProjectImage() {
           delay: 0.55,
           ease: motionEase,
         }}
-        className="
-          absolute
-          bottom-[-8px]
-          left-[46%]
-          z-10
-          h-[89%]
-          w-auto
-          max-w-none
-          -translate-x-1/2
-          select-none
-          object-contain
-
-          sm:left-[46%]
-          sm:h-[91%]
-
-          lg:bottom-[10px]
-          lg:left-[46%]
-          lg:h-[99%]
-
-          xl:h-[99%]
-        "
+        className={imageClassName || defaultImageClassName}
       />
     </motion.div>
   );
 }
 
-function RightProjectImage() {
+function RightProjectImage({
+  image,
+  imageClassName = "",
+  alt = "Project preview",
+}) {
+  const defaultImageClassName = `
+    absolute
+    bottom-[-3px]
+    left-1/2
+    z-10
+    h-[84%]
+    w-auto
+    max-w-none
+    -translate-x-1/2
+    select-none
+    object-contain
+
+    sm:h-[86%]
+
+    lg:bottom-[30px]
+    lg:h-[104%]
+
+    xl:bottom-[9px]
+    xl:h-[101%]
+  `;
+
   return (
     <motion.div
       initial={{
@@ -336,12 +410,28 @@ function RightProjectImage() {
         overflow-hidden
         rounded-[15px]
         bg-[#1B202C]
+
         sm:h-[590px]
         lg:h-full
       "
     >
-      <div className="pointer-events-none absolute left-1/2 top-1/2 h-[320px] w-[320px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#77A6D0]/[0.045] blur-[90px]" />
+      <div
+        className="
+          pointer-events-none
+          absolute
+          left-1/2
+          top-1/2
+          h-[320px]
+          w-[320px]
+          -translate-x-1/2
+          -translate-y-1/2
+          rounded-full
+          bg-[#77A6D0]/[0.045]
+          blur-[90px]
+        "
+      />
 
+      {/* Fixed blue shape */}
       <motion.img
         src="/images/portfolioDetailsPage/image 173.png"
         alt=""
@@ -392,9 +482,10 @@ function RightProjectImage() {
         "
       />
 
+      {/* Dynamic project image */}
       <motion.img
-        src="/images/portfolioDetailsPage/iPhone 13 Pro.png"
-        alt="Healthcare application home screen"
+        src={image || "/images/portfolioDetailsPage/iPhone 13 Pro.png"}
+        alt={alt}
         draggable={false}
         initial={{
           opacity: 0,
@@ -415,35 +506,85 @@ function RightProjectImage() {
           delay: 0.6,
           ease: motionEase,
         }}
-        className="
-          absolute
-          bottom-[-3px]
-          left-1/2
-          z-10
-          h-[84%]
-          w-auto
-          max-w-none
-          -translate-x-1/2
-          select-none
-          object-contain
-
-          sm:h-[86%]
-
-          lg:bottom-[30px]
-          lg:h-[104%]
-
-          xl:bottom-[9px]
-          xl:h-[101%]
-        "
+        className={imageClassName || defaultImageClassName}
       />
     </motion.div>
   );
 }
 
-export default function AboutProjectSection() {
+export default function AboutProjectSection({ project }) {
+  const sectionCards = project?.about
+    ? {
+        idea: {
+          ...cards.idea,
+          description: project.about.idea,
+        },
+
+        client: {
+          ...cards.client,
+          description: project.about.client,
+        },
+
+        value: {
+          ...cards.value,
+          description: project.about.value,
+        },
+      }
+    : cards;
+
+  const firstImage =
+    project?.aboutImages?.first ||
+    project?.aboutImage ||
+    project?.image;
+
+  const secondImage =
+    project?.aboutImages?.second ||
+    project?.aboutImage ||
+    project?.image;
+
+  const firstImageClassName =
+    project?.aboutImageStyles?.first?.className || "";
+
+  const secondImageClassName =
+    project?.aboutImageStyles?.second?.className || "";
+
+  const projectTitle =
+    project?.shortTitle ||
+    project?.title ||
+    "Project";
+
   return (
-    <section className="relative isolate overflow-hidden bg-[#111521] px-4 py-[55px] text-white sm:px-8 sm:py-[65px] lg:px-10 lg:py-[68px]">
-      <div className="pointer-events-none absolute left-[18%] top-1/2 h-[260px] w-[260px] -translate-y-1/2 rounded-full bg-[#77A6D0]/[0.025] blur-[110px]" />
+    <section
+      className="
+        relative
+        isolate
+        overflow-hidden
+        bg-[#111521]
+        px-4
+        py-[55px]
+        text-white
+
+        sm:px-8
+        sm:py-[65px]
+
+        lg:px-10
+        lg:py-[68px]
+      "
+    >
+      <div
+        className="
+          pointer-events-none
+          absolute
+          left-[18%]
+          top-1/2
+          h-[260px]
+          w-[260px]
+          -translate-y-1/2
+          rounded-full
+          bg-[#77A6D0]/[0.025]
+          blur-[110px]
+        "
+      />
 
       <div className="relative z-10 mx-auto w-full max-w-[1320px]">
         <motion.h2
@@ -469,40 +610,53 @@ export default function AboutProjectSection() {
             font-bold
             leading-none
             tracking-[-0.045em]
+
             sm:text-[36px]
+
             lg:mb-[34px]
             lg:text-[38px]
           "
         >
-          About The <span className="text-[#77A6D0]">Project</span>
+          About The{" "}
+          <span className="text-[#77A6D0]">
+            Project
+          </span>
         </motion.h2>
 
         {/* Mobile and tablet */}
         <div className="grid gap-[18px] lg:hidden">
           <InfoCard
-            card={cards.idea}
+            card={sectionCards.idea}
             delay={0.05}
             className="min-h-[225px]"
             contentClassName="justify-center"
           />
 
           <InfoCard
-            card={cards.client}
+            card={sectionCards.client}
             delay={0.12}
             className="min-h-[165px]"
             contentClassName="justify-center"
           />
 
           <InfoCard
-            card={cards.value}
+            card={sectionCards.value}
             delay={0.19}
             className="min-h-[190px]"
             contentClassName="justify-center"
           />
 
-          <LeftProjectImage />
+          <LeftProjectImage
+            image={firstImage}
+            imageClassName={firstImageClassName}
+            alt={`${projectTitle} preview 1`}
+          />
 
-          <RightProjectImage />
+          <RightProjectImage
+            image={secondImage}
+            imageClassName={secondImageClassName}
+            alt={`${projectTitle} preview 2`}
+          />
         </div>
 
         {/* Desktop */}
@@ -512,8 +666,10 @@ export default function AboutProjectSection() {
             w-full
             items-stretch
             gap-x-[44px]
+
             lg:grid
             lg:grid-cols-2
+
             xl:gap-x-[54px]
           "
         >
@@ -525,24 +681,29 @@ export default function AboutProjectSection() {
               min-w-0
               grid-rows-[190px_150px_300px]
               gap-y-[18px]
+
               xl:grid-rows-[190px_150px_320px]
             "
           >
             <InfoCard
-              card={cards.idea}
+              card={sectionCards.idea}
               delay={0.08}
               className="h-full"
               contentClassName="justify-center"
             />
 
             <InfoCard
-              card={cards.value}
+              card={sectionCards.value}
               delay={0.18}
               className="h-full"
               contentClassName="justify-center"
             />
 
-            <LeftProjectImage />
+            <LeftProjectImage
+              image={firstImage}
+              imageClassName={firstImageClassName}
+              alt={`${projectTitle} preview 1`}
+            />
           </div>
 
           {/* Right column */}
@@ -553,17 +714,22 @@ export default function AboutProjectSection() {
               min-w-0
               grid-rows-[140px_518px]
               gap-y-[18px]
+
               xl:grid-rows-[140px_538px]
             "
           >
             <InfoCard
-              card={cards.client}
+              card={sectionCards.client}
               delay={0.13}
               className="h-full"
               contentClassName="justify-center"
             />
 
-            <RightProjectImage />
+            <RightProjectImage
+              image={secondImage}
+              imageClassName={secondImageClassName}
+              alt={`${projectTitle} preview 2`}
+            />
           </div>
         </div>
       </div>

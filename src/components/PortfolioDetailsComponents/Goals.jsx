@@ -341,7 +341,7 @@ export default function ProjectGoalsSection({ project }) {
                 />
 
                 <p className="text-[12px] font-medium text-[#111521]/85 sm:text-[13px]">
-                  App to help patients find medications
+                  {project?.goalsLabel || "Project experience"}
                 </p>
               </motion.div>
             </motion.div>

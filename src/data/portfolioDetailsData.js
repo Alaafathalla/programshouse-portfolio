@@ -156,51 +156,23 @@ const overrides = {
   aboutImageStyles: {
     first: {
       className: `
-        pointer-events-none
-        absolute
-        z-20
-        select-none
-        object-contain
-
-        bottom-[-1%]
-        left-[8%]
-        h-[94%]
-        w-[84%]
-
-        sm:bottom-[-3%]
-        sm:left-[7%]
-        sm:h-[99%]
-        sm:w-[86%]
-
-        lg:bottom-[-2%]
-        lg:left-[13%]
-        lg:h-[102%]
-        lg:w-[88%]
+        pointer-events-none absolute bottom-0 left-1/2 z-20
+        h-[84%] w-auto max-w-[92%] -translate-x-1/2
+        select-none object-contain
+        sm:h-[88%]
+        lg:bottom-[6px] lg:h-[90%]
+        xl:h-[92%]
       `,
     },
 
     second: {
       className: `
-        pointer-events-none
-        absolute
-        z-20
-        select-none
-        object-contain
-
-        bottom-[-2%]
-        right-[4%]
-        h-[98%]
-        w-[95%]
-
-        sm:bottom-[-4%]
-        sm:right-[3%]
-        sm:h-[103%]
-        sm:w-[92%]
-
-        lg:bottom-[-6%]
-        lg:right-[2%]
-        lg:h-[108%]
-        lg:w-full
+        pointer-events-none absolute bottom-0 left-1/2 z-20
+        h-[88%] w-auto max-w-[96%] -translate-x-1/2
+        select-none object-contain
+        sm:h-[92%]
+        lg:bottom-[8px] lg:h-[96%]
+        xl:h-[98%]
       `,
     },
   },
@@ -528,16 +500,16 @@ const overrides = {
     ],
   },
 
-"ms-marketing-website": {
+"ms-marketing": {
   shortTitle: "M&S Marketing Website",
 
-  categoryLabel: "Marketing Agency Website",
+  categoryLabel: "Digital Marketing Agency Website",
 
   description:
-    "A modern marketing agency website designed to present services, showcase successful campaigns, build client trust, and generate qualified business leads.",
+    " A modern corporate website designed to showcase a digital marketing agency's services, portfolio, and expertise while converting visitors into potential clients through a clean and engaging user experience.",
 
   services:
-    "Website Development, UI/UX Design, Branding",
+   "UX Research, UI/UX Design, Website Design, Branding",
 
   team: "5 specialists",
 
@@ -622,35 +594,33 @@ const overrides = {
 
   about: {
     idea:
-      "Create a bold digital presence for a modern marketing agency that clearly communicates its services, expertise, creativity, and ability to deliver measurable business results.",
-
+      "Design a modern corporate website for a digital marketing agency that showcases the company's services, expertise, and successful projects. The website is designed to strengthen the agency's online presence while encouraging businesses to connect and grow their brands.",
     client:
-      "A growing marketing agency offering digital campaigns, social media management, branding, content creation, advertising, and strategic marketing solutions.",
-
+"A full-service digital marketing agency specializing in branding, social media management, SEO, paid advertising, content creation, and web design. The agency helps businesses increase visibility, attract customers, and achieve measurable growth.",
     value:
-      "The website strengthens the agency’s professional image, makes services easier to understand, showcases previous work, and helps convert visitors into qualified clients.",
-  },
+"The website establishes a strong digital presence for the agency by presenting its services, portfolio, and achievements in a professional and engaging way. It also builds credibility and encourages potential clients to start their digital marketing journey with confidence"
+ },
 
   goals: [
     {
       title: "Strengthen Brand Presence",
       description:
-        "Present the agency through a modern and confident visual identity that communicates professionalism and creativity.",
+        "Create a visually appealing and professional website that reflects the agency’s expertise, values, and unique approach to digital marketing.",
     },
     {
       title: "Showcase Marketing Services",
       description:
-        "Organize advertising, branding, content, social media, and campaign services in a clear and accessible structure.",
+        "Present the agency's services in a clear and engaging structure, making it easy for visitors to understand how the company can support their business growth.",
     },
     {
-      title: "Generate Qualified Leads",
+      title: "Build Trust & Credibility",
       description:
-        "Use focused calls to action and simple contact flows to turn interested visitors into potential clients.",
+        "Highlight successful projects, client testimonials, and measurable results to demonstrate the agency's experience and effectiveness.",
     },
     {
-      title: "Highlight Proven Results",
+      title: "Increase Client Inquiries",
       description:
-        "Show successful campaigns, client achievements, and measurable outcomes that build trust and credibility.",
+        "Encourage visitors to request consultations, contact the agency, or start a project through strategic calls-to-action and a seamless user journey.",
     },
   ],
 
@@ -688,52 +658,55 @@ const overrides = {
 
   solution: [
     {
-      title: "Service-Focused Website",
+      title: "Professional Company Presentation",
       description:
-        "A structured website that clearly presents the agency’s marketing, branding, advertising, and content services.",
+        "A visually engaging website that clearly communicates the agency's mission, expertise, and competitive advantages.",
     },
     {
-      title: "Campaign Portfolio",
+      title: "Service-Oriented Experience",
       description:
-        "Dedicated project sections highlight successful campaigns, creative work, client results, and business impact.",
+        "Well-structured service pages that explain each marketing solution, helping businesses quickly understand how the agency can support their goals.",
     },
     {
-      title: "Lead Generation Experience",
+      title: "Portfolio & Success Stories",
       description:
-        "Clear calls to action, inquiry forms, and contact channels help potential clients start conversations quickly.",
+        "A dedicated portfolio section showcasing completed projects, client testimonials, and campaign results to strengthen trust and credibility.",
     },
   ],
+solutionImage: "/images/portfolio/ms-marketing-website/solution.png",
+solutionImageStyles: {
+  wrapperClassName: `
+    relative
+    flex
+    min-h-[260px]
+    w-[82%]
+    items-center
+    justify-center
+    overflow-hidden
+    rounded-[15px]
 
-  solutionImage:
-    "/images/portfolio/ms-marketing-website/solution.png",
+    sm:min-h-[320px]
+    sm:w-[84%]
 
-  solutionImageStyles: {
-    wrapperClassName: `
-      relative
-      flex
-      min-h-[360px]
-      w-full
-      items-center
-      justify-center
-      overflow-hidden
-      rounded-[15px]
+    lg:min-h-[290px]
+    lg:w-[86%]
+  `,
 
-      sm:min-h-[420px]
-      lg:min-h-[460px]
-    `,
+  className: `
+    relative
+    z-10
+    h-auto
 
-    className: `
-      relative
-      z-10
-      h-auto
-      w-[92%]
-      max-w-none
-      object-contain
+    w-[96%]
+    mx-auto
 
-      sm:w-[95%]
-      lg:w-full
-    `,
-  },
+    sm:w-[94%]
+
+    lg:w-[86%]
+
+    object-contain
+  `,
+},
 },
 "rosetta-medical": {
   shortTitle: "Medical App",
@@ -748,10 +721,10 @@ const overrides = {
 
   aboutImages: {
     first:
-      "/images/portfolioDetailsPage/about-phone-left.png",
+      "/images/portfolioDetailsPage/iPhone 16 Pro.png",
 
     second:
-      "/images/portfolioDetailsPage/about-phone-right.png",
+      "/images/portfolioDetailsPage/iPhone 13 Pro.png",
   },
 
   about: {
@@ -857,25 +830,25 @@ export const portfolioDetails = projects.reduce(
           second: project.image,
         },
 
-      aboutImageStyles: {
-        first: {
-          ...defaultAboutImageStyles.first,
-          ...(custom.aboutImageStyles?.first || {}),
-        },
+      heroImageStyles:
+        custom.heroImageStyles || null,
 
-        second: {
-          ...defaultAboutImageStyles.second,
-          ...(custom.aboutImageStyles?.second || {}),
-        },
-      },
+      aboutImageStyles:
+        custom.aboutImageStyles || null,
 
       goalsImage:
         custom.goalsImage ||
         project.image,
 
+      goalsImageStyles:
+        custom.goalsImageStyles || null,
+
       solutionImage:
         custom.solutionImage ||
         project.image,
+
+      solutionImageStyles:
+        custom.solutionImageStyles || null,
 
       about: {
         ...shared.about,

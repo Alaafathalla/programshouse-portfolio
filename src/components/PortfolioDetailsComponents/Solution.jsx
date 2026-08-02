@@ -127,6 +127,18 @@ export default function ProjectSolutionSection({ project }) {
     id: solution.id || index + 1,
   })) || solutions;
   const solutionImage = project?.solutionImage || "/images/portfolioDetailsPage/solution.png";
+  const solutionImageWrapperClassName =
+    project?.solutionImageStyles?.wrapperClassName ||
+    `
+      relative aspect-[1.07/1] w-full overflow-hidden rounded-[16px]
+      shadow-[0_24px_55px_rgba(0,0,0,0.3)]
+      sm:aspect-[1.2/1]
+      lg:aspect-auto lg:h-[500px]
+      xl:h-[520px]
+    `;
+  const solutionImageClassName =
+    project?.solutionImageStyles?.className ||
+    "absolute inset-0 h-full w-full object-cover object-center";
   return (
     <section
       className="
@@ -233,28 +245,13 @@ export default function ProjectSolutionSection({ project }) {
                 duration: 0.35,
                 ease: motionEase,
               }}
-              className="
-                relative
-                aspect-[1.07/1]
-                w-full
-                overflow-hidden
-                rounded-[16px]
-                shadow-[0_24px_55px_rgba(0,0,0,0.3)]
-                sm:aspect-[1.2/1]
-                lg:aspect-auto
-                lg:h-[500px]
-                xl:h-[520px]
-              "
+              className={solutionImageWrapperClassName}
             >
               <img
                 src={solutionImage}
-                alt="Healthcare application solution screens"
+                alt={`${project?.shortTitle || project?.title || "Project"} solution`}
                 draggable={false}
-                className="
-                  absolute inset-0
-                  h-full w-full
-                  object-cover object-center
-                "
+                className={solutionImageClassName}
               />
 
               <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#111521]/18 via-transparent to-transparent" />

@@ -98,14 +98,17 @@ function RosettaVisual() {
   );
 }
 
-function SingleImageVisual({ image, title }) {
+function SingleImageVisual({ image, title, imageClassName }) {
   return (
     <div className="relative mx-auto flex min-h-[300px] w-full max-w-[760px] items-center justify-center overflow-visible sm:min-h-[400px] lg:min-h-[520px]">
       <img
         src={image}
         alt={title || "Project preview"}
         draggable={false}
-        className="relative z-10 max-h-[520px] w-full max-w-[720px] select-none object-contain"
+        className={
+          imageClassName ||
+          "relative z-10 max-h-[520px] w-full max-w-[720px] select-none object-contain"
+        }
       />
     </div>
   );
@@ -120,6 +123,7 @@ export default function ProjectVisual({ project }) {
     <SingleImageVisual
       image={project?.heroImage || project?.image}
       title={project?.shortTitle || project?.title}
+      imageClassName={project?.heroImageStyles?.className}
     />
   );
 }

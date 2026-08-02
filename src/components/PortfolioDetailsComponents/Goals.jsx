@@ -46,6 +46,12 @@ export default function ProjectGoalsSection({ project }) {
     icon: goals[index]?.icon || goals[0].icon,
   })) || goals;
   const goalsImage = project?.goalsImage || "/images/portfolioDetailsPage/goal.png";
+  const goalsImageWrapperClassName =
+    project?.goalsImageStyles?.wrapperClassName ||
+    "relative overflow-hidden rounded-[18px] bg-[#1A2030] shadow-[0_28px_65px_rgba(0,0,0,0.34)]";
+  const goalsImageClassName =
+    project?.goalsImageStyles?.className ||
+    "aspect-[1.03/1] w-full object-cover";
   return (
     <section
       className="
@@ -268,11 +274,11 @@ export default function ProjectGoalsSection({ project }) {
               className="relative overflow-visible"
             >
               {/* Image wrapper */}
-              <div className="relative overflow-hidden rounded-[18px] bg-[#1A2030] shadow-[0_28px_65px_rgba(0,0,0,0.34)]">
+              <div className={goalsImageWrapperClassName}>
                 <img
                   src={goalsImage}
-                  alt="User finding medicine through a mobile application"
-                  className="aspect-[1.03/1] w-full object-cover"
+                  alt={`${project?.shortTitle || project?.title || "Project"} goals`}
+                  className={goalsImageClassName}
                   draggable={false}
                 />
 

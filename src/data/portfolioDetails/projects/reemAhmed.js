@@ -2,24 +2,135 @@ import { createProjectDetails } from "../createProjectDetails.js";
 
 export const reemAhmedDetails = createProjectDetails({
   slug: "reem-ahmed",
+
   shortTitle: "Reem Ahmed Life Coaching Website",
-  categoryLabel: "Life Coaching Website",
-  description: "A personal coaching website that introduces the coach, programs, sessions, and a clear path to booking consultations.",
-  services: "UX Research, UI/UX Design, Website Development",
-  about: {
-    idea: "Create a warm and inspiring digital presence that helps visitors understand the coach’s approach and begin a personal development journey.",
-    client: "A life coach offering guidance in personal growth, relationships, mindset, balance, and lifestyle organization.",
-    value: "The website builds trust, presents coaching services clearly, and makes consultation booking simple and approachable.",
+
+  categoryLabel:
+    "Life Coaching Website & Personal Development Platform",
+
+  description:
+    "A modern personal brand website created for an Emirati life coach who offers private sessions and practical guidance in life organization, relationships, self-awareness, and personal growth.",
+
+  services:
+    "Responsive Web Design, Personal Brand Strategy",
+
+  team: "6 specialists",
+aboutImageStyles: {
+  first: {
+    wrapperClassName: `
+      relative
+      mx-auto
+      flex
+      min-h-[210px]
+      w-full
+      items-end
+      justify-center
+      overflow-hidden
+      rounded-[18px]
+
+      sm:min-h-[250px]
+
+      lg:min-h-[280px]
+    `,
+
+    className: `
+      relative
+      h-auto
+      w-[82%]
+      object-contain
+
+      sm:w-[78%]
+ sm:translate-y-[88px]
+     sm:translate-x-[120px]
+      lg:w-[93%]
+      lg:max-h-[260px]
+      lg:translate-y-[58px]
+        lg:translate-x-[88px]
+    `,
   },
+
+  second: {
+    wrapperClassName: `
+      relative
+      mx-auto
+      flex
+      min-h-[210px]
+      w-full
+      items-center
+      justify-center
+      overflow-hidden
+      rounded-[18px]
+
+      sm:min-h-[250px]
+
+      lg:min-h-[280px]
+    `,
+
+    className: `
+      relative
+      h-auto
+      w-[92%]
+      object-contain
+
+      sm:w-[80%]
+      sm:translate-y-[88px]
+      sm:translate-x-[90px]
+      lg:w-[100%]
+      lg:max-h-[295px]
+    lg:translate-y-[78px]
+      lg:translate-x-[0px]
+    `,
+  },
+},
+  about: {
+    idea:
+      "Design a warm and inspiring digital experience that introduces the coach's philosophy, showcases her coaching programs, and helps visitors easily begin their personal growth journey through online session booking.",
+
+    client:
+      "An Emirati life coach dedicated to empowering individuals through personalized coaching, helping them improve relationships, build self-confidence, organize their lives, and achieve emotional well-being.",
+
+    value:
+      "The platform strengthens the client's personal brand while providing a seamless experience for discovering coaching services, reading valuable insights, and booking sessions with confidence.",
+  },
+
   goals: [
-    { title: "Build Personal Trust", description: "Present the coach’s story, values, and expertise through an authentic digital identity." },
-    { title: "Explain Coaching Programs", description: "Organize sessions and programs so visitors can quickly find the right support." },
-    { title: "Encourage Session Booking", description: "Use clear calls to action and a simple inquiry path to increase bookings." },
-    { title: "Support Long-Term Growth", description: "Create a flexible platform for future courses, resources, and community content." },
+    {
+      title: "Build a Strong Personal Brand",
+      description:
+        "Create a professional online presence that reflects the coach's personality, values, and expertise.",
+    },
+    {
+      title: "Increase Trust & Credibility",
+      description:
+        "Use authentic content, elegant visuals, and clear messaging to build confidence with potential clients.",
+    },
+    {
+      title: "Simplify Session Booking",
+      description:
+        "Provide an intuitive user journey that makes exploring services and scheduling coaching sessions quick and effortless.",
+    },
+    {
+      title: "Inspire Personal Growth",
+      description:
+        "Encourage visitors to take positive action through motivational content and practical coaching solutions.",
+    },
   ],
+
   solution: [
-    { title: "Personal Brand Experience", description: "A calm visual identity communicates trust, confidence, and positive transformation." },
-    { title: "Program & Session Pages", description: "Each service is presented with clear outcomes, details, and booking guidance." },
-    { title: "Simple Contact Journey", description: "Visitors can move from discovery to consultation request with minimal steps." },
+    {
+      title: "Elegant & Human-Centered Design",
+      description:
+        "A clean and calming interface that creates an emotional connection while reflecting professionalism and trust.",
+    },
+    {
+      title: "Clear Coaching Experience",
+      description:
+        "Well-structured pages that explain coaching services, programs, and the transformation clients can expect.",
+    },
+    {
+      title: "Optimized User Journey",
+      description:
+        "Responsive layouts, simple navigation, and clear calls-to-action that guide visitors from exploration to booking.",
+    },
   ],
 });

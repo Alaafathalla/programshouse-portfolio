@@ -224,7 +224,11 @@ export default function ProjectSolutionSection({ project }) {
               delay: 0.08,
               ease: motionEase,
             }}
-            className="relative w-full"
+            className="
+              relative w-full
+              lg:h-[510px]
+              xl:h-[520px]
+            "
           >
             <div
               className="
@@ -245,13 +249,21 @@ export default function ProjectSolutionSection({ project }) {
                 duration: 0.35,
                 ease: motionEase,
               }}
-              className={solutionImageWrapperClassName}
+              className={`
+                ${solutionImageWrapperClassName}
+                !h-full !w-full
+              `}
             >
               <img
                 src={solutionImage}
                 alt={`${project?.shortTitle || project?.title || "Project"} solution`}
                 draggable={false}
-                className={solutionImageClassName}
+                className={`${solutionImageClassName} max-h-full max-w-full object-contain`}
+                style={{
+                  objectFit: "contain",
+                  maxHeight: "100%",
+                  maxWidth: "100%",
+                }}
               />
 
               <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#111521]/18 via-transparent to-transparent" />

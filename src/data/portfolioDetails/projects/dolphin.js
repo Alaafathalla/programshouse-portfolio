@@ -172,6 +172,7 @@ aboutImageStyles: {
     `,
   },
 
+  // Project story
   about: {
     idea:
       "Design a modern corporate website for a company that offers academic, printing, and creative design services. The website is built to showcase the company's expertise, simplify service discovery, and provide clients with an easy way to request professional support.",
@@ -183,6 +184,7 @@ aboutImageStyles: {
       "The website creates a professional online presence that highlights the company's services and expertise. It helps visitors easily explore available solutions, builds trust through a clean presentation, and encourages them to request services with confidence.",
   },
 
+  // Project goals
   goals: [
     {
       title: "Showcase Professional Services",
@@ -206,18 +208,22 @@ aboutImageStyles: {
     },
   ],
 
+  // Project solution — each card has a project-specific icon
   solution: [
     {
+      icon: "BookOpenCheck",
       title: "Clear Service Presentation",
       description:
         "Well-organized sections that introduce academic support, printing, formatting, and creative design services with concise and engaging content.",
     },
     {
+      icon: "Palette",
       title: "Professional Brand Experience",
       description:
         "A clean and modern interface that reflects the company's expertise while creating a trustworthy first impression for potential clients.",
     },
     {
+      icon: "Route",
       title: "Simplified Customer Journey",
       description:
         "An intuitive navigation system that enables users to browse services, request quotes, and contact the company with minimal effort.",

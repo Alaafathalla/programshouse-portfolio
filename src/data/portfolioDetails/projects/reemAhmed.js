@@ -36,9 +36,10 @@ aboutImageStyles: {
     className: `
       relative
       h-auto
-      w-[82%]
+      w-[89%]
       object-contain
-
+translate-y-[95px]
+translate-x-[90px]
       sm:w-[78%]
  sm:translate-y-[88px]
      sm:translate-x-[120px]
@@ -71,7 +72,8 @@ aboutImageStyles: {
       h-auto
       w-[92%]
       object-contain
-
+translate-y-[95px]
+translate-x-[30px]
       sm:w-[80%]
       sm:translate-y-[88px]
       sm:translate-x-[90px]
@@ -82,6 +84,7 @@ aboutImageStyles: {
     `,
   },
 },
+  // Project story
   about: {
     idea:
       "Design a warm and inspiring digital experience that introduces the coach's philosophy, showcases her coaching programs, and helps visitors easily begin their personal growth journey through online session booking.",
@@ -93,6 +96,7 @@ aboutImageStyles: {
       "The platform strengthens the client's personal brand while providing a seamless experience for discovering coaching services, reading valuable insights, and booking sessions with confidence.",
   },
 
+  // Project goals
   goals: [
     {
       title: "Build a Strong Personal Brand",
@@ -116,18 +120,22 @@ aboutImageStyles: {
     },
   ],
 
+  // Project solution — each card has a project-specific icon
   solution: [
     {
+      icon: "HeartHandshake",
       title: "Elegant & Human-Centered Design",
       description:
         "A clean and calming interface that creates an emotional connection while reflecting professionalism and trust.",
     },
     {
+      icon: "Sparkles",
       title: "Clear Coaching Experience",
       description:
         "Well-structured pages that explain coaching services, programs, and the transformation clients can expect.",
     },
     {
+      icon: "Waypoints",
       title: "Optimized User Journey",
       description:
         "Responsive layouts, simple navigation, and clear calls-to-action that guide visitors from exploration to booking.",

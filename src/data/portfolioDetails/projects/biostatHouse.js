@@ -61,76 +61,83 @@ export const biostatHouseDetails = createProjectDetails({
   |
   */
 
-  aboutImageStyles: {
-    first: {
-      wrapperClassName: `
-        relative
-        mx-auto
-        flex
-        min-h-[210px]
-        w-full
-        items-end
-        justify-center
-        overflow-hidden
-        rounded-[16px]
+aboutImageStyles: {
+  first: {
+    wrapperClassName: `
+      relative
+      mx-auto
+      flex
+      min-h-[250px]
+      w-full
+      items-end
+      justify-center
+      overflow-hidden
+      rounded-[16px]
 
-        sm:min-h-[250px]
+      sm:min-h-[290px]
 
-        lg:min-h-[285px]
-      `,
+      lg:min-h-[285px]
+    `,
 
-      className: `
-        relative
-        h-auto
-        w-[92%]
-        max-h-[195px]
-        translate-y-[10px]
-        object-contain
+    className: `
+      relative
+      h-auto
+      w-[97%]
+      max-h-[220px]
+      object-contain
 
-        sm:w-[88%]
-        sm:max-h-[230px]
-        sm:translate-y-[14px]
+      translate-y-[85px]
+      translate-x-[25px]
 
-        lg:w-[98%]
-        lg:max-h-[295px]
-        lg:translate-y-[30px]
-        lg:translate-x-[50px]
-      `,
-    },
+      sm:w-[88%]
+      sm:max-h-[230px]
+      sm:translate-y-[45px]
 
-    second: {
-      wrapperClassName: `
-        relative
-        mx-auto
-        flex
-        min-h-[210px]
-        w-full
-        items-center
-        justify-center
-        overflow-hidden
-        rounded-[16px]
-
-        sm:min-h-[250px]
-
-        lg:min-h-[285px]
-      `,
-
-      className: `
-        relative
-        h-auto
-        w-full
-        max-h-[230px]
-        object-cover
-        object-center
-
-        sm:max-h-[270px]
-
-        lg:h-[74%]
-        lg:max-h-none
-        lg:translate-y-[39px]
-      `,
-    },
+      lg:w-[98%]
+      lg:max-h-[295px]
+      lg:translate-y-[30px]
+      lg:translate-x-[50px]
+    `,
   },
+
+  second: {
+    wrapperClassName: `
+      relative
+      mx-auto
+      flex
+      min-h-[250px]
+      w-full
+      items-center
+      justify-center
+      overflow-hidden
+      rounded-[16px]
+
+      sm:min-h-[290px]
+
+      lg:min-h-[285px]
+    `,
+
+    className: `
+      relative
+      h-auto
+      w-full
+      max-h-[230px]
+      object-cover
+      object-center
+
+    translate-y-[95px]
+      translate-x-[15px]
+
+
+      sm:max-h-[270px]
+      sm:translate-y-[45px]
+
+      lg:h-[74%]
+      lg:max-h-none
+      lg:translate-y-[39px]
+    `,
+  },
+},
 
   /*
   |--------------------------------------------------------------------------
@@ -203,6 +210,7 @@ solutionImageStyles: {
   `,
 },
 
+  // Project story
   about: {
     idea:
       "Build a credible digital platform that explains specialized research and biostatistics services in a clear business-focused way.",
@@ -214,6 +222,7 @@ solutionImageStyles: {
       "The website strengthens credibility, simplifies complex services, and helps potential clients request the right research support.",
   },
 
+  // Project goals
   goals: [
     {
       title: "Present Specialized Expertise",
@@ -237,18 +246,22 @@ solutionImageStyles: {
     },
   ],
 
+  // Project solution — each card has a project-specific icon
   solution: [
     {
+      icon: "Microscope",
       title: "Research Services Hub",
       description:
         "A central website for data analysis, study design, and scientific consulting.",
     },
     {
+      icon: "ChartNoAxesCombined",
       title: "Clear Service Architecture",
       description:
         "Services are grouped by user need and research stage.",
     },
     {
+      icon: "FileSearch",
       title: "Professional Inquiry Flow",
       description:
         "Visitors can submit project details and request tailored support.",

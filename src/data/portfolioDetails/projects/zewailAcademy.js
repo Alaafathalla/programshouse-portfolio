@@ -171,6 +171,7 @@ export const zewailAcademyDetails = createProjectDetails({
     `,
   },
 
+  // Project story
   about: {
     idea:
       "Build an organized learning platform that connects students with courses, schedules, registration, and academy information.",
@@ -182,6 +183,7 @@ export const zewailAcademyDetails = createProjectDetails({
       "The platform improves enrollment, simplifies academic administration, and gives students clearer access to learning opportunities.",
   },
 
+  // Project goals
   goals: [
     {
       title: "Simplify Course Discovery",
@@ -205,18 +207,22 @@ export const zewailAcademyDetails = createProjectDetails({
     },
   ],
 
+  // Project solution — each card has a project-specific icon
   solution: [
     {
+      icon: "BookOpen",
       title: "Course Catalog",
       description:
         "Programs and course details are structured for easy comparison and enrollment.",
     },
     {
+      icon: "ClipboardCheck",
       title: "Registration & Payment Flow",
       description:
         "Students can submit information and complete required enrollment steps.",
     },
     {
+      icon: "GraduationCap",
       title: "Academy Admin Dashboard",
       description:
         "Staff can manage courses, students, schedules, and academic records.",

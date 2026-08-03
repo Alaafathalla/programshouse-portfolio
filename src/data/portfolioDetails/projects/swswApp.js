@@ -110,6 +110,7 @@ export const swswAppDetails = createProjectDetails({
   //   },
   // },
 
+  // Project story
   about: {
     idea:
       "Build a smart food delivery platform that connects customers with nearby restaurants through one seamless experience. Users can browse menus, place orders, track deliveries in real time, and enjoy fast, reliable service from their favorite restaurants.",
@@ -121,6 +122,7 @@ export const swswAppDetails = createProjectDetails({
       "The platform makes food ordering faster and more convenient by offering real-time order tracking, secure payments, personalized recommendations, and an easy-to-use interface. Restaurants benefit from efficient order management, while customers enjoy a seamless dining experience.",
   },
 
+  // Project goals
   goals: [
     {
       title: "Streamline Food Ordering",
@@ -144,18 +146,22 @@ export const swswAppDetails = createProjectDetails({
     },
   ],
 
+  // Project solution — each card has a project-specific icon
   solution: [
     {
+      icon: "UtensilsCrossed",
       title: "Discover Restaurants Easily",
       description:
         "Browse nearby restaurants, explore categories, and find meals based on cuisine, ratings, or delivery time.",
     },
     {
+      icon: "WalletCards",
       title: "Fast & Secure Ordering",
       description:
         "Customize meals, add items to the cart, and complete checkout quickly using multiple secure payment methods.",
     },
     {
+      icon: "MapPinCheck",
       title: "Real-Time Order Tracking",
       description:
         "Track every stage of the order, from restaurant preparation to delivery, with live status updates and estimated arrival times.",

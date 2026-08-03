@@ -32,9 +32,9 @@ export const sharedDetails = {
     { title: "Support Future Growth", description: "Use a flexible structure that can grow with new users, services and business requirements." },
   ],
   solution: [
-    { title: "Unified Digital Platform", description: "A single destination that connects the project’s main services, content and workflows." },
-    { title: "Seamless User Flow", description: "Every step is designed to feel fast, clear and consistent from entry to completion." },
-    { title: "Scalable Architecture", description: "Reusable modules make the product easier to maintain, extend and adapt over time." },
+    { icon: "Layers3", title: "Unified Digital Platform", description: "A single destination that connects the project’s main services, content and workflows." },
+    { icon: "Route", title: "Seamless User Flow", description: "Every step is designed to feel fast, clear and consistent from entry to completion." },
+    { icon: "Blocks", title: "Scalable Architecture", description: "Reusable modules make the product easier to maintain, extend and adapt over time." },
   ],
   review: {
     text: "Programs House transformed our idea into a polished digital product with a clear process, thoughtful design and dependable delivery.",

@@ -92,6 +92,7 @@ aboutImageStyles: {
     lg:translate-y-[35px]
   `,
 },
+  // Project story
   about: {
     idea:
       "Design a modern home services website that connects homeowners with trusted professionals for repair, maintenance, cleaning, and installation services. The website offers a simple and convenient way to book reliable services anytime.",
@@ -103,6 +104,7 @@ aboutImageStyles: {
       "The website simplifies the process of finding and booking trusted home service professionals. It improves customer convenience, increases service accessibility, and helps users schedule appointments quickly and confidently.",
   },
 
+  // Project goals
   goals: [
     {
       title: "Simplify Service Booking",
@@ -126,18 +128,22 @@ aboutImageStyles: {
     },
   ],
 
+  // Project solution — each card has a project-specific icon
   solution: [
     {
+      icon: "Wrench",
       title: "Easy Service Discovery",
       description:
         "Users can quickly browse categories such as plumbing, electrical, cleaning, painting, appliance repair, and HVAC services to find the right solution.",
     },
     {
+      icon: "CalendarCheck2",
       title: "Quick Online Booking",
       description:
         "A streamlined booking process allows customers to select a service, choose their preferred date and time, and confirm appointments in just a few steps.",
     },
     {
+      icon: "BadgeCheck",
       title: "Trusted Professionals",
       description:
         "The website highlights certified technicians, customer ratings, and service guarantees to build confidence and ensure a reliable experience.",
